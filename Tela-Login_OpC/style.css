@@ -1,21 +1,33 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap');
+/* Definindo variáveis para fontes e cor */
+:root {
+    --primary-font: 'Segoe UI', sans-serif;
+    --secondary-font: 'Segoe UI Bold', sans-serif;
+    --primary-color: #6b1bc6;
+}
+
+/* Importando fontes locais */
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('Segoe Fontes/SegoeUI-Regular.ttf') format('truetype');
+}
 
 @font-face {
-    font-family: 'Noto Sans Display';
-    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap');
+    font-family: 'Segoe UI Bold';
+    src: url('Segoe Fontes/SegoeUI-Bold.ttf') format('truetype');
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans Display', sans-serif;
+    font-family: var(--primary-font);
     font-weight: bold;
     text-align: center;
+    color: var(--primary-color);    
 }
 
-h1{
+h1 {
     font-size: 1.2em;
     margin-bottom: 5px;
 }
@@ -30,7 +42,7 @@ body {
     width: 100dvw;
 }
 
-#google, #facebook, #apple{ 
+#google, #Microsoft{ 
     width: 28px;
     height: 28px;
     padding-left: 25px;
@@ -67,20 +79,21 @@ div#foto{
 
 input[type="email"], input[type="password"]{
     width: 80%;
-    height: 20px;
+    height: 35px;
     padding: 5px;
-    margin-bottom: -1px;
+    margin: 10px 0px;
     text-align: left;
-    border: 1px solid rgba(0, 0, 0, 0.534);
-    border-radius: 8px;
-    background-color: #f7f7f7;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    border-radius: 5px;
+    background-color: white;
 }
 
 input[type="button"]{
-    width: 85%;
+    width: 35%;
+    height: 35px;
     padding: 5px;
     margin: 10px 0px;
-    background-color: #1CB0F6;
+    background-color: var(--primary-color);
     border-radius: 8px;
     color: white;
     border: none;
@@ -92,38 +105,34 @@ input[type="button"]{
     text-decoration: none;
     font-size: small;
     font-weight: bold;
-    color: #1cb1f6;
+    color: var(--primary-color);
 }
 
 div#links{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column;;
     align-items: center;
     flex-wrap: wrap;
     height: 270px;
-    width: 85%;
+    width: 65%;
     margin-bottom: 10px;
 }
 
 a#redes{
     display: flex;
-    text-align: right;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #3b5998;
-    margin: 6px -5px;
-    text-align: start;
-    border: 1px solid rgba(0, 0, 0, 0.379);
-    padding-right: 5px;
+    color: var(--primary-color);
+    margin: 10px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     width: 85%;
-    max-width: 330px;
-    border-radius: 12px;
+    max-width: 300px;
+    border-radius: 8px;
 }
 
 a img {
-    margin-right: 10px; /* Espaço entre a imagem e o texto */
+    margin-right: 8px; /* Espaço entre a imagem e o texto */
 }
 
 footer a{

@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="medias.css">
-    <title>Login-v2</title>
+    <title>Login-OpC</title>
 </head>
 <body>
     <div id="foto">
-        <img src="https://cdn.freebiesupply.com/logos/large/2x/duolingo-symbol-icon-logo-png-transparent.png" alt="">
+        <img src="../Arquivos SVG/big_onion_facts_and_data.svg" alt="">
+    </div>
         <div id="tela">
             <div id="campos">
-                <h1> <img src="../Arquivos SVG/logoescrita.svg" alt=""></h1>
+                <h1> <img id="logoescrita" src="../Arquivos SVG/logoescrita.svg" alt="logo escrita"></h1>
+                <p id="bemvindo" >Bem-vindo de volta! Faça o Login para continuar</p><hr>
                 <form action="#" method="post">
-                    <input type="email" name="email" id="email" placeholder="e-mail">
-                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                    <div id="campoemail">
+                        <img src="../Arquivos SVG/mail_20dp_6B1BC6_FILL0_wght400_GRAD0_opsz20.svg" alt="">
+                        <input type="email" name="email" id="email" placeholder="Insira aqui seu e-mail ou nome de usuário">
+                    </div>
+
+                    <div id="camposenha">
+                        <img src="../Arquivos SVG/lock_20dp_6B1BC6_FILL0_wght400_GRAD0_opsz20.svg" alt="">
+                        <input type="password" name="senha" id="senha" placeholder="Insira aqui a sua senha">
+                    </div>
+
                     <input type="button" value="ENTRAR"> <br>
                     <a class="preencher" href="#">ESQUECI A SENHA</a>
                 </form>
@@ -29,7 +39,6 @@
                     <p>Feito por <a href="#">Enio Felipe</a></p>
                 </footer>
         </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,106 +1,143 @@
 @charset "UTF-8";
 
-@media screen and (min-width: 720px) and (max-width: 992px) {
+:root {
+    --primary-font: 'Segoe UI', sans-serif;
+    --secondary-font: 'Segoe UI Bold', sans-serif;
+    --primary-color: #6b1bc6;
+}
 
-    div#foto > img{
-        display: block;
-        width: 50%;
-        height: 40%;
-        margin: 30px;
-    }
 
-    div#foto{
+@media screen and (min-width: 720px){
+
+    body {
+        line-height: 1;
+        background-color: white;
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
-        background-color: #58ae02;
-        width: 100dvw;
-        height: 100dvh;
+        height: 100vh; /* Garanta que o conteúdo ocupe pelo menos a altura da viewport */
+        width: 100vw;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    div#foto {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: white;
+        width: 50%;
+        height: 80%;
+    }
+    
+    div#foto > img {
+        display: block;
+        width: 52%;
+        height: auto;
+    }
+    
+    div#tela {
+        margin-left: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 2 1 auto;
+        width: 40%;
+        height: 80%; /* Ajuste a altura mínima */
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.19);
+        box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.16);
+        border-radius: 25px;
     }
 
-    input[type="email"], input[type="password"]{
-        margin-bottom: 10px;
+    div#campos {
+        width: 100%; /* Ajuste a largura */
+        padding: 2rem; /* Ajuste o padding */
     }
 
-    input[type="button"]{
-        width: 85%;
-        padding: 5px;
-        margin: 5px 0px;
-        background-color: #58ae02;
+    div#campos h1 {
+        font-size: 2rem; /* Ajuste o tamanho da fonte */
+        margin-bottom: 1.5rem; /* Ajuste a margem inferior */
+    }
+
+    div#campos p#bemvindo {
+        font-size: 1.2rem; /* Ajuste o tamanho da fonte */
+        margin-bottom: 1rem; /* Ajuste a margem inferior */
+    }
+
+    div#campos hr {
+        width: 70%; /* Ajuste a largura */
+        max-width: 300px; /* Ajuste a largura máxima */
+        margin-bottom: 1.5rem; /* Ajuste a margem inferior */
+    }
+
+    div#campoemail, div#camposenha {
+        width: 100%; /* Ajuste a largura máxima */
+        height: 55px; /* Ajuste a altura */
+        padding-left: 15px; /* Ajuste o padding à esquerda */
+        margin-bottom: 1.5rem; /* Ajuste a margem inferior */
+        border: 1px solid rgba(0, 0, 0, 0.242);
+        border-radius: 8px;
+    }
+
+    input[type="email"], input[type="password"] {
+        width: 100%;
+        height: 45px; /* Ajuste a altura */
+        padding: 10px 0px 10px 15px; /* Ajuste o padding */
+        margin: 10px 0px;
+        text-align: left;
+        border: none;
+        background-color: transparent;
+    }
+
+    input[type="button"] {
+        width: 50%; /* Ajuste a largura */
+        height: 45px; /* Ajuste a altura */
+        padding: 10px; /* Ajuste o padding */
+        margin: 10px 0px;
+        background-color: var(--primary-color);
         border-radius: 8px;
         color: white;
         border: none;
     }
 
-    .preencher{
-        color: #58ae02;
+    .preencher {
+        font-size: 1rem; /* Ajuste o tamanho da fonte */
     }
 
-    a#redes{
-        color: #58ae02;
+    a#redes {
+        font-size: 1rem; /* Ajuste o tamanho da fonte */
+        width: 100%; /* Ajuste a largura */
+        max-width: 300px; /* Ajuste a largura máxima */
+        padding: 10px; /* Ajuste o padding */
+        margin: 10px 0px;
+        border-radius: 8px;
+    }
+
+    footer {
+        width: 100%;
+        padding: 20px 0; 
+        text-align: center;
+        margin-top: auto; 
     }
     
-    div#tela{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center ;
-        width: 100dvw;
-        height: 100dvh;
-        background-color: white;
-        border-radius: 0px;
+    footer a {
+        text-decoration: underline;
+        color: black;
+        border: 0px;
     }
-
-    div#links{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    
+    footer p {
+        font-size: small;
+        margin-bottom: 10px;
     }
-
-    a#redes{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    footer{
-        margin: 50px 0px;
-        padding: 0px;
+    
+    div#links {
+        display: none;
     }
 }
 
-@media screen and (min-width: 992px) {
 
-    div#tela{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100dvw;
-        height: 100dvh;
-        background-color: white;
-        border-radius: 0px;
-    }
-
-    div#links{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 40%;
-    }
-
-    a#redes{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    footer{
-        margin: 50px 0px;
-        padding: 0px;
-    }
-
-}
     

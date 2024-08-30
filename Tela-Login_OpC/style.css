@@ -27,25 +27,51 @@
     color: var(--primary-color);    
 }
 
-h1 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-}
-
 body {
     line-height: 1;
     background-color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    justify-content: flex-start; 
     align-items: center;
-    height: 100dvh;
+    min-height: 100dvh;
     width: 100dvw;
+    margin: 0;
+    padding: 0;
+}
+
+hr{
+    width: 55%;
+    max-width: 200px;
+    border: 0.1px solid rgba(0, 0, 0, 0.105);
+    margin-bottom: 1em;
+}
+
+h1{
+    margin-bottom: 1em;
+}
+
+p#bemvindo{
+    font-size: smaller;
+    font-weight: lighter;
+    margin-bottom: 0.8em;
+    color: black;
+}
+
+img#logoescrita{
+    width: 100%;
+    height: 150%;
+    object-fit: fill;
 }
 
 #google, #Microsoft{ 
     width: 28px;
     height: 28px;
     padding-left: 25px;
+}
+
+div#foto{
+    display: none;
 }
 
 div#foto > img{
@@ -57,7 +83,7 @@ div#tela{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100dvh;
+    flex: 1;
     width: 100dvw;
     background-color: white;
 }
@@ -66,6 +92,7 @@ div#campos{
     display: flex;
     flex: auto;
     flex-direction: column;
+    width: 80%;
     align-items: center;
     flex-wrap: wrap;
     padding: 20px;
@@ -76,16 +103,42 @@ div#foto{
     width: 100dvw;
 }
 
+div#campoemail, div#camposenha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 260px;
+    max-width: 90%;
+    height: 45px;
+    padding-left: 10px;
+    margin-bottom: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.242);
+    border-radius: 8px;
+}
 
 input[type="email"], input[type="password"]{
-    width: 80%;
+    width: 100%;
     height: 35px;
-    padding: 5px;
+    padding: 5px 0px 5px 10px;
     margin: 10px 0px;
     text-align: left;
-    border: 1px solid rgba(0, 0, 0, 0.199);
-    border-radius: 5px;
-    background-color: white;
+    border: none;
+    background-color: transparent;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    outline: none; /* Remove a borda padrão */
+    padding-right: 25px;
+    border: 2px solid var(--primary-color); /* Adiciona uma borda personalizada */
+    border-radius: 8px;
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.432); 
+    font-family: var(--primary-font); 
+    font-size: smaller; 
+    font-weight: light;
 }
 
 input[type="button"]{
@@ -113,21 +166,22 @@ div#links{
     flex-direction: column;;
     align-items: center;
     flex-wrap: wrap;
-    height: 270px;
-    width: 65%;
+    height: auto;
+    width: 85%;
     margin-bottom: 10px;
 }
 
 a#redes{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: var(--primary-color);
-    margin: 10px 0px;
+    margin: 7px 0px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     width: 85%;
-    max-width: 300px;
+    max-width: 240px;
     border-radius: 8px;
 }
 

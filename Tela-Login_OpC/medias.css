@@ -38,23 +38,18 @@
     }
     
     div#tela {
-        margin-left: 3rem;
+        margin-left: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         flex: 2 1 auto;
-        width: 40%;
-        height: 80%; /* Ajuste a altura mínima */
+        max-width: 600px;
+        height: 80%; 
         background-color: white;
         border: 1px solid rgba(0, 0, 0, 0.19);
         box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.16);
         border-radius: 25px;
-    }
-
-    div#campos {
-        width: 100%; /* Ajuste a largura */
-        padding: 2rem; /* Ajuste o padding */
     }
 
     div#campos h1 {
@@ -74,7 +69,7 @@
     }
 
     div#campoemail, div#camposenha {
-        width: 100%; /* Ajuste a largura máxima */
+        max-width: 500px; /* Ajuste a largura máxima */
         height: 55px; /* Ajuste a altura */
         padding-left: 15px; /* Ajuste o padding à esquerda */
         margin-bottom: 1.5rem; /* Ajuste a margem inferior */
@@ -93,7 +88,7 @@
     }
 
     input[type="button"] {
-        width: 50%; /* Ajuste a largura */
+        max-width: 150px; /* Ajuste a largura */
         height: 45px; /* Ajuste a altura */
         padding: 10px; /* Ajuste o padding */
         margin: 10px 0px;

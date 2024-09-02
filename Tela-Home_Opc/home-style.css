@@ -15,10 +15,11 @@ menu {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    align-self: center;
     width: 15%;
-    height: 100%;
-    color: white;
+    height: 90dvh;
     border: 1px solid black;
+    border-radius: 25px;
     padding: 10px 30px;
 }
 
@@ -27,22 +28,36 @@ div#exibicao {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     color: white;
-    border: 1px solid black;
 }
 
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     width: 90%;
-    height: 200px;
+    height: 5.5em;
     flex-grow: 1;
     color: white;
-    border: 1px solid black;
     padding: 10px 30px;
+}
+
+.barra-pesquisa{
+    display: flex;
+    align-self: center;
+    flex: auto;
+    min-width: 400px;
+    max-width: 650px;
+    margin-right: auto;
+}
+
+.entrada-pesquisa{
+    align-self: flex-start;
+    width: 100%;
+}
+
+.config{
+    margin-left: auto;
 }
 
 #nav-cadastro{
@@ -50,11 +65,11 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    min-width: 400px;
+    max-width: 650px;
     height: 10%;
-    color: white;
-    border: 1px solid black;
-    padding: 10px 30px;
+    flex: auto;
+    padding: 10px 0px 10px 30px;
     margin-top: auto;
 }
 
@@ -63,27 +78,41 @@ main{
     flex-direction: row;
     align-items:center;
     width: 90%;
+    height: 100%;
     flex: 1 1 auto;
     color: white;
-    border: 1px solid black;
     padding: 10px 30px;
 }
 
 #cadastro{
    margin: auto;
+   width: 80%;
+   height: 100%;
+}
+
+iframe{
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    max-width: 750px;
+    min-width: 400px;
+    width: 100%;
+    height: 100%;
 }
 
 .profile{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: auto;
     align-items: center;
-    width: auto;
-    height: 100%;
-    color: white;
+    width: 100%;
+    min-width: 400px;
+    max-width: 650px;
     border: 1px solid black;
-    margin: 15px;
-    padding: 10px 30px;
+    margin-bottom: 30px;
+    margin-right: auto;
+    
 }
 
 div#dados-cadastro{
@@ -92,12 +121,9 @@ div#dados-cadastro{
     justify-content: center;
     align-items: center;
     width: auto;
-    height: 100%;
-    color: white;
-    border: 1px solid black;
-    margin: 15px;
-    padding: 10px 30px;
+    height: auto;
     margin-left: auto;
+    margin-bottom: auto;
 }
 
 .cadastro-info{
@@ -105,12 +131,26 @@ div#dados-cadastro{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100%;
-    color: white;
+    width: 250px;
+    height: 150px;
     border: 1px solid black;
-    margin: 15px;
-    padding: 10px 30px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+
+h3{
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    padding-bottom: 5px;
+    justify-self: self-start;
+    border-radius: 25px 25px 0px 0px;
+}
+
+p.numero{
+    font-size: 2em;
+    align-self: center;
+    margin: auto;
 }
 
 div#config{

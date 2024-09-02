@@ -1,0 +1,126 @@
+body {
+    line-height: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-start; 
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    color: white;
+    border: 1px solid black;
+    padding: 10px 30px;
+}
+
+div#exibicao {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+    color: white;
+    border: 1px solid black;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 200px;
+    flex-grow: 1;
+    color: white;
+    border: 1px solid black;
+    padding: 10px 30px;
+}
+
+#nav-cadastro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 10%;
+    color: white;
+    border: 1px solid black;
+    padding: 10px 30px;
+    margin-top: auto;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    width: 90%;
+    flex: 1 1 auto;
+    color: white;
+    border: 1px solid black;
+    padding: 10px 30px;
+}
+
+#cadastro{
+   margin: auto;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    color: white;
+    border: 1px solid black;
+    margin: 15px;
+    padding: 10px 30px;
+}
+
+div#dados-cadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    color: white;
+    border: 1px solid black;
+    margin: 15px;
+    padding: 10px 30px;
+    margin-left: auto;
+}
+
+.cadastro-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    color: white;
+    border: 1px solid black;
+    margin: 15px;
+    padding: 10px 30px;
+}
+
+div#config{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    color: white;
+    border: 1px solid black;
+    padding: 10px 30px;
+}

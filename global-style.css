@@ -4,7 +4,7 @@
 :root {
     --primary-font: 'Segoe UI', sans-serif;
     --secondary-font: 'Segoe UI Bold', sans-serif;
-    --primary-color: #6b1bc6;
+    --primary-color: #8923d1;
 }
 
 /* Importando fontes locais */
@@ -21,6 +21,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: var(--primary-font);
     font-weight: bold;
     text-align: center;

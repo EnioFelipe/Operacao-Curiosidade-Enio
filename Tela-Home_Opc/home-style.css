@@ -16,21 +16,38 @@ menu {
     justify-content: flex-start;
     align-items: center;
     align-self: center;
-    width: 15%;
-    height: 90dvh;
-    border: 1px solid black;
+    width: 20%;
+    height: 100dvh;
+    border: 1px solid rgba(0, 0, 0, 0.215);
     border-radius: 0px 25px 25px 0px;
-    margin: 30px 0px 30px 0px
-    
 }
 
-#logoescrita02{
-    display: flex;
-    width: 100%;
-    height: 20%;
-    background-color: black;
+menu p{
+    color: white;
+    background-color: var(--primary-color);
+    font-size: 1em;
+    padding-left: 2px;
     border-radius: 0px 25px 0px 0px;
 }
+
+.topo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 10%;
+    border-radius: 0px 25px 0px 0px;
+}
+
+.fundo{
+    background-color: var(--primary-color);
+    margin-top: auto;
+    width: 100%;
+    height: 10%;
+    border-radius: 0px 0px 25px 0px;
+}
+
 
 div#exibicao {
     display: flex;
@@ -44,11 +61,11 @@ div#exibicao {
 header {
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 100%;
     height: 5.5em;
     flex-grow: 1;
     color: white;
-    padding: 10px 30px;
+    padding: 10px 0px 10px 30px;
 }
 
 .barra-pesquisa{
@@ -56,8 +73,8 @@ header {
     align-self: center;
     flex: auto;
     min-width: 400px;
-    max-width: 650px;
-    margin-right: auto;
+    max-width: 700px;
+    margin-right: 50px;
 }
 
 .entrada-pesquisa{
@@ -65,8 +82,18 @@ header {
     width: 100%;
 }
 
+.botao-tema{
+    align-self: center;
+    margin: 5px;
+}
+
+.botao-sino{
+    align-self: center;
+    margin: 5px;
+}
+
 .config{
-    margin-left: auto;
+    margin: auto;
 }
 
 #nav-cadastro{
@@ -75,7 +102,7 @@ header {
     justify-content: space-between;
     align-items: center;
     min-width: 400px;
-    max-width: 650px;
+    max-width: 730px;
     height: 10%;
     flex: auto;
     padding: 10px 0px 10px 30px;
@@ -85,25 +112,30 @@ header {
 main{
     display: flex;
     flex-direction: row;
-    align-items:center;
-    width: 90%;
+    align-items: self-start;
+    justify-content: space-between;
+    width: 100%;
     height: 100%;
     flex: 1 1 auto;
     color: white;
-    padding: 10px 30px;
+    padding: 10px 0px 10px 30px;
 }
 
 #cadastro{
-   margin: auto;
-   width: 80%;
-   height: 100%;
+    align-self: start;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 750px;
+    height: 100%;
 }
 
 iframe{
+    align-self: start;
     display: flex;
     flex-direction: column;
     flex: auto;
-    max-width: 750px;
+    max-width: 900px;
     min-width: 400px;
     width: 100%;
     height: 100%;
@@ -117,7 +149,7 @@ iframe{
     align-items: center;
     width: 100%;
     min-width: 400px;
-    max-width: 650px;
+    max-width: 700px;
     border: 1px solid black;
     margin-bottom: 30px;
     margin-right: auto;
@@ -131,8 +163,7 @@ div#dados-cadastro{
     align-items: center;
     width: auto;
     height: auto;
-    margin-left: auto;
-    margin-bottom: auto;
+    margin: 0px auto auto auto;
 }
 
 .cadastro-info{

@@ -18,7 +18,8 @@ menu {
     align-self: center;
     width: 20%;
     height: 100dvh;
-    border: 1px solid rgba(0, 0, 0, 0.215);
+    border: 1px solid rgba(0, 0, 0, 0.293);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0px 25px 25px 0px;
 }
 
@@ -28,6 +29,52 @@ menu p{
     font-size: 1em;
     padding-left: 2px;
     border-radius: 0px 25px 0px 0px;
+}
+
+/* Estilização da lista dentro do menu */
+menu ul {
+    list-style-type: none; /* Remove as bolinhas da lista */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+menu ul li {
+    width: 100%;
+}
+
+menu ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove o sublinhado */
+    color: var(--primary-color); /* Cor da fonte */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+menu ul li a .icon {
+    display: inline-block;
+    width: 20px; /* Largura do ícone */
+    height: 20px; /* Altura do ícone */
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+    background-color: #ccc; /* Cor de fundo do ícone (substitua pelo ícone real) */
+    border-radius: 50%; /* Ícone circular */
+}
+
+menu ul li a:hover {
+    background-color: #8923d13c; /* Cor de fundo mais clara */
+}
+
+menu ul li a.active {
+    background-color: #8923d13c; /* Cor de fundo mais clara */
+}
+
+/* Estilização das linhas de separação */
+.separator {
+    border: none;
+    border-top: 1px solid #ccc; /* Cor da linha de separação */
+    margin: 10px 0; /* Espaçamento vertical */
 }
 
 .topo{
@@ -68,18 +115,37 @@ header {
     padding: 10px 0px 10px 30px;
 }
 
-.barra-pesquisa{
+.barra-pesquisa {
     display: flex;
     align-self: center;
     flex: auto;
     min-width: 400px;
     max-width: 700px;
     margin-right: 50px;
+    border-radius: 25px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #f0f0f0; /* Cor de fundo */
+    padding: 10px 20px; /* Espaçamento interno */
 }
 
-.entrada-pesquisa{
+.entrada-pesquisa {
     align-self: flex-start;
     width: 100%;
+    border: none; /* Remove a borda padrão */
+    outline: none; /* Remove o contorno ao focar */
+    background: transparent; /* Fundo transparente */
+    padding-left: 30px; /* Espaço para o ícone de lupa */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+/* Estilização do ícone de lupa */
+.barra-pesquisa::before {
+    content: '\1F50D'; /* Unicode para o ícone de lupa */
+    font-size: 20px; /* Tamanho do ícone */
+    color: #888; /* Cor do ícone */
+    position: absolute;
+    margin-left: 10px; /* Espaçamento à esquerda */
+    align-self: center;
 }
 
 .botao-tema{
@@ -93,8 +159,20 @@ header {
 }
 
 .config{
+    display: flex;
+    flex-direction: row;
+    max-width: 200px;
+    height: 50px;
+    background-color: var(--primary-color);
     margin: auto;
 }
+
+.config P{
+    align-self: center;
+    margin: auto;
+    color: white;
+}
+
 
 #nav-cadastro{
     display: flex;
@@ -107,6 +185,25 @@ header {
     flex: auto;
     padding: 10px 0px 10px 30px;
     margin-top: auto;
+}
+
+/* Estilização dos links da nav-cadastro */
+#nav-cadastro a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: var(--primary-color); /* Cor da fonte */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+/* Cor de fundo ao passar o mouse */
+#nav-cadastro a:hover {
+    background-color: #8923d13c; /* Cor de fundo mais clara */
+}
+
+/* Cor de fundo quando o link está selecionado */
+#nav-cadastro a.active {
+    background-color: #8923d13c; /* Cor de fundo mais clara */
 }
 
 main{
@@ -141,19 +238,65 @@ iframe{
     height: 100%;
 }
 
-.profile{
+.profile {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: auto;
     align-items: center;
     width: 100%;
     min-width: 400px;
     max-width: 700px;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.293);
     margin-bottom: 30px;
     margin-right: auto;
-    
+    padding: 20px; /* Adiciona espaçamento interno */
+    background-color: #f9f9f9; /* Cor de fundo */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
+.profile-photo {
+    width: 150px; /* Largura da foto */
+    height: 150px; /* Altura da foto */
+    border-radius: 50%; /* Foto circular */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
+    margin-bottom: 20px; /* Espaçamento abaixo da foto */
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centraliza o texto */
+}
+
+.profile-info h2 {
+    font-size: 24px; /* Tamanho da fonte */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+    color: #333; /* Cor do texto */
+}
+
+.profile-info p {
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 5px 0; /* Espaçamento vertical */
+    color: #666; /* Cor do texto */
+}
+
+.profile-info a {
+    font-size: 16px; /* Tamanho da fonte */
+    color: #007BFF; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado */
+    margin: 5px 0; /* Espaçamento vertical */
+}
+
+.profile-info a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+.profile-info #data-criacao {
+    font-size: 14px; /* Tamanho da fonte */
+    color: #999; /* Cor do texto */
+    margin-top: 10px; /* Espaçamento acima */
 }
 
 div#dados-cadastro{
@@ -176,19 +319,22 @@ div#dados-cadastro{
     border: 1px solid black;
     border-radius: 25px;
     margin-bottom: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.293);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 h3{
     background-color: var(--primary-color);
     color: white;
     width: 100%;
-    padding-bottom: 5px;
+    padding: 8px;
     justify-self: self-start;
     border-radius: 25px 25px 0px 0px;
 }
 
 p.numero{
-    font-size: 2em;
+    font-size: 3em;
+    font-weight: 500;
     align-self: center;
     margin: auto;
 }

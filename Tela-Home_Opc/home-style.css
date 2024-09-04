@@ -10,6 +10,12 @@ body {
     padding: 0;
 }
 
+.icons{
+    background-color: var(--primary-color);
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
 menu {
     display: flex;
     flex-direction: column;
@@ -40,7 +46,8 @@ menu ul {
 }
 
 menu ul li {
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
 
 menu ul li a {
@@ -51,15 +58,6 @@ menu ul li a {
     padding: 10px 20px; /* Espaçamento interno */
     border-radius: 5px; /* Bordas arredondadas */
     transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
-}
-
-menu ul li a .icon {
-    display: inline-block;
-    width: 20px; /* Largura do ícone */
-    height: 20px; /* Altura do ícone */
-    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
-    background-color: #ccc; /* Cor de fundo do ícone (substitua pelo ícone real) */
-    border-radius: 50%; /* Ícone circular */
 }
 
 menu ul li a:hover {
@@ -129,6 +127,7 @@ header {
 }
 
 .entrada-pesquisa {
+    content: url("../icons/pesquisar.svg"); /* Adiciona o ícone de lupa */
     align-self: flex-start;
     width: 100%;
     border: none; /* Remove a borda padrão */
@@ -140,7 +139,6 @@ header {
 
 /* Estilização do ícone de lupa */
 .barra-pesquisa::before {
-    content: '\1F50D'; /* Unicode para o ícone de lupa */
     font-size: 20px; /* Tamanho do ícone */
     color: #888; /* Cor do ícone */
     position: absolute;
@@ -165,6 +163,7 @@ header {
     height: 50px;
     background-color: var(--primary-color);
     margin: auto;
+    margin-left: 0px;
 }
 
 .config P{

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global-style.css">
-    <link rel="stylesheet" href="home-style.css">
-    <title>Home</title>
+    <link rel="stylesheet" href="config-style.css">
+    <title>Configurações</title>
 </head>
 <body>
     <menu>
@@ -13,14 +13,14 @@
             <img src="../Arquivos SVG/Onion_slices.svg" alt=""><p>peração Curiosidade</p>
         </div>
         <ul>
-            <li><a href="home-index.html"><img src="../icons/dashboard.svg" class="icons" alt="visao geral">Visão Geral</a></li>
+            <li><a href="../Tela-Home_Opc/home-index.html"><img src="../icons/dashboard.svg" class="icons" alt="visao geral">Visão Geral</a></li>
             <li><hr class="separador"></li>
             <li><a href="#"><img src="../icons/add.svg" class="icons" alt="cadastrar curiosidade">Nova Curiosidade</a></li>
             <li><hr class="separador"></li>
             <li><a href="#"><img src="../icons/meus-cadastros.svg" class="icons" alt="meus cadastros"> Meus Cadastros</a></li>
             <li><a href="#"><img src="../icons/relatorios.svg" class="icons" alt="relatorios">Relatórios</a></li>
             <li><hr class="separador"></li>
-            <li><a href="../Tela-Config_OpC/config.html" target="_self"><img src="../icons/relatorios.svg" class="icons" alt="relatorios">Configurações</a></li>
+            <li><a href="config.html" target="_self"><img src="../icons/relatorios.svg" class="icons" alt="relatorios">Configurações</a></li>
         </ul>
         <div class="fundo"></div>
     </menu>
@@ -36,35 +36,21 @@
                     <p>Enio Felipe <br>
                        [ADM]
                     </p>
-                <a href="#"><img id="seta-expandir" src="../icons/seta-expandir.svg" alt="configurações"></a>
+                <a href="#"><img id="seta-expandir" src="../icons/seta-expandir.svg" alt="opc-perfil"></a>
             </div>
         </header>
         <nav id="nav-cadastro">
-            <a class="active" href="cadastro-recente.html" target="tela"><img src="../icons/relogio.svg" alt="relogio"> Últimos cadastros</a>
-            <a href="por_mim-compartilhados.html" target="tela"><img src="../icons/diversidade.svg" alt="pessoas">Compartilhados por mim</a>
-            <a href="compartilhados-cmg.html" target="tela"><img  src="../icons/diversidade.svg" alt="pessoas">Compartilhados comigo</a>
+            <a href="teste.html" target="tela"><img src="../icons/relogio.svg" alt="relogio">Meu perfil</a>
+            <a href="teste.html" target="tela"><img src="../icons/diversidade.svg" alt="pessoas">Opções de compartilhamento</a>
+            <a href="teste.html" target="tela"><img  src="../icons/diversidade.svg" alt="pessoas">Gerenciar Usuários</a>
+            <a href="trilha-auditoria.html" target="tela"><img  src="../icons/diversidade.svg" alt="pessoas">Trilhas de Auditoria</a>
     </nav>
         <main>
-            <div id="cadastro">
-                <iframe name="tela" id="tela" src="cadastro-recente.html" frameborder="0"></iframe>
+            <div id="exbir-configs">
+                <iframe name="tela" id="tela" src="trilha-auditoria.html" frameborder="0"></iframe>
             </div>
             
-            <div id="dados-cadastro">
-                <div class="cadastro-info">
-                    <h3>Total cadastrados</h3>
-                    <p class="numero">100</p>
-                </div>
-                <div class="cadastro-info">
-                    <h3>Cadastros pendentes</h3>
-                    <p class="numero">20</p>
-                </div>
-                <div class="cadastro-info">
-                    <h3>Cadastros ativos</h3>
-                    <p class="numero">80</p>
-                </div>
-            </div>
         </main>
     </div>
-    
 </body>
 </html>

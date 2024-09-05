@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global-style.css">
+    <link rel="stylesheet" href="config-style.css">
+    <title>Relatório de Auditoria</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+        }
+
+        #tabela-auditoria{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        }
+
+        label{
+            display: flex;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="tabela-auditoria">
+
+        <div id="cabeça-auditoria">
+            <div class="label">
+                <label for="tipo-item">Item <br><input type="search" name="tipo-item" id="tipo-item" placeholder="Pesquisar Item"></label>
+                <label for="tipo-local">Local <br><input type="search" name="tipo-local" id="tipo-local" placeholder="Pesquisar Local"></label>
+                <label for="tipo-usuario">Usuário <br><input type="search" name="tipo-usuario" id="tipo-usuario" placeholder="Pesquisar Usuário"></label>
+                <label for="tipo-periodo">Período <br><input type="date" name="tipo-periodo" id="tipo-periodo"></label>
+            </div>
+            <div class="input">
+                
+                
+                
+            </div>
+                <input type="reset" value="Limpar">
+                <input type="submit" value="Filtrar">
+        </div>
+    
+</body>
+</html>

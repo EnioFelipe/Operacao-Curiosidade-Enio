@@ -121,7 +121,6 @@ header {
     flex: auto;
     min-width: 400px;
     max-width: 700px;
-    margin-right: 50px;
     border-radius: 25px; /* Bordas arredondadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     background-color: #f0f0f0; /* Cor de fundo */
@@ -130,22 +129,13 @@ header {
 
 .entrada-pesquisa {
     content: url("../icons/pesquisar.svg"); /* Adiciona o ícone de lupa */
-    align-self: flex-start;
+    text-align: start;
     width: 100%;
     border: none; /* Remove a borda padrão */
     outline: none; /* Remove o contorno ao focar */
     background: transparent; /* Fundo transparente */
-    padding-left: 30px; /* Espaço para o ícone de lupa */
+    padding-left: 10px; /* Espaço para o ícone de lupa */
     font-size: 16px; /* Tamanho da fonte */
-}
-
-/* Estilização do ícone de lupa */
-.barra-pesquisa::before {
-    font-size: 20px; /* Tamanho do ícone */
-    color: #888; /* Cor do ícone */
-    position: absolute;
-    margin-left: 10px; /* Espaçamento à esquerda */
-    align-self: center;
 }
 
 .botao-tema{
@@ -162,23 +152,37 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 50px;
+    justify-content: space-between;
+    width: 250px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: 95px;
     background-color: var(--primary-color);
-    margin: auto;
+    border-radius: 8px;
 }
 
 .config img{
-    width: 30px;
-    height: 30px;
-    margin: auto;
+    width: 20%;
+    align-self: start;
+    height: auto;
+    margin: auto 10px;
+    border-radius: 8px;
 }
 
 .config p{
+    display: flex;
+    flex-direction: column;
     align-self: center;
-    margin: auto;
+    font-size: small;
     color: white;
+}
+
+img#seta-expandir{
+    align-self: center;
+    justify-self: center;
+    margin-top: 13px;
+    width: 30px;
+    height: 30px;
 }
 
 
@@ -237,7 +241,7 @@ main{
     height: 100%;
 }
 
-iframe{
+iframe#tela{
     align-self: start;
     display: flex;
     flex-direction: column;
@@ -248,7 +252,7 @@ iframe{
     height: 100%;
 }
 
-.profile {
+.perfil {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -265,49 +269,86 @@ iframe{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
 }
 
-.profile-photo {
-    width: 150px; /* Largura da foto */
-    height: 150px; /* Altura da foto */
+.perfil-foto {
+    align-self: start;
+    width: 100px; /* Largura da foto */
+    height: 100px; /* Altura da foto */
     border-radius: 50%; /* Foto circular */
     object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
     margin-bottom: 20px; /* Espaçamento abaixo da foto */
 }
 
-.profile-info {
+.main-info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.identificadores {
+    gap: 10px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+p#nome-perfil{
+    font-size: 1em; /* Tamanho da fonte */
+    font-weight: 500; /* Peso da fonte */
+    color: black;
+}
+
+a#apelido{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+p#email{
+    color: var(--primary-color);
+    color: #777;
+    gap: 30px;
+}
+
+#pilares{
+    margin-top: 30px;
+}
+
+.id-situ{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center; /* Centraliza o texto */
+    gap: 10px;
+    width: 10%;
+    height: auto
 }
 
-.profile-info h2 {
-    font-size: 24px; /* Tamanho da fonte */
-    margin-bottom: 10px; /* Espaçamento abaixo do título */
-    color: #333; /* Cor do texto */
+.detalhes{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: auto;
 }
 
-.profile-info p {
-    font-size: 16px; /* Tamanho da fonte */
-    margin: 5px 0; /* Espaçamento vertical */
-    color: #666; /* Cor do texto */
-}
-
-.profile-info a {
-    font-size: 16px; /* Tamanho da fonte */
-    color: #007BFF; /* Cor do link */
-    text-decoration: none; /* Remove sublinhado */
-    margin: 5px 0; /* Espaçamento vertical */
-}
-
-.profile-info a:hover {
-    text-decoration: underline; /* Sublinhado ao passar o mouse */
-}
-
-.profile-info #data-criacao {
+.perfil-info #data-criacao {
+    text-align: start;
     font-size: 14px; /* Tamanho da fonte */
-    color: #999; /* Cor do texto */
-    margin-top: 10px; /* Espaçamento acima */
+    color:hsla(275, 71%, 48%, 0.696); /* Cor do texto */
+    margin-bottom: 10px;
 }
+
+.perfil-info #editado-por{
+    text-align: start;
+    color: #8923d1d9; /* Cor do texto */
+    
+}
+
+.perfil-acao{
+    align-self: flex-end;
+}
+
+
 
 div#dados-cadastro{
     display: flex;
@@ -316,7 +357,7 @@ div#dados-cadastro{
     align-items: center;
     width: auto;
     height: auto;
-    margin: 0px auto auto auto;
+    margin: 0px 95px auto auto;
 }
 
 .cadastro-info{

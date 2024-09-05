@@ -3,7 +3,7 @@
 /* Definindo variáveis para fontes e cor */
 :root {
     --primary-font: 'Segoe UI', sans-serif;
-    --secondary-font: 'Segoe UI Bold', sans-serif;
+    --secondary-font: 'Segoe UI Bold', sans-serif;;
     --primary-color: #8923d1;
 }
 
@@ -23,7 +23,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--primary-font);
-    font-weight: bold;
+    font-weight: 600;
     text-align: center;
     color: var(--primary-color);    
 }

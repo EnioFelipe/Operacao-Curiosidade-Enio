@@ -18,7 +18,7 @@
             <li><a href="#"><img src="../icons/add.svg" class="icons" alt="cadastrar curiosidade">Nova Curiosidade</a></li>
             <li><hr class="separador"></li>
             <li><a href="#"><img src="../icons/meus-cadastros.svg" class="icons" alt="meus cadastros"> Meus Cadastros</a></li>
-            <li><a href="#"><img src="../icons/relatorios.svg" class="icons" alt="relatorios"></span>Relatórios</a></li>
+            <li><a href="#"><img src="../icons/relatorios.svg" class="icons" alt="relatorios">Relatórios</a></li>
             <li><hr class="separador"></li>
         </ul>
         <div class="fundo"></div>
@@ -28,21 +28,24 @@
             <div class="barra-pesquisa">
                 <img src="../icons/pesquisar.svg" alt=""><input type="search" placeholder="Pesquise aqui" class="entrada-pesquisa"></img>
             </div>
-                <div class="botao-tema"><img src="../icons/alterar-tema.svg" alt="alterar tema"></div>
-                <div class="botao-sino"><img src="../icons/sino.svg" alt="notificação"></div> 
+                <img class="botao-tema" src="../icons/alterar-tema.svg" alt="alterar tema">
+                <img class="botao-sino" src="../icons/sino.svg" alt="notificação"> 
             <div class="config">
-                <img src="../Arquivos SVG/big_onion_facts_and_data.svg" alt="Foto do usuário" class="foto-usuario">
-                <p>Nome do Usuário</p>
+                <img src="../Arquivos SVG/minha_foto.jpg" alt="Foto do usuário" class="foto-usuario">
+                    <p>Enio Felipe <br>
+                       [ADM]
+                    </p>
+                <a href="#"><img id="seta-expandir" src="../icons/seta-expandir.svg" alt="configurações"></a>
             </div>
         </header>
         <nav id="nav-cadastro">
-            <a class="active" href="#"><img src="../icons/relogio.svg" alt="relogio"> Últimos cadastros</a>
-            <a href="#"><img src="../icons/diversidade.svg" alt="pessoas">Compartilhados por mim</a>
-            <a href="#"><img src="../icons/diversidade.svg" alt="pessoas">Compartilhados comigo</a>
+            <a class="active" href="cadastro-recente.html" target="tela"><img src="../icons/relogio.svg" alt="relogio"> Últimos cadastros</a>
+            <a href="por_mim-compartilhados.html" target="tela"><img src="../icons/diversidade.svg" alt="pessoas">Compartilhados por mim</a>
+            <a href="compartilhados-cmg.html" target="tela"><img  src="../icons/diversidade.svg" alt="pessoas">Compartilhados comigo</a>
     </nav>
         <main>
             <div id="cadastro">
-                <iframe src="cadastro-recente.html" frameborder="0"></iframe>
+                <iframe name="tela" id="tela" src="cadastro-recente.html" frameborder="0"></iframe>
             </div>
             
             <div id="dados-cadastro">

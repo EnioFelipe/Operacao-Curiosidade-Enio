@@ -182,11 +182,16 @@ img#seta-expandir{
     justify-content: space-between;
     align-items: center;
     min-width: 400px;
-    max-width: 730px;
+    max-width: 800px;
     height: 10%;
     flex: auto;
     padding: 10px 0px 10px 30px;
     margin-top: auto;
+    font-size: 15px;
+}
+
+#nav-cadastro img{
+    margin-right: 5px;
 }
 
 /* Estilização dos links da nav-cadastro */

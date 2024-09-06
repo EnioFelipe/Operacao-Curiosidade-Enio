@@ -199,6 +199,11 @@ img#seta-expandir{
     margin-top: auto;
 }
 
+#nav-cadastro img{
+   margin-right: 5px;
+}
+
+
 /* Estilização dos links da nav-cadastro */
 #nav-cadastro a {
     display: flex;

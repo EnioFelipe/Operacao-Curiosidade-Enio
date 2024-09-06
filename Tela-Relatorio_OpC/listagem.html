@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="relatorio-style.css">
     <title>Listagem Relatórios</title>
     <style>
+        body.detalhes-relatorio #nav-cadastro a.voltar-para {
+            display: inline-block;
+        }
+
+
         body{
             width: 100%;
             height: 100%;
@@ -35,10 +40,6 @@
             border: 1px solid black;
         }
 
-        .cabeça-usuario {
-            padding: 12px;
-        }
-
         .corpo-usuario{
             display: flex;
             flex-direction: column;
@@ -48,6 +49,7 @@
         .index-corpo {
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
             width: 100%;
             padding: 8px 12px;
             margin-bottom: 10px;
@@ -57,8 +59,6 @@
         }
 
         .index-corpo p {
-            width: 175px;
-            margin-right: 35px;
             text-align: start;
         }
 
@@ -66,6 +66,7 @@
             display: flex;
             flex-direction: row;
             width: 100%;
+            justify-content: space-between;
             padding: 15px 12px;
             margin-bottom: 5px;
             background-color: #f7f7f7;
@@ -74,26 +75,6 @@
         }
 
         .dados p{
-            width: 175px;
-            margin-right: 35px;
-            text-align: start;
-        }
-
-        input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            margin-right: 10px;
-        }
-
-        .label-input {
-            display: flex;
-            flex-direction: column;
-            width: 200px;
-            margin-right: 20px;
-        }
-
-        .cabeça-usuario label {
-            margin-bottom: 5px;
             text-align: start;
         }
 
@@ -152,97 +133,108 @@
 </head>
 <body>
     <div id="tabela-usuario">
-        <div class="cabeça-usuario">
-            <div class="label-input">
-                <label for="tipo-item">Status</label>
-                <input type="search" name="tipo-status" id="tipo-status" placeholder="Status">
-            </div>
-            <div class="label-input">
-                <label for="tipo-permissao">Permissão</label>
-                <input type="search" name="tipo-tipo" id="tipo-tipo" placeholder="Permissão">
-            </div>
-            <div class="label-input">
-                <label for="tipo-nome-id">Nome ou ID</label>
-                <input type="search" name="tipo-nome-id" id="tipo-nome-id" placeholder="Nome ou ID">
-            </div>
-            <div class="label-input">
-                <label for="tipo-periodo">Período</label>
-                <input type="date" name="tipo-periodo" id="tipo-periodo">
-            </div>
-            <div class="form-actions">
-                <input class="btn-usuario" type="reset" value="Limpar">
-                <input class="btn-usuario" type="submit" value="Filtrar">
-                <input class="btn-usuario" type="submit" value="Criar Usuário">
-            </div>
-        </div>
         <div class="index-corpo">
-            <input type="checkbox">
             <p>Código</p>
-            <p>Nome</p>
-            <p>E-mail</p>
+            <p>Nome do Relatório</p>
+            <p>Criado por</p>
             <p>Data de Criação</p>
-            <p>Status</p>
         </div>
         <div class="corpo-usuario">
             <div class="dados">
-                <input type="checkbox">
                 <p>2453479</p>
-                <p>Edson Arantes</p>
+                <a href="detalhes-relatorio.html">Relatórios de nomes de usuário do sitema</a>
                 <p>ed.arantes@fakemail.br</p>
                 <p>30/10/2024</p>
-                <p>Ativo</p>
             </div>
             <div class="dados">
-                <input type="checkbox">
                 <p>2453479</p>
-                <p>Edson Arantes</p>
+                <p>Relatório de nomes de usuário do sistema</p>
                 <p>ed.arantes@fakemail.br</p>
                 <p>30/10/2024</p>
-                <p>Ativo</p>
             </div>
             <div class="dados">
-                <input type="checkbox">
                 <p>2453479</p>
-                <p>Edson Arantes</p>
+                <p>Relatório de nomes de usuário do sistema</p>
                 <p>ed.arantes@fakemail.br</p>
                 <p>30/10/2024</p>
-                <p>Ativo</p>
             </div>
             <div class="dados">
-                <input type="checkbox">
                 <p>2453479</p>
-                <p>Edson Arantes</p>
+                <p>Relatório de nomes de usuário do sistema</p>
                 <p>ed.arantes@fakemail.br</p>
                 <p>30/10/2024</p>
-                <p>Ativo</p>
             </div>
             <div class="dados">
-                <input type="checkbox">
                 <p>2453479</p>
-                <p>Edson Arantes</p>
+                <p>Relatório de nomes de usuário do sistema</p>
                 <p>ed.arantes@fakemail.br</p>
                 <p>30/10/2024</p>
-                <p>Ativo</p>
             </div>
             <div class="dados">
-                <input type="checkbox">
                 <p>2453479</p>
-                <p>Edson Arantes</p>
+                <p>Relatório de nomes de usuário do sistema</p>
                 <p>ed.arantes@fakemail.br</p>
                 <p>30/10/2024</p>
-                <p>Ativo</p>
             </div>
-        </div>
-        <div class="rodape-usuario">
-            <div class="pagination-info">
-                <label for="itens-por-pg">Itens por página</label>
-                <input type="number" name="itens-por-pg" id="itens-por-pg">
+            <div class="dados">
+                <p>2453479</p>
+                <p>Relatório de nomes de usuário do sistema</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
             </div>
-            <div class="pagination-controls">
-                <button>Página anterior</button>
-                <label for="pg-atual">Página atual</label>
-                <input type="number" name="pg-atual" id="pg-atual">
-                <button>Próxima página</button>
+            <div class="dados">
+                <p>2453479</p>
+                <p>Relatório de nomes de usuário do sistema</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+            </div>
+            <div class="dados">
+                <p>2453479</p>
+                <p>Relatório de nomes de usuário do sistema</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+            </div>
+            <div class="dados">
+                <p>2453479</p>
+                <p>Relatório de nomes de usuário do sistema</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+            </div>
+            <div class="dados">
+                <p>2453479</p>
+                <p>Relatório de nomes de usuário do sistema</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+            </div>
+            <div class="dados">
+                <p>2453479</p>
+                <p>Relatório de nomes de usuário do sistema</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+            </div>
+            <div class="dados">
+                <p>2453479</p>
+                <p>Relatório de nomes de usuário do sistema</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+            </div>
+            <div class="dados">
+                <p>2453479</p>
+                <p>Relatório de nomes de usuário do sistema</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+            </div>
+            <div class="dados">
+                <p>2453479</p>
+                <p>Relatório de nomes de usuário do sistema</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+            </div>
+            <div class="dados">
+                <p>2453479</p>
+                <p>Relatório de nomes de usuário do sistema</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
             </div>
         </div>
     </div>

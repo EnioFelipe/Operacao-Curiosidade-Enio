@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../global-style.css">
+    <link rel="stylesheet" href="relatorio-style.css">
+    <title>Gerenciar Usuários</title>
+    
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+        }
+
+        #tabela-usuario {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin-right: 95px;
+            width: 100%;
+            height: 100%;
+            text-align: start;
+        }
+
+        .cabeça-usuario, .corpo-usuario {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            margin-bottom: 10px;
+            background-color: #bab4b45c;
+            border-radius: 6px;
+            border: 1px solid black;
+        }
+
+        .cabeça-usuario {
+            padding: 12px;
+        }
+
+        .corpo-usuario{
+            display: flex;
+            flex-direction: column;
+            border: none;
+        }
+
+        .index-corpo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            background-color: #bab4b45c;
+            border-radius: 6px;
+            border: 1px solid black;
+        }
+
+        .index-corpo p {
+            text-align: start;
+        }
+
+        .dados {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            padding: 15px 12px;
+            margin-bottom: 5px;
+            background-color: #f7f7f7;
+            border-radius: 6px;
+            border: 1px solid black;
+        }
+
+        .dados p{
+            text-align: start;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        .label-input {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            margin-right: 20px;
+        }
+
+        .cabeça-usuario label {
+            margin-bottom: 5px;
+            text-align: start;
+        }
+
+        .form-actions {
+            margin: auto auto 0 auto;
+        }
+
+        .btn-usuario{
+            width: 90px;
+            height: 23px;
+            margin-left: 5px;
+        }
+
+        .rodape-usuario {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            margin-top: 5px;
+            width: 100%;
+            background-color: #bab4b45c;
+            border-radius: 6px;
+            border: 1px solid black;
+        }
+
+        .rodape-usuario input {
+            width: 50px;
+            height: 20px;
+            margin-right: 10px;
+            margin-left: 10px;
+
+        }
+
+        .pagination-info, .pagination-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .pagination-controls button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination-controls button:hover {
+            background-color: #ddd;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="tabela-usuario">
+        <div class="cabeça-usuario">
+            <div class="label-input">
+                <label for="tipo-item">Status</label>
+                <input type="search" name="tipo-status" id="tipo-status" placeholder="Status">
+            </div>
+            <div class="label-input">
+                <label for="tipo-permissao">Permissão</label>
+                <input type="search" name="tipo-tipo" id="tipo-tipo" placeholder="Permissão">
+            </div>
+            <div class="label-input">
+                <label for="tipo-nome-id">Nome ou ID</label>
+                <input type="search" name="tipo-nome-id" id="tipo-nome-id" placeholder="Nome ou ID">
+            </div>
+            <div class="label-input">
+                <label for="tipo-periodo">Período</label>
+                <input type="date" name="tipo-periodo" id="tipo-periodo">
+            </div>
+            <div class="form-actions">
+                <input class="btn-usuario" type="reset" value="Limpar">
+                <input class="btn-usuario" type="submit" value="Filtrar">
+                <input class="btn-usuario" type="submit" value="Imprimir">
+            </div>
+        </div>
+        <div class="index-corpo">
+            <p>Código</p>
+            <p>Nome</p>
+            <p>E-mail</p>
+            <p>Data de Criação</p>
+            <p>Permissão</p>
+        </div>
+        <div class="corpo-usuario">
+            <div class="dados">
+
+                <p>2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+                <p>Operador</p>
+            </div>
+            <div class="dados">
+
+                <p>2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+                <p>Operador</p>
+            </div>
+            <div class="dados">
+
+                <p>2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+                <p>Operador</p>
+            </div>
+            <div class="dados">
+
+                <p>2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+                <p>Operador</p>
+            </div>
+            <div class="dados">
+
+                <p>2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+                <p>Operador</p>
+            </div>
+            <div class="dados">
+
+                <p>2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2024</p>
+                <p>Operador</p>
+            </div>
+        </div>
+        <div class="rodape-usuario">
+            <div class="pagination-info">
+                <label for="itens-por-pg">Itens por página</label>
+                <input type="number" name="itens-por-pg" id="itens-por-pg">
+            </div>
+            <div class="pagination-controls">
+                <button>Página anterior</button>
+                <label for="pg-atual">Página atual</label>
+                <input type="number" name="pg-atual" id="pg-atual">
+                <button>Próxima página</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

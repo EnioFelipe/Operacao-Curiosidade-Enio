@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <link rel="stylesheet" href="../global-style.css">
+
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            background-color: #f7f7f7;
+        }
+
+        .form-container {
+            background-color: white;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.181);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            height: 90dvh;
+            height: auto;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .separador {
+            border: none;
+            width: 100%; /* Largura da linha de separação */
+            border-top: 1px solid #ccc; /* Cor da linha de separação */
+            margin: 10px 0; /* Espaçamento vertical */
+        }
+
+        .form-container label {
+            display: block;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .form-container input{
+            display: block;
+            width: 270px;
+            margin: 10px 10px 10px 0px;
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.304);
+            border-radius: 5px;
+            color: black;
+        }
+
+        input::placeholder {
+            text-align: left;
+        }
+
+        .linha-dados {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .alinhamento {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #8923d1;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="form-container">
+        <h2>Segurança <hr class="separador"></h2>
+        <form action="/submit-senha" method="POST">
+            <div class="linha-dados">
+                <div class="alinhamento">
+                    <label for="senha-atual">Senha Atual</label>
+                    <input type="password" id="senha-atual" name="senha-atual" placeholder="Digite a sua senha atual" required>
+                </div>
+            </div>
+            <div class="linha-dados">
+                <div class="alinhamento">
+                    <label for="nova-senha">Nova Senha</label>
+                    <input type="password" id="nova-senha" name="nova-senha" placeholder="Digite a nova senha" required>
+                </div>
+                <div class="alinhamento">
+                    <label for="confirmar-senha">Confirmar Nova Senha</label>
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme a nova senha" required>
+                </div>
+            </div>
+            <button type="submit">Alterar Senha</button>
+        </form>
+    </div>
+</body>
+</html>

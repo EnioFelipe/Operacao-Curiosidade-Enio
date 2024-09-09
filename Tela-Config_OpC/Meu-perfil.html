@@ -77,10 +77,17 @@
         }
 
         #permissao{
+            align-self: flex-start;
+            margin: auto;
+        }
+
+        #permissao label{
             display: flex;
             flex-direction: row;
-            align-items: center;
-            justify-content: center;
+        }
+
+        #permissao input{
+            margin: 0px 10px 0px 0px;
         }
 
         .separador {
@@ -105,16 +112,15 @@
         <div id="conteudo">
             <h2>Enio Felipe</h2>
             <img src="../Arquivos SVG/minha_foto.jpg" alt="">
-            <input type="file" placeholder="Editar foto">
             <hr class="separador">
-            <a href="dados-pessoais.html" target="tela-dados">Dados Cadastrais</a>
+            <a href="dados-pessoais.html" target="tela-dados">Fatos e Dados</a>
             <hr class="separador">
             <a href="segurança.html" target="tela-dados">Segurança</a>
             <hr class="separador">
-            <div id="permissao">
-                <input type="checkbox" name="adm" id="adm">
-                <label for="adm">Administrador</label>
-            </div>
+            <a href="permissao.html" target="tela-dados">Permissões</a>
+            <hr class="separador">
+            <a href="editar-foto.html" target="tela-dados">Editar foto</a>
+            <hr class="separador">
         </div>
     </menu>
     <iframe id="tela-dados" name="tela-dados" src="dados-pessoais.html" frameborder="0"></iframe>

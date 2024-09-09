@@ -14,28 +14,30 @@
             background-color: #f7f7f7;
         }
 
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 10px;
+        }
+
+        header h2{
+            color: white;
+        }
+
         .form-container {
             background-color: white;
             margin: auto;
-            padding: 20px;
+            
             border-radius: 10px;
             border: 1px solid rgba(0, 0, 0, 0.181);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 90%;
-            height: 90dvh;
             height: auto;
-        }
-
-        .form-container h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .separador {
-            border: none;
-            width: 100%; /* Largura da linha de separação */
-            border-top: 1px solid #ccc; /* Cor da linha de separação */
-            margin: 10px 0; /* Espaçamento vertical */
         }
 
         .form-container label {
@@ -59,26 +61,13 @@
             text-align: left;
         }
 
-        #nome{
-            width: 550px;
-        }
 
-        #endereco{
-            width: 550px;
-        }
-
-        #ocupacao{
-            width: 550px;
-        }
-
-        #formacao{
-            width: 550px;
-        }
 
         .alinhamento {
             display: flex;
             flex-direction: column;
             text-align: left;
+            margin: 20px; 
         }
 
         .form-container button {
@@ -94,18 +83,42 @@
         }
 
         .form-container button:hover {
-            background-color: #8923d1;
+            background-color: var(--primary-color);
         }
+
+        .interesse {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .interesse {
+            margin-bottom: 10px;
+        }
+
+        .interesse span {
+            margin-right: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
     </style>
 </head>
 <body>
+    
     <div class="form-container">
-        <h2>Dados Cadastrais<hr class="separador"></h2>
+        <header>
+            <h2>Dados Cadastrais</h2>
+        </header>
         <form action="/submit-cadastro" method="POST">
 
                 <div class="alinhamento">
                     <label for="nome">Nome
-                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                        <input type="text" id="nome" name="nome" class="text-area" placeholder="Digite seu nome" required>
                     </label>
                     <label for="nome-usuario">Nome de Usuário
                         <input type="text" id="nome-usuario" name="nome-usuario" placeholder="Digite seu nome de usuário" required>
@@ -129,31 +142,38 @@
                         </select>
                     </label>
                     <label for="endereco">Endereço
-                        <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço" required>
+                        <input type="text" id="endereco" class="text-area" name="endereco" placeholder="Digite seu endereço" required>
                     </label>
                     <label for="complemento">Complemento
                         <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
                     </label>
                     <label for="ocupacao">Ocupação/Profissão
-                        <input type="text" id="ocupacao" name="ocupacao" placeholder="Digite sua ocupação/profissão" required>
+                        <input type="text" id="ocupacao"  class="text-area" name="ocupacao" placeholder="Digite sua ocupação/profissão" required>
                     </label>
                     <label for="formacao">Formação Acadêmica
-                        <input type="text" id="formacao" name="formacao" placeholder="Digite sua formação acadêmica" required>
+                        <input type="text" id="formacao"  class="text-area" name="formacao" placeholder="Digite sua formação acadêmica" required>
                     </label>
             </div>
 
-            <h2>Curiosidades<hr class="separador"></h2>
-                <div class="alinhamento">
-                    <label for="interesses">Interesses
-                        <input type="text" name="interesses" id="interesses" placeholder="Digite seus interesses">
-                    </label>
-                    <label for="valores">Valores
-                        <input type="text" name="valores" id="valores" placeholder="Digite seus valores">
-                    </label>
-                    <label for="sentimentos">Sentimentos
-                        <input type="text" name="sentimentos" id="sentimentos" placeholder="Digite seus sentimentos">
-                    </label>
-            </div>
+            <header>
+                <h2>Interesses</h2>
+            </header>
+                    <div class="interesse">
+                        <span>1</span>
+                        <textarea></textarea>
+                    </div>
+                    <div class="interesse">
+                        <span>2</span>
+                        <textarea></textarea>
+                    </div>
+                    <div class="interesse">
+                        <span>3</span>
+                        <textarea></textarea>
+                    </div>
+                    <div class="interesse">
+                        <span>4</span>
+                        <textarea></textarea>
+                    </div> 
                 
             <button type="submit">Salvar</button>
         </form>

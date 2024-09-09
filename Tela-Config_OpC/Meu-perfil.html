@@ -76,6 +76,13 @@
             background-color: #8923d13c; /* Cor de fundo mais clara */
         }
 
+        #permissao{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
         .separador {
             border: none;
             width: 90%; /* Largura da linha de separação */
@@ -104,6 +111,10 @@
             <hr class="separador">
             <a href="segurança.html" target="tela-dados">Segurança</a>
             <hr class="separador">
+            <div id="permissao">
+                <input type="checkbox" name="adm" id="adm">
+                <label for="adm">Administrador</label>
+            </div>
         </div>
     </menu>
     <iframe id="tela-dados" name="tela-dados" src="dados-pessoais.html" frameborder="0"></iframe>

@@ -19,6 +19,7 @@
             margin: auto;
             padding: 20px;
             border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.181);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 90%;
             height: 90dvh;
@@ -30,18 +31,58 @@
             text-align: center;
         }
 
-        .form-container label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+        .separador {
+            border: none;
+            width: 100%; /* Largura da linha de separação */
+            border-top: 1px solid #ccc; /* Cor da linha de separação */
+            margin: 10px 0; /* Espaçamento vertical */
         }
 
-        .form-container input {
-            width: 100%;
+        .form-container label {
+            display: block;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .form-container input, select {
+            display: block;
+            width: 270px;
+            margin: 10px 10px 10px 0px;
             padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
+            border: 1px solid rgba(0, 0, 0, 0.304);
             border-radius: 5px;
+            color: black;
+        }
+
+        input::placeholder {
+            text-align: left;
+        }
+
+        #nome{
+            width: 550px;
+        }
+
+        #endereco{
+            width: 550px;
+        }
+
+        #ocupacao{
+            width: 550px;
+        }
+
+        #formacao{
+            width: 550px;
+        }
+
+        .linha-dados {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .alinhamento {
+            display: flex;
+            flex-direction: column;
         }
 
         .form-container button {
@@ -59,42 +100,73 @@
         .form-container button:hover {
             background-color: #8923d1;
         }
+
+
     </style>
 </head>
 <body>
-   <div class="form-container">
-        <h2>Cadastro de Usuário</h2>
+    <div class="form-container">
+        <h2>Dados Cadastrais <hr class="separador"></h2>
         <form action="/submit-cadastro" method="POST">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="idade">Nome</label>
-            <input type="number" id="idade" name="idade" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="nome-usuario">Nome de Usuário</label>
-            <input type="text" id="nome-usuario" name="nome-usuario" required>
-
-            <label for="data-nasc">Data de nascimento</label>
-            <input type="datetime" id="data-nasc" name="data-nasc" required>
-
-            <label for="estado-civil">Estado Civil</label>
-            <input type="text" id="estado-civil" name="estado-civil" required>
-
-            <label for="endereco">Endereço</label>
-            <input type="text" id="endereco" name="endereco" required>
-
-            <label for="ocupacao">Ocupação/Profissão</label>
-            <input type="text" id="ocupacao" name="ocupacao" required>
-
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" required>
-
-            <label for="confirmar-senha">Confirmar Senha</label>
-            <input type="password" id="confirmar-senha" name="confirmar-senha" required>
-
+    
+            <div class="linha-dados">
+                <div class="alinhamento">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+                <div class="alinhamento">
+                    <label for="nome-usuario">Nome de Usuário</label>
+                    <input type="text" id="nome-usuario" name="nome-usuario" placeholder="Digite seu nome de usuário" required>
+                </div>
+                <div class="alinhamento">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+            </div>
+    
+            <div class="linha-dados">
+                <div class="alinhamento">
+                    <label for="data-nasc">Data de nascimento</label>
+                    <input type="date" id="data-nasc" name="data-nasc" required>
+                </div>
+                <div class="alinhamento">
+                    <label for="cpf">CPF</label>
+                    <input type="number" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx" required>
+            </div>
+            <div class="linha-dados">
+                <div class="alinhamento">
+                    <label for="estado-civil">Estado Civil</label>
+                    <select id="estado-civil" name="estado-civil" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="solteiro">Solteiro(a)</option>
+                        <option value="casado">Casado(a)</option>
+                        <option value="divorciado">Divorciado(a)</option>
+                        <option value="viuvo">Viúvo(a)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="linha-dados">
+                <div class="alinhamento">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço" required>
+                </div>
+                <div class="alinhamento">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
+                </div>
+            </div>
+    
+            <div class="linha-dados">
+                <div class="alinhamento">
+                    <label for="ocupacao">Ocupação/Profissão</label>
+                    <input type="text" id="ocupacao" name="ocupacao" placeholder="Digite sua ocupação/profissão" required>
+                </div>
+                <div class="alinhamento">
+                    <label for="formacao">Formação Acadêmica</label>
+                    <input type="text" id="formacao" name="formacao" placeholder="Digite sua formação acadêmica" required>
+                </div>
+            </div>
+    
             <button type="submit">Salvar</button>
         </form>
     </div>

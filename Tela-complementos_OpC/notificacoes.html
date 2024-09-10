@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificações</title>
+    <link rel="stylesheet" href="../global-style.css">
+
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        menu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 50%;
+            height: 90dvh;
+            margin: auto;
+            margin-left: 10px;
+            background-color: white;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.181);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #lateral-estilo {
+            width: 3%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--primary-color);
+            border-radius: 12px 0px 0px 12px;
+        }
+
+        #conteudo {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+        }
+
+        h2 {
+            width: 100%;
+            text-align: left;
+            margin: 10px 0px;
+        }
+
+        span{
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0px 5px;
+            border-radius: 50%;
+            font-size: 0.7em;
+        }
+
+        .separador {
+            border: none;
+            width: 100%;
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+        }
+
+        .notificacao {
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.31);
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .notificacao-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .notificacao-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .notificacao-header .nome-usuario {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .notificacao-header .tempo {
+            font-size: 0.8em;
+            margin-left: auto;
+            color: gray;
+        }
+
+        .notificacao-conteudo {
+            margin-top: 5px;
+            font-size: 0.8em;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <menu>
+        <div id="conteudo">
+            <h2>Notificações <span>3</span><hr class="separador"></h2>
+            <div class="notificacao">
+                <div class="notificacao-header">
+                    <img src="../Arquivos SVG/big_onion_values.svg" alt="Foto do usuário">
+                    <div class="nome-usuario">@ed.arantes</div>
+                    <div class="tempo">2h</div>
+                </div>
+                <div class="notificacao-conteudo">
+                    Compartilhou 3 operações com você
+                </div>
+            </div>
+            <div class="notificacao">
+                <div class="notificacao-header">
+                    <img src="../Arquivos SVG/big_onion_values.svg" alt="Foto do usuário">
+                    <div class="nome-usuario">@ed.arantes</div>
+                    <div class="tempo">2h</div>
+                </div>
+                <div class="notificacao-conteudo">
+                    Compartilhou 3 operações com você
+                </div>
+            </div>
+            <div class="notificacao">
+                <div class="notificacao-header">
+                    <img src="../Arquivos SVG/big_onion_values.svg" alt="Foto do usuário">
+                    <div class="nome-usuario">@ed.arantes</div>
+                    <div class="tempo">2h</div>
+                </div>
+                <div class="notificacao-conteudo">
+                    Compartilhou 3 operações com você
+                </div>
+            </div>
+        </div>
+    </menu>
+</body>
+</html>

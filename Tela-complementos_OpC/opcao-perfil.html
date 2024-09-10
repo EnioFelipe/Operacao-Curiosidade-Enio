@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opções perfil</title>
+    <link rel="stylesheet" href="../global-style.css">
+
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        menu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 50%;
+            height: 90dvh;
+            margin: auto;
+            margin-left: 10px;
+            background-color: white;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.181);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #conteudo {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+        }
+
+                menu ul {
+            list-style-type: none; /* Remove as bolinhas da lista */
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        menu ul li {
+            width: 90%;
+            margin: auto;
+        }
+
+        menu ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none; /* Remove o sublinhado */
+            color: var(--primary-color); /* Cor da fonte */
+            padding: 10px 20px; /* Espaçamento interno */
+            border-radius: 5px; /* Bordas arredondadas */
+            transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+            margin-top: 10px;
+        }
+
+        menu img{
+            width: 35px;
+            margin-right: 10px;
+        }
+
+        /* Estilização das linhas de separação */
+        .separador {
+            border: none;
+            width: 90%; /* Largura da linha de separação */
+            border-top: 1px solid #ccc; /* Cor da linha de separação */
+            margin: 10px 0; /* Espaçamento vertical */
+        }
+
+    </style>
+</head>
+<body>
+    <menu>
+        <div id="conteudo">
+            <ul>
+                <li><a href="#"><img src="../Arquivos SVG/big_onion_interests.svg" class="icons" alt="perfil">Perfil</a></li>
+                <li><hr class="separador"></li>
+                <li><a href="#"><img src="../icons/add.svg" class="icons" alt="cadastrar curiosidade">Configurações</a></li>
+                <li><hr class="separador"></li>
+                <li><a href="#"><img src="../icons/meus-cadastros.svg" class="icons" alt="meus cadastros">Sair</a></li>
+            </ul>
+        </div>
+    </menu>
+</body>
+</html>

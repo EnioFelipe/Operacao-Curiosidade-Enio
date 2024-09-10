@@ -10,12 +10,12 @@
 /* Importando fontes locais */
 @font-face {
     font-family: 'Segoe UI';
-    src: url('Segoe Fontes/SegoeUI-Regular.ttf') format('truetype');
+    src: url('Segoe Fonte/Segoe\ UI.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Segoe UI Bold';
-    src: url('Segoe Fontes/SegoeUI-Bold.ttf') format('truetype');
+    src: url('Segoe Fonte/Segoe\ UI\ Bold.ttf') format('truetype');
 }
 
 * {

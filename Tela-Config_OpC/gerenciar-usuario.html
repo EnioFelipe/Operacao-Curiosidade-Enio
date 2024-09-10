@@ -49,7 +49,6 @@
             display: flex;
             flex-direction: row;
             width: 100%;
-            gap: 185px;
             padding: 6px 12px;
             margin-bottom: 10px;
             background-color: #bab4b45c;
@@ -57,16 +56,27 @@
             border: 1px solid black;
         }
 
+        .index-corpo p {
+            width: 175px;
+            margin-right: 35px;
+            text-align: start;
+        }
+
         .dados {
             display: flex;
             flex-direction: row;
             width: 100%;
-            gap: 185px;
             padding: 15px 12px;
             margin-bottom: 5px;
             background-color: #f7f7f7;
             border-radius: 6px;
             border: 1px solid black;
+        }
+
+        .dados p {
+            width: 175px;
+            margin-right: 35px;
+            text-align: start;
         }
 
         .label-input {
@@ -131,6 +141,10 @@
             background-color: #ddd;
         }
 
+        .dados p{
+            color: black;
+        }
+
 
     </style>
 </head>
@@ -138,16 +152,16 @@
     <div id="tabela-auditoria">
         <div class="cabeça-auditoria">
             <div class="label-input">
-                <label for="tipo-item">STATUS</label>
-                <input type="search" name="tipo-item" id="tipo-item" placeholder="Pesquisar Item">
+                <label for="tipo-item">Status</label>
+                <input type="search" name="tipo-item" id="tipo-item" placeholder="Pesquisar Status">
             </div>
             <div class="label-input">
-                <label for="tipo-local">Local</label>
-                <input type="search" name="tipo-local" id="tipo-local" placeholder="Pesquisar Local">
+                <label for="tipo-local">Tipo</label>
+                <input type="search" name="tipo-local" id="tipo-local" placeholder="Pesquisar tipo">
             </div>
             <div class="label-input">
-                <label for="tipo-usuario">Usuário</label>
-                <input type="search" name="tipo-usuario" id="tipo-usuario" placeholder="Pesquisar Usuário">
+                <label for="tipo-usuario">Nome ou Código</label>
+                <input type="search" name="tipo-usuario" id="tipo-usuario" placeholder="Pesquisar">
             </div>
             <div class="label-input">
                 <label for="tipo-periodo">Período</label>
@@ -156,57 +170,64 @@
             <div class="form-actions">
                 <input class="btn-auditoria" type="reset" value="Limpar">
                 <input class="btn-auditoria" type="submit" value="Filtrar">
+                <input class="btn-auditoria" type="submit" value="Criar Usuário">
             </div>
         </div>
         <div class="index-corpo">
-            <p>Local</p>
-            <p>Data</p>
-            <p>Usuário</p>
-            <p>Evento</p>
-            <p>Item</p>
+            <p><input type="checkbox">Código</p>
+            <p>Nome</p>
+            <p>e-mail</p>
+            <p>Data de criação</p>
+            <p>Status</p>
         </div>
         <div class="corpo-auditoria">
             <div class="dados">
-                <p>Local</p>
-                <p>Data</p>
-                <p>Usuário</p>
-                <p>Evento</p>
-                <p>Item</p>
+                <p><input type="checkbox">2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2023</p>
+                <p>ativo</p>
+                <a href="#">detalhes</a>
             </div>
             <div class="dados">
-                <p>Local</p>
-                <p>Data</p>
-                <p>Usuário</p>
-                <p>Evento</p>
-                <p>Item</p>
+                <p><input type="checkbox">2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2023</p>
+                <p>ativo</p>
+                <a href="#">detalhes</a>
             </div>
             <div class="dados">
-                <p>Local</p>
-                <p>Data</p>
-                <p>Usuário</p>
-                <p>Evento</p>
-                <p>Item</p>
+                <p><input type="checkbox">2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2023</p>
+                <p>ativo</p>
+                <a href="#">detalhes</a>
             </div>
             <div class="dados">
-                <p>Local</p>
-                <p>Data</p>
-                <p>Usuário</p>
-                <p>Evento</p>
-                <p>Item</p>
+                <p><input type="checkbox">2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2023</p>
+                <p>ativo</p>
+                <a href="#">detalhes</a>
             </div>
             <div class="dados">
-                <p>Local</p>
-                <p>Data</p>
-                <p>Usuário</p>
-                <p>Evento</p>
-                <p>Item</p>
+                <p><input type="checkbox">2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2023</p>
+                <p>ativo</p>
+                <a href="#">detalhes</a>
             </div>
             <div class="dados">
-                <p>Local</p>
-                <p>Data</p>
-                <p>Usuário</p>
-                <p>Evento</p>
-                <p>Item</p>
+                <p><input type="checkbox">2453479</p>
+                <p>Edson Arantes</p>
+                <p>ed.arantes@fakemail.br</p>
+                <p>30/10/2023</p>
+                <p>ativo</p>
+                <a href="#">detalhes</a>
             </div>
         </div>
         <div class="rodape-auditoria">

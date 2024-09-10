@@ -32,7 +32,6 @@
         .form-container {
             background-color: white;
             margin: auto;
-            
             border-radius: 10px;
             border: 1px solid rgba(0, 0, 0, 0.181);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,70 +39,74 @@
             height: auto;
         }
 
-        .form-container label {
-            display: block;
-            font-weight: bold;
-            text-align: left;
-        }
-
-        .form-container input, select {
-            display: block;
-            text-align: left;
-            width: 270px;
-            margin: 10px 10px 10px 0px;
-            padding: 10px;
-            border: 1px solid rgba(0, 0, 0, 0.304);
-            border-radius: 5px;
-            color: black;
-        }
-
         input::placeholder {
             text-align: left;
         }
 
-
-
         .alinhamento {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .alinhamento label {
             display: flex;
             flex-direction: column;
             text-align: left;
-            margin: 20px; 
+            font-size: 1em;
+            color: #333;
+            min-width: 200px;
+        }
+
+        .alinhamento input,
+        .alinhamento select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-top: 5px;
+            text-align: left;
+            width: 300px;
+        }
+
+        .alinhamento input[type="text"].text-area {
+            width: 500px;
         }
 
         .form-container button {
-            width: 100%;
+            width: 50%;
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background-color: var(--primary-color);
+            background-color: green;
             color: white;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .form-container button:hover {
-            background-color: var(--primary-color);
         }
 
         .interesse {
             display: flex;
-            flex-direction: column;
-        }
-
-        .interesse {
-            margin-bottom: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
         }
 
         .interesse span {
+            font-size: 1.2em;
             margin-right: 10px;
+            color: #555;
         }
 
-        textarea {
-            width: 100%;
+        .interesse textarea {
+            flex-grow: 1;
             padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            resize: vertical;
         }
 
     </style>
@@ -116,47 +119,84 @@
         </header>
         <form action="/submit-cadastro" method="POST">
 
-                <div class="alinhamento">
-                    <label for="nome">Nome
-                        <input type="text" id="nome" name="nome" class="text-area" placeholder="Digite seu nome" required>
-                    </label>
-                    <label for="nome-usuario">Nome de Usuário
-                        <input type="text" id="nome-usuario" name="nome-usuario" placeholder="Digite seu nome de usuário" required>
-                    </label>
-                    <label for="email">E-mail
-                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-                    </label>
-                    <label for="data-nasc">Data de nascimento
-                        <input type="date" id="data-nasc" name="data-nasc" required>
-                    </label>
-                    <label for="cpf">CPF
-                        <input type="number" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx" required>
-                    </label>
-                    <label for="estado-civil">Estado Civil
-                        <select id="estado-civil" name="estado-civil" required>
-                            <option value="" disabled selected>Selecione</option>
-                            <option value="solteiro">Solteiro(a)</option>
-                            <option value="casado">Casado(a)</option>
-                            <option value="divorciado">Divorciado(a)</option>
-                            <option value="viuvo">Viúvo(a)</option>
-                        </select>
-                    </label>
-                    <label for="endereco">Endereço
-                        <input type="text" id="endereco" class="text-area" name="endereco" placeholder="Digite seu endereço" required>
-                    </label>
-                    <label for="complemento">Complemento
-                        <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
-                    </label>
-                    <label for="ocupacao">Ocupação/Profissão
-                        <input type="text" id="ocupacao"  class="text-area" name="ocupacao" placeholder="Digite sua ocupação/profissão" required>
-                    </label>
-                    <label for="formacao">Formação Acadêmica
-                        <input type="text" id="formacao"  class="text-area" name="formacao" placeholder="Digite sua formação acadêmica" required>
-                    </label>
+            <div class="alinhamento">
+                <label for="nome">Nome
+                    <input type="text" id="nome" name="nome" class="text-area" placeholder="Digite seu nome" required>
+                </label>
+                <label for="nome-usuario">Nome de Usuário
+                    <input type="text" id="nome-usuario" name="nome-usuario" placeholder="Digite seu nome de usuário" required>
+                </label>
+                <label for="email">E-mail
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </label>
+                <label for="data-nasc">Data de nascimento
+                    <input type="date" id="data-nasc" name="data-nasc" required>
+                </label>
+                <label for="estado-civil">Estado Civil
+                    <select id="estado-civil" name="estado-civil" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="solteiro">Solteiro(a)</option>
+                        <option value="casado">Casado(a)</option>
+                        <option value="divorciado">Divorciado(a)</option>
+                        <option value="viuvo">Viúvo(a)</option>
+                    </select>
+                </label>
+                <label for="endereco">Endereço
+                    <input type="text" id="endereco" class="text-area" name="endereco" placeholder="Digite seu endereço" required>
+                </label>
+                <label for="complemento">Complemento
+                    <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
+                </label>
+                <label for="ocupacao">Ocupação/Profissão
+                    <input type="text" id="ocupacao" class="text-area" name="ocupacao" placeholder="Digite sua ocupação/profissão" required>
+                </label>
+                <label for="formacao">Formação Acadêmica
+                    <input type="text" id="formacao" class="text-area" name="formacao" placeholder="Digite sua formação acadêmica" required>
+                </label>
             </div>
 
             <header>
                 <h2>Interesses</h2>
+            </header>
+                    <div class="interesse">
+                        <span>1</span>
+                        <textarea></textarea>
+                    </div>
+                    <div class="interesse">
+                        <span>2</span>
+                        <textarea></textarea>
+                    </div>
+                    <div class="interesse">
+                        <span>3</span>
+                        <textarea></textarea>
+                    </div>
+                    <div class="interesse">
+                        <span>4</span>
+                        <textarea></textarea>
+                    </div>
+
+            <header>
+                <h2>Valores</h2>
+            </header>
+                    <div class="interesse">
+                        <span>1</span>
+                        <textarea></textarea>
+                    </div>
+                    <div class="interesse">
+                        <span>2</span>
+                        <textarea></textarea>
+                    </div>
+                    <div class="interesse">
+                        <span>3</span>
+                        <textarea></textarea>
+                    </div>
+                    <div class="interesse">
+                        <span>4</span>
+                        <textarea></textarea>
+                    </div>
+            
+            <header>
+                <h2>Sentimentos</h2>
             </header>
                     <div class="interesse">
                         <span>1</span>

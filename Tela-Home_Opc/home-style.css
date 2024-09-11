@@ -143,11 +143,6 @@ header {
     margin: 5px;
 }
 
-.botao-sino{
-    align-self: center;
-    margin: 5px;
-}
-
 .config{
     display: flex;
     flex-direction: row;

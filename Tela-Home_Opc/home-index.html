@@ -5,51 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global-style.css">
     <link rel="stylesheet" href="home-style.css">
+    <link rel="stylesheet" href="../modal-style.css">
     <title>Home</title>
-    <style>
-
-    #iframe-notificacoes {
-        width: 100%;
-        height: 100%;
-        border-radius: 25px;
-    }
-
-    #opacidade {
-            display: none; /* Esconde o overlay inicialmente */
-            position: fixed; /* Fixa o overlay na tela */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-            z-index: 999; /* Garante que o overlay fique abaixo do modal */
-        }
-
-    #modal-notificacoes {
-        display: none; /* Esconde o modal inicialmente */
-        position: fixed; /* Fixa o modal na tela */
-        top: 70px; /* Ajuste a posição vertical conforme necessário */
-        right: 305px; /* Ajuste a posição horizontal conforme necessário */
-        width: 300px; /* Largura do modal */
-        height: 410px; /* Altura do modal */
-        background-color: transparent; /* Cor de fundo do modal */
-        z-index: 1000; /* Garante que o modal fique acima de outros elementos */
-    }
-
-    #modal-notificacoes.show, #opacidade.show {
-        display: block; /* Mostra o modal quando a classe 'show' é adicionada */
-    }
-
-    #btn-notificacoes {
-        align-self: center;
-        background-color: white;
-        border: none;
-        border-radius: 50%;
-        z-index: 1001; /* Garante que o botão fique acima do modal */
-        cursor: pointer;
-        height: fit-content;
-    }
-    </style>
 </head>
 <body>
     <menu>
@@ -114,23 +71,6 @@
             </div>
         </main>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var btnNotificacoes = document.getElementById('btn-notificacoes');
-            var modalNotificacoes = document.getElementById('modal-notificacoes');
-            var modalOpacidade = document.getElementById('opacidade');
-    
-            btnNotificacoes.addEventListener('click', function() {
-                modalNotificacoes.classList.toggle('show');
-                modalOpacidade.classList.toggle('show');
-            });
-
-            modalOpacidade.addEventListener('click', function() {
-                modalNotificacoes.classList.remove('show');
-                modalOpacidade.classList.remove('show');
-            });
-        });
-    </script>
-    
+    <script src="../modal.js"></script>
 </body>
 </html>

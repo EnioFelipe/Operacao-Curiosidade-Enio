@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global-style.css">
     <link rel="stylesheet" href="relatorio-style.css">
+    <link rel="stylesheet" href="../modal-style.css">
     <title>Configurações</title>
 </head>
 <body>
@@ -30,7 +31,12 @@
                 <img src="../icons/pesquisar.svg" alt=""><input type="search" placeholder="Pesquise aqui" class="entrada-pesquisa"></img>
             </div>
                 <img class="botao-tema" src="../icons/alterar-tema.svg" alt="alterar tema">
-                <img class="botao-sino" src="../icons/sino.svg" alt="notificação"> 
+                <button id="btn-notificacoes"><img class="botao-sino" src="../icons/sino.svg" alt="notificação"></button>
+                <div id="opacidade">
+                    <div id="modal-notificacoes">
+                        <iframe id="iframe-notificacoes" src="../Tela-complementos_OpC/notificacoes.html" frameborder="0"></iframe>
+                    </div>
+                </div>
             <div class="config">
                 <img src="../Arquivos SVG/minha_foto.jpg" alt="Foto do usuário" class="foto-usuario">
                     <p>Enio Felipe <br>
@@ -46,8 +52,8 @@
             <div id="exbir-configs">
                 <iframe name="tela" id="tela" src="listagem.html" frameborder="0"></iframe>
             </div>
-            
         </main>
     </div>
+    <script src="../modal.js"></script>
 </body>
 </html>

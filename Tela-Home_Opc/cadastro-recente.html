@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global-style.css">
     <link rel="stylesheet" href="home-style.css">
+    <link rel="stylesheet" href="../modal-style.css">
     <title>Últimos cadastros</title>
 
    <style>
@@ -41,7 +42,12 @@
             <p id="editado-por">Editado por: Nome do Editor</p>
         </div>
         <div class="perfil-acao">
-            <a href="#" class="btn-share"><img id="compartilhar" class="icon" src="../icons/share.svg" alt="compartilhar"></a>
+            <button id="btn-share"><img id="compartilhar" class="icon" src="../icons/share.svg" alt="compartilhar"></button>
+                <div id="opacidade">
+                    <div id="modal-share">
+                        <iframe id="iframe-share" src="../Tela-complementos_OpC/def-compartilhar.html" frameborder="0"></iframe>
+                    </div>
+                </div>
             <a href="#" class="btn-delete"><img id="excluir" class="icon" src="../icons/delete.svg" alt="excluir"></a>
             <a href="#" class="btn-edit"><img id="editar" class="icon" src="../icons/editar.svg"  alt=""></a>
         </div>
@@ -105,5 +111,6 @@
         </div>
         </div>
     </div>
+    <script src="../modal.js"></script>
 </body>
 </html>

@@ -282,9 +282,10 @@ iframe#tela{
     align-self: start;
     width: 100px; /* Largura da foto */
     height: 100px; /* Altura da foto */
-    border-radius: 50%; /* Foto circular */
+    border-radius: 8px; /* Foto circular */
     object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
     margin-bottom: 20px; /* Espaçamento abaixo da foto */
+    margin-right: 5px;
 }
 
 .main-info{

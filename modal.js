@@ -30,13 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (modalShare) {
                 modalShare.classList.toggle('show');
             }
-            const iframe = document.getElementById('iframe-share');
-            iframe.contentWindow.postMessage({ action: 'ativarmodalOpacidade' }, '*');
         });
     }
 
     if (btnExcluir) {
         btnExcluir.addEventListener('click', function() {
+            modalOpacidade.classList.toggle('show');
             modalExcluir.classList.toggle('show');
         });
     }

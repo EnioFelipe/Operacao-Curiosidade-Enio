@@ -120,6 +120,14 @@
             width: 90px;
         }
 
+        #btn-fechar{
+            margin-left: auto;
+            border: none;
+            background-color: transparent;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
         .btn-opcoes{
             display: flex;
             align-items: center;
@@ -172,6 +180,7 @@
     <menu>
         <div id="lateral-estilo"></div>
         <div id="conteudo">
+            <button id="btn-fechar">fechar</button>
             <h2>Definição de compartilhamento<hr class="separador"></h2>
             <p>
                 Insira o nome deo usuário que deseja incluir em sua lista de compartilhamento e pressione a tecla <strong>Enter</strong>
@@ -223,15 +232,20 @@
                         </section>
                 </div>
         </div>
+        <script src="../modal.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                var btnOpcoes = document.querySelectorAll('.btn-opcoes');
+                let btnOpcoes = document.querySelectorAll('.btn-opcoes');
                 btnOpcoes.forEach(function(button) {
                     button.addEventListener('click', function() {
-                        var modalOpcoes = this.nextElementSibling;
+                        let modalOpcoes = this.nextElementSibling;
                         modalOpcoes.classList.toggle('show');
                     });
                 });
+                    document.getElementById('btn-fechar').addEventListener('click', function() {
+                    window.parent.postMessage({ action: 'fechar' }, '*');
+                });
+                
             });
         </script>
     </menu>

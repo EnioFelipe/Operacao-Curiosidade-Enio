@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var modalOpacidade = document.getElementById('opacidade');
-    var btnNotificacoes = document.getElementById('btn-notificacoes');
-    var modalNotificacoes = document.getElementById('modal-notificacoes');
-    var btnShare = document.getElementById('btn-share');
-    var modalShare = document.getElementById('modal-share');
-    var btnPerfil = document.getElementById('btn-perfil');
-    var modalPerfil = document.getElementById('modal-perfil');
-    var btnExcluir = document.getElementById('btn-excluir');
-    var modalExcluir = document.getElementById('modal-excluir');
-    var btnCancelar = document.getElementById('btn-cancelar');
-    var btnConfirmar = document.getElementById('btn-confirmar-remocao');
+    let modalOpacidade = document.getElementById('opacidade');
+    let btnNotificacoes = document.getElementById('btn-notificacoes');
+    let modalNotificacoes = document.getElementById('modal-notificacoes');
+    let btnShare = document.getElementById('btn-share');
+    let modalShare = document.getElementById('modal-share');
+    let btnPerfil = document.getElementById('btn-perfil');
+    let modalPerfil = document.getElementById('modal-perfil');
+    let btnExcluir = document.getElementById('btn-excluir');
+    let modalExcluir = document.getElementById('modal-excluir');
 
     if (btnPerfil) {
         btnPerfil.addEventListener('click', function() {
@@ -26,14 +24,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (btnShare) {
         btnShare.addEventListener('click', function() {
-            modalOpacidade.classList.toggle('show');
-            modalShare.classList.toggle('show');
+            if (modalOpacidade) {
+                modalOpacidade.classList.toggle('show');
+            }
+            if (modalShare) {
+                modalShare.classList.toggle('show');
+            }
+            const iframe = document.getElementById('iframe-share');
+            iframe.contentWindow.postMessage({ action: 'ativarmodalOpacidade' }, '*');
         });
     }
 
     if (btnExcluir) {
         btnExcluir.addEventListener('click', function() {
-            modalOpacidade.classList.toggle('show');
             modalExcluir.classList.toggle('show');
         });
     }
@@ -48,10 +51,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (btnCancelar) {
-        btnCancelar.addEventListener('click', function() {
-            modalOpacidade.classList.remove('show');
-            modalExcluir.classList.remove('show');
-        });
-    }
+    window.addEventListener('message', function(event) {
+        if (event.data.action === 'cancelar') {
+            if (modalOpacidade) {
+                modalOpacidade.classList.remove('show');
+            }
+            if (modalExcluir) {
+                modalExcluir.classList.remove('show');
+            }
+        } else if (event.data.action === 'remover') {
+            if (modalOpacidade) {
+                modalOpacidade.classList.remove('show');
+            }
+            if (modalExcluir) {
+                modalExcluir.classList.remove('show');
+            }
+        } else if (event.data.action === 'ativarOpacidadeTotal') {
+            if (modalOpacidade) {
+                modalOpacidade.classList.toggle('show');
+            }
+        } else if (event.data.action === 'fechar') {
+            if (modalOpacidade) {
+                modalOpacidade.classList.remove('show');
+            }
+            if (modalShare) {
+                modalShare.classList.remove('show');
+            }
+        }
+    });
+
 });

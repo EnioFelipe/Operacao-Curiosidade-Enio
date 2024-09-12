@@ -102,7 +102,18 @@
                 <button id="btn-confirmar-remocao">Remover</button>
            </div>
         </div>
+    
     <script src="../modal.js"></script>
+    <script>
+        document.getElementById('btn-cancelar').addEventListener('click', function() {
+            window.parent.postMessage({ action: 'cancelar' }, '*');
+        });
+
+        document.getElementById('btn-confirmar-remocao').addEventListener('click', function() {
+            window.parent.postMessage({ action: 'remover' }, '*');
+        });
+    </script>
+    
     </menu>
 </body>
 </html>

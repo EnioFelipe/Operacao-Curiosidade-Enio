@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definições de compartilhamento</title>
+    <link rel="stylesheet" href="../global-style.css">
+
+    <style>
+
+        html{
+            border-radius: 25px;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        body {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            border-radius: 25px;
+            background-color: transparent;
+        }
+
+        menu {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            width: max-content;
+            height: 100%;
+            border-radius: 25px;
+            border: 1px solid rgba(0, 0, 0, 0.208);
+            background-color: white;
+        }
+
+        #lateral-estilo {
+            width: 6%; /* Defina uma largura fixa ou ajustável */ 
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(255, 0, 0);
+            border-radius: 25px 0px 0px 25px;
+        }
+
+        #conteudo {
+            width: max-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+
+        h2{
+            width: fit-content;
+            text-align: left;
+            margin: 10px 0px;
+        }
+
+        .separador {
+            border: none;
+            width: 100%; /* Largura da linha de separação */
+            border-top: 1px solid #ccc; /* Cor da linha de separação */
+            margin: 10px 0; /* Espaçamento vertical */
+        }
+
+        p{
+            text-align: justify;
+            text-indent: 30px;
+            padding: 10px;
+            color: black;
+        }
+
+        button{
+            width: 100px;
+            height: 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button#btn-confirmar-remocao{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <menu>
+        <div id="lateral-estilo"></div>
+        <div id="conteudo">
+            <h2>Remover Cadastro de Operação Curiosidade<hr class="separador"></h2>
+            <p>
+                Deseja realmente remover está operação do sistema? <br>
+                Após remover este cadastro não será possível recuperá-lo.
+            </p>
+           <div>
+                <button id="btn-cancelar">Cancelar</button>
+                <button id="btn-confirmar-remocao">Remover</button>
+           </div>
+        </div>
+    <script src="../modal.js"></script>
+    </menu>
+</body>
+</html>

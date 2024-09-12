@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
-#iframe-notificacoes, #iframe-share{
+#iframe-notificacoes, #iframe-share, #iframe-excluir{
     width: 100%;
     height: 100%;
     border-radius: 25px;
+    z-index: 1000;
 }
 
 #opacidade {
@@ -39,7 +40,7 @@
     z-index: 1000; /* Garante que o modal fique acima de outros elementos */
 }
 
-#modal-share {
+#modal-share{
     display: none;
     position: fixed;
     top: 50%;
@@ -49,7 +50,19 @@
     height: 75%;
 }
 
-#opacidade.show, #modal-notificacoes.show, #modal-share.show{
+#modal-excluir{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 490px;
+    height: 213px;
+    background-color: transparent;
+}
+
+
+#opacidade.show, #modal-notificacoes.show, #modal-share.show, #modal-excluir.show{
     display: block; /* Mostra o modal quando a classe 'show' é adicionada */
 }
 
@@ -74,7 +87,7 @@
     height: fit-content;
 }
 
-#btn-share {
+#btn-share, #btn-excluir{
     align-self: center;
     background-color: #f9f9f9;
     border: none;

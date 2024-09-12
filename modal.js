@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var modalShare = document.getElementById('modal-share');
     var btnPerfil = document.getElementById('btn-perfil');
     var modalPerfil = document.getElementById('modal-perfil');
+    var btnExcluir = document.getElementById('btn-excluir');
+    var modalExcluir = document.getElementById('modal-excluir');
+    var btnCancelar = document.getElementById('btn-cancelar');
+    var btnConfirmar = document.getElementById('btn-confirmar-remocao');
 
     if (btnPerfil) {
         btnPerfil.addEventListener('click', function() {
@@ -27,12 +31,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    if (btnExcluir) {
+        btnExcluir.addEventListener('click', function() {
+            modalOpacidade.classList.toggle('show');
+            modalExcluir.classList.toggle('show');
+        });
+    }
+
     if (modalOpacidade) {
         modalOpacidade.addEventListener('click', function() {
             modalOpacidade.classList.remove('show');
             if (modalNotificacoes) modalNotificacoes.classList.remove('show');
             if (modalShare) modalShare.classList.remove('show');
             if (modalPerfil) modalPerfil.classList.remove('show');
+            if (modalExcluir) modalExcluir.classList.remove('show');
+        });
+    }
+
+    if (btnCancelar) {
+        btnCancelar.addEventListener('click', function() {
+            modalOpacidade.classList.remove('show');
+            modalExcluir.classList.remove('show');
         });
     }
 });

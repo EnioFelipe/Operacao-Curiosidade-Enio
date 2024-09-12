@@ -361,6 +361,7 @@ p#email{
 div#dados-cadastro{
     display: flex;
     flex-direction: column;
+    gap: 30px;
     justify-content: center;
     align-items: center;
     width: auto;
@@ -374,10 +375,9 @@ div#dados-cadastro{
     justify-content: center;
     align-items: center;
     width: 250px;
-    height: 150px;
+    height: 120px;
     border: 1px solid black;
     border-radius: 25px;
-    margin-bottom: 30px;
     border: 1px solid rgba(0, 0, 0, 0.293);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }

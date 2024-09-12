@@ -114,20 +114,24 @@
             margin: 10px 0px;
         }
 
-        #caixa-opcoes{
+        .caixa-opcoes{
             margin-left: auto;
+            margin-right: 5px;
+            width: 90px;
         }
 
-        #btn-opcoes{
+        .btn-opcoes{
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
             text-align: left;
-            padding: 10px;
+            padding: 5px;
             border: 1px solid var(--primary-color);
             border-radius: 5px;
             background-color: #f0f0f0;
             text-align: center;
+            cursor: pointer;
         }
 
         #foto-pessoa{
@@ -143,19 +147,19 @@
         
         }
 
-        #modal-opcoes{
+        .modal-opcoes{
             display: none;
         }
 
-        #modal-opcoes.show{
+        .modal-opcoes.show{
             display: flex;
             flex-direction: column;
-            gap: 5px;
         }
 
-        #modal-opcoes a {
+        .modal-opcoes a {
             text-decoration: none;
-            padding: 10px;
+            margin-top: 5px;
+            padding: 5px;
             border: 1px solid var(--primary-color);
             border-radius: 5px;
             background-color: #f0f0f0;
@@ -183,51 +187,52 @@
                 <div id="pessoas">
                         <section>
                             <img id="foto-pessoa" src="../Arquivos SVG/big_onion_interests.svg" alt=""> Carlos Mendes Costa
-                            <div id="caixa-opcoes">
-                                <button id="btn-opcoes">
+                            <div class="caixa-opcoes">
+                                <button class="btn-opcoes">
                                     Editar <img class="icon-expandir" src="seta-expandir02.svg" alt="">
                                 </button>
-                                <div id="modal-opcoes">
+                                <div class="modal-opcoes">
                                     <a href="#">Visualizar</a>
                                     <a href="#">Editar</a>
                                 </div>
                             </div>
                         </section>
-                
-                
                         <section>
                             <img id="foto-pessoa" src="../Arquivos SVG/big_onion_interests.svg" alt=""> Carlos Mendes Costa
-                            <a href="#" class="toggle-options">
-                                Editar <img class="icon-expandir" src="seta-expandir02.svg" alt="">
-                            </a>
-                            <div class="additional-options">
-                                <a href="#">Visualizar</a>
-                                <a href="#">Editar</a>
+                            <div class="caixa-opcoes">
+                                <button class="btn-opcoes">
+                                    Editar <img class="icon-expandir" src="seta-expandir02.svg" alt="">
+                                </button>
+                                <div class="modal-opcoes">
+                                    <a href="#">Visualizar</a>
+                                    <a href="#">Editar</a>
+                                </div>
                             </div>
                         </section>
                         <section>
                             <img id="foto-pessoa" src="../Arquivos SVG/big_onion_interests.svg" alt=""> Carlos Mendes Costa
-                            <a href="#" class="toggle-options">
-                                Editar <img class="icon-expandir" src="seta-expandir02.svg" alt="">
-                            </a>
-                            <div class="additional-options">
-                                <a href="#">Visualizar</a>
-                                <a href="#">Editar</a>
+                            <div class="caixa-opcoes">
+                                <button class="btn-opcoes">
+                                    Editar <img class="icon-expandir" src="seta-expandir02.svg" alt="">
+                                </button>
+                                <div class="modal-opcoes">
+                                    <a href="#">Visualizar</a>
+                                    <a href="#">Editar</a>
+                                </div>
                             </div>
                         </section>
                 </div>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-            var btnOpcoes = document.getElementById('btn-opcoes');
-            var modalOpcoes = document.getElementById('modal-opcoes');
-
-            if (btnOpcoes) {
-                btnOpcoes.addEventListener('click', function() {
-                    modalOpcoes.classList.toggle('show');
+                var btnOpcoes = document.querySelectorAll('.btn-opcoes');
+                btnOpcoes.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        var modalOpcoes = this.nextElementSibling;
+                        modalOpcoes.classList.toggle('show');
+                    });
                 });
-            }
-        });
+            });
         </script>
     </menu>
 </body>

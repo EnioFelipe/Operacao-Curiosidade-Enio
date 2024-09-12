@@ -7,23 +7,26 @@
     <link rel="stylesheet" href="../global-style.css">
 
     <style>
+       html{
+            border-radius: 25px;
+        }
+        
         body {
             width: 100%;
             height: 100%;
-            background-color: #f7f7f7;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: flex-start;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
         }
 
         menu {
             display: flex;
             flex-direction: row;
             align-items: center;
-            width: 50%;
-            height: 90dvh;
+            width: 300px;
+            height: fit-content;
             margin: auto;
             margin-left: 10px;
             background-color: white;
@@ -34,14 +37,14 @@
 
         #conteudo {
             width: 90%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: flex-start;
             margin: auto;
         }
 
-                menu ul {
+        menu ul {
             list-style-type: none; /* Remove as bolinhas da lista */
             padding: 0;
             margin: 0;
@@ -83,11 +86,9 @@
     <menu>
         <div id="conteudo">
             <ul>
-                <li><a href="#"><img src="../Arquivos SVG/big_onion_interests.svg" class="icons" alt="perfil">Perfil</a></li>
+                <li><a href="../Tela-Config_OpC/config.html"><img src="../Arquivos SVG/big_onion_interests.svg" class="icons" alt="perfil">Perfil</a></li>
                 <li><hr class="separador"></li>
-                <li><a href="#"><img src="../icons/add.svg" class="icons" alt="cadastrar curiosidade">Configurações</a></li>
-                <li><hr class="separador"></li>
-                <li><a href="#"><img src="../icons/meus-cadastros.svg" class="icons" alt="meus cadastros">Sair</a></li>
+                <li><a href="../Tela-Login_OpC/index.html"><img src="../icons/meus-cadastros.svg" class="icons" alt="meus cadastros">Sair</a></li>
             </ul>
         </div>
     </menu>

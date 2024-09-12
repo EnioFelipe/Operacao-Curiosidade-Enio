@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../global-style.css">
     <link rel="stylesheet" href="relatorio-style.css">
     <link rel="stylesheet" href="../modal-style.css">
+    <link rel="stylesheet" href="../opcoes-perfil-style.css">
     <title>Configurações</title>
 </head>
 <body>
@@ -37,13 +38,24 @@
                         <iframe id="iframe-notificacoes" src="../Tela-complementos_OpC/notificacoes.html" frameborder="0"></iframe>
                     </div>
                 </div>
-            <div class="config">
-                <img src="../Arquivos SVG/minha_foto.jpg" alt="Foto do usuário" class="foto-usuario">
-                    <p>Enio Felipe <br>
-                       [ADM]
-                    </p>
-                <a href="#"><img id="seta-expandir" src="../icons/seta-expandir.svg" alt="opc-perfil"></a>
-            </div>
+                <div class="config">
+                    <div id="config-conteudo">
+                        <img src="../Arquivos SVG/minha_foto.jpg" alt="Foto do usuário" class="foto-usuario">
+                            <p>Enio Felipe <br>
+                               [ADM]
+                            </p>
+                        <button id="btn-perfil"><img id="seta-expandir" src="../icons/seta-expandir.svg" alt="configurações"></button>
+                    </div>
+                    <div id="modal-perfil">
+                        <div id="conteudo">
+                            <ul>
+                                <li><a href="../Tela-Config_OpC/config.html"><img src="../Arquivos SVG/ big_onion_interests.svg" class="icons" alt="perfil">Perfil</a></li>
+                                <li><hr class="separador"></li>
+                                <li><a href="../Tela-Login_OpC/index.html"><img src="../icons/meus-cadastros.svg" class="icons" alt="meus cadastros">Sair</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
         </header>
         <nav id="nav-cadastro">
             <a class="tela-padrao" class="active" href="listagem.html" target="tela"><img src="../icons/relogio.svg" alt="relogio">Listagem de Relatórios</a>

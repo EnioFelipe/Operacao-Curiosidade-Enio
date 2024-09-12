@@ -140,18 +140,27 @@ header {
 
 .config{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     width: 250px;
-    height: 60px;
+    height: auto;
     margin-left: auto;
     margin-right: 95px;
     background-color: var(--primary-color);
     border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.293);
 }
 
-.config img{
+#config-conteudo{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+#config-conteudo img{
     width: 20%;
     align-self: start;
     height: auto;
@@ -170,11 +179,10 @@ header {
 img#seta-expandir{
     align-self: center;
     justify-self: center;
-    margin-top: 13px;
+    margin-left: 5px;
     width: 30px;
     height: 30px;
 }
-
 
 #nav-cadastro{
     display: flex;

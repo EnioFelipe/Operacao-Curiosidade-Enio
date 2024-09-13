@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let modalPerfil = document.getElementById('modal-perfil');
     let btnExcluir = document.getElementById('btn-excluir');
     let modalExcluir = document.getElementById('modal-excluir');
+    let btnEditarUsuario = document.getElementById('btn-editar-usuario');
+    let modalEditarUsuario = document.getElementById('modal-editar-usuario');
 
     if (btnPerfil) {
         btnPerfil.addEventListener('click', function() {
@@ -40,6 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    if (btnEditarUsuario) {
+        btnEditarUsuario.addEventListener('click', function() {
+            modalOpacidade.classList.toggle('show');
+            modalEditarUsuario.classList.toggle('show');
+        });
+    }
+
     if (modalOpacidade) {
         modalOpacidade.addEventListener('click', function() {
             modalOpacidade.classList.remove('show');
@@ -47,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (modalShare) modalShare.classList.remove('show');
             if (modalPerfil) modalPerfil.classList.remove('show');
             if (modalExcluir) modalExcluir.classList.remove('show');
+            if (modalEditarUsuario) modalEditarUsuario.classList.remove('show');
         });
     }
 

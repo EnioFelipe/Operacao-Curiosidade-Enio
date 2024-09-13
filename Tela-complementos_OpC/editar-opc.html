@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Definições de compartilhamento</title>
+    <title>Cadastrar Operação Curiosidade</title>
     <link rel="stylesheet" href="../global-style.css">
 
     <style>
@@ -32,11 +32,19 @@
             background-color: white;
         }
 
-        #lateral-estilo {
+        .lateral-estilo-ativo {
             width: 6%; /* Defina uma largura fixa ou ajustável */ 
             display: flex;
             flex-direction: column;
-            background-color: var(--primary-color);
+            background-color: green;
+            border-radius: 12px 0px 0px 12px;
+        }
+
+        .lateral-estilo-inativo{
+            display: none;
+            width: 6%; /* Defina uma largura fixa ou ajustável */ 
+            flex-direction: column;
+            background-color: red;
             border-radius: 12px 0px 0px 12px;
         }
 
@@ -111,40 +119,12 @@
             width: 150px;
         }
 
-        input#admin {
-            width: 15px;
-            height: 50px;
-            margin: auto;
-        }
-
-        .checkbox-container {
-            display: inline-flex;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .checkbox-container label {
-            margin-left: 5px;
-            font-size: 1em;
-            color: #333;
-        }
-
-        .form-container button {
-            width: 50%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: green;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
         #foto-perfil {
             display: flex;
             flex-direction:row;
             align-self: self-start;
             margin-bottom: 30px;
+            width: 100%;
         }
 
         img {
@@ -159,6 +139,45 @@
            padding: 0px;
            height: fit-content;
            margin-left: 10px;
+        }
+
+        button#status-ativo {
+            align-self: flex-start;
+            padding: 10px;
+            margin-left: auto;
+            border: none;
+            border-radius: 5px;
+            background-color: green;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button#status-inativo {
+            display: none;
+            align-self: flex-start;
+            padding: 10px;
+            margin-left: auto;
+            border: none;
+            border-radius: 5px;
+            background-color: red;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        header{
+            display: flex;
+            width: 100%;
+            background-color: var(--primary-color);
+            padding: 2px;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 10px;
+        }
+
+        header h2{
+            margin-left:40px;
+            color: white;
         }
 
         h1{
@@ -192,7 +211,7 @@
             width: 90px;
             padding: 10px;
             align-self: flex-start;
-            margin-right: auto;
+            margin-left: auto;
             border: none;
             border-radius: 5px;
             background-color: green;
@@ -201,18 +220,51 @@
             cursor: pointer;
         }
 
+        .interesse {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+
+        .interesse span {
+            margin-right: 10px;
+            color: white;
+            padding: 3px 6px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .interesse textarea {
+            text-align: left;
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            resize: vertical;
+        }
+
 
     </style>
 </head>
 <body>
     <menu>
-        <div id="lateral-estilo"></div>
+        <div class="lateral-estilo-ativo" id="lateral-ativo"></div>
+        <div class="lateral-estilo-inativo" id="lateral-inativo"></div>
         <div id="conteudo">
             <button id="btn-fechar">fechar</button>
-            <h1>Cadastro de Usuário<hr class="separador"></h2>
-            <div id="foto-perfil"><img src="" alt="foto-usuario"><button id="atualizar-img">Atualizar imagem</button></div>
+            <h1>Cadastro de Operação Curiosidade<hr class="separador"></h2>
+            <div id="foto-perfil">
+                <img src="" alt="foto-usuario">
+                <button id="atualizar-img">Atualizar imagem</button>
+                <button id="status-ativo">Ativo</button>
+                <button id="status-inativo">Inativo</button>
+            </div>
             <form action="/submit-cadastro" method="POST">
-                <h2>Fatos e Dados</h2>
+                <header>
+                    <h2>Fatos e Dados</h2>
+                </header>
                 <div class="alinhamento">
                     <label for="nome">Nome
                         <input type="text" id="nome" name="nome" class="text-area" placeholder="Digite seu nome" required>
@@ -248,21 +300,65 @@
                         <input type="text" id="formacao" class="text-area" name="formacao" placeholder="Digite sua formação acadêmica" required>
                     </label>
                 </div>
-                <h2>Defina uma Senha</h2>
-                <div class="alinhamento">
-                    <label for="senha">Senha
-                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-                    </label>
-                    <label for="confirmar-senha">Confirmar Senha
-                        <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme sua senha" required>
-                    </label>
-                </div>
-                <div class="alinhamento">
-                    <div class="checkbox-container">
-                        <input type="checkbox" name="admin" id="admin">
-                        <label for="admin">Administrador</label>
-                    </div>
-                </div>
+                    <header>
+                        <h2>Interesses</h2>
+                    </header>
+                            <div class="interesse">
+                                <span>1</span>
+                                <textarea></textarea>
+                            </div>
+                            <div class="interesse">
+                                <span>2</span>
+                                <textarea></textarea>
+                            </div>
+                            <div class="interesse">
+                                <span>3</span>
+                                <textarea></textarea>
+                            </div>
+                            <div class="interesse">
+                                <span>4</span>
+                                <textarea></textarea>
+                            </div>
+        
+                    <header>
+                        <h2>Valores</h2>
+                    </header>
+                            <div class="interesse">
+                                <span>1</span>
+                                <textarea></textarea>
+                            </div>
+                            <div class="interesse">
+                                <span>2</span>
+                                <textarea></textarea>
+                            </div>
+                            <div class="interesse">
+                                <span>3</span>
+                                <textarea></textarea>
+                            </div>
+                            <div class="interesse">
+                                <span>4</span>
+                                <textarea></textarea>
+                            </div>
+                    
+                    <header>
+                        <h2>Sentimentos</h2>
+                    </header>
+                            <div class="interesse">
+                                <span>1</span>
+                                <textarea></textarea>
+                            </div>
+                            <div class="interesse">
+                                <span>2</span>
+                                <textarea></textarea>
+                            </div>
+                            <div class="interesse">
+                                <span>3</span>
+                                <textarea></textarea>
+                            </div>
+                            <div class="interesse">
+                                <span>4</span>
+                                <textarea></textarea>
+                            </div> 
                 <hr class="separador">
             </form>
             <button id="btn-salvar">Salvar</button>
@@ -270,17 +366,28 @@
         <script src="../modal.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                let btnOpcoes = document.querySelectorAll('.btn-opcoes');
-                btnOpcoes.forEach(function(button) {
-                    button.addEventListener('click', function() {
-                        let modalOpcoes = this.nextElementSibling;
-                        modalOpcoes.classList.toggle('show');
-                    });
-                });
                     document.getElementById('btn-fechar').addEventListener('click', function() {
                     window.parent.postMessage({ action: 'fechar' }, '*');
                 });
                 
+                const btnAtivo = document.getElementById('status-ativo');
+                const btnInativo = document.getElementById('status-inativo');
+                const lateralAtivo = document.getElementById('lateral-ativo');
+                const lateralInativo = document.getElementById('lateral-inativo');
+
+                btnAtivo.addEventListener('click', function() {
+                    btnAtivo.style.display = 'none';
+                    btnInativo.style.display = 'block';
+                    lateralAtivo.style.display = 'none';
+                    lateralInativo.style.display = 'flex';
+                });
+
+                btnInativo.addEventListener('click', function() {
+                    btnInativo.style.display = 'none';
+                    btnAtivo.style.display = 'block';
+                    lateralInativo.style.display = 'none';
+                    lateralAtivo.style.display = 'flex';
+                });
             });
         </script>
     </menu>

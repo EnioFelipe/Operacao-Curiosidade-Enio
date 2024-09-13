@@ -209,7 +209,7 @@
         <div id="lateral-estilo"></div>
         <div id="conteudo">
             <button id="btn-fechar">fechar</button>
-            <h1>Cadastro de Usuário<hr class="separador"></h2>
+            <h1>Editar Cadastro de Usuário<hr class="separador"></h2>
             <div id="foto-perfil"><img src="" alt="foto-usuario"><button id="atualizar-img">Atualizar imagem</button></div>
             <form action="/submit-cadastro" method="POST">
                 <h2>Fatos e Dados</h2>
@@ -270,13 +270,6 @@
         <script src="../modal.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                let btnOpcoes = document.querySelectorAll('.btn-opcoes');
-                btnOpcoes.forEach(function(button) {
-                    button.addEventListener('click', function() {
-                        let modalOpcoes = this.nextElementSibling;
-                        modalOpcoes.classList.toggle('show');
-                    });
-                });
                     document.getElementById('btn-fechar').addEventListener('click', function() {
                     window.parent.postMessage({ action: 'fechar' }, '*');
                 });

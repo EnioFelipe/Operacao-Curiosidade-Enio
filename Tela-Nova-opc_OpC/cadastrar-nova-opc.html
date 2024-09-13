@@ -58,9 +58,9 @@
         .alinhamento {
             display: flex;
             flex-wrap: wrap;
+            align-items: center;
             gap: 20px;
-            margin: auto;
-            margin: 30px 0px;
+            margin: 40px;
         }
 
         .alinhamento label {
@@ -69,7 +69,7 @@
             text-align: left;
             font-size: 1em;
             color: #333;
-            max-width: 300px;
+            max-width: 400px;
         }
 
         .alinhamento input,
@@ -80,7 +80,7 @@
             font-size: 1em;
             margin-top: 5px;
             text-align: left;
-            width: 300px;
+            width: 330px;
         }
 
         .alinhamento input[type="date"] {
@@ -88,7 +88,7 @@
         }
 
         .alinhamento input[type="text"].text-area {
-            width: 300px;
+            width: 330px;
         }
 
         .alinhamento select {
@@ -100,15 +100,15 @@
         }
 
         label#estado-civil {
-            width: 150px;
+            width: 160px;
         }
 
         #foto-perfil {
             display: flex;
             flex-direction:row;
             align-self: self-start;
+            margin-left: 40px;
             margin-bottom: 30px;
-            width: 100%;
         }
 
         img {
@@ -138,7 +138,7 @@
         header.topicos{
             display: flex;
             width: 100%;
-            background-image: linear-gradient(to right, #6c2eae, #7f225f); );
+            background-image: linear-gradient(to right, #6c2eae, #7f225f);
             padding: 2px;
             border-radius: 10px 10px 0 0;
             margin-bottom: 10px;
@@ -214,7 +214,7 @@
                 <h1>Cadastro de Operação Curiosidade</h2>
             </header>
             <div id="foto-perfil">
-                <img src="" alt="foto-usuario">
+                <img src="../Fotos-usuarios/user05.jpg" alt="foto-usuario">
                 <button id="atualizar-img">Atualizar imagem</button>
             </div>
             <form action="/submit-cadastro" method="POST">
@@ -248,7 +248,7 @@
                     </label>
                     <label for="complemento">Complemento
                         <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
-                    </label>
+                    </label> 
                     <label for="ocupacao">Ocupação/Profissão
                         <input type="text" id="ocupacao" class="text-area" name="ocupacao" placeholder="Digite sua ocupação/profissão" required>
                     </label>

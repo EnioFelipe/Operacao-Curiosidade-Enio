@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (btnEditarUsuario) {
-        btnEditarUsuario.addEventListener('click', function() {
-            modalOpacidade.classList.toggle('show');
-            modalEditarUsuario.classList.toggle('show');
-        });
-    }
+    // if (btnEditarUsuario) {
+    //     btnEditarUsuario.addEventListener('click', function() {
+    //         modalOpacidade.classList.toggle('show');
+    //         modalEditarUsuario.classList.toggle('show');
+    //     });
+    // }
 
     if (modalOpacidade) {
         modalOpacidade.addEventListener('click', function() {
@@ -86,7 +86,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (modalShare) {
                 modalShare.classList.remove('show');
             }
+        } else if (event.data.action === 'abrirModalEditarUsuario') {
+            if (modalOpacidade) {
+                modalOpacidade.classList.toggle('show');
+            }
+            if (modalEditarUsuario) {
+                modalEditarUsuario.classList.toggle('show');
+            }
         }
     });
-
 });

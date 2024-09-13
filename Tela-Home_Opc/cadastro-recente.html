@@ -49,9 +49,9 @@
                         <div id="modal-excluir">
                             <iframe id="iframe-excluir" src="../Tela-complementos_OpC/remover-usuario.html" frameborder="0"></iframe>
                         </div>
-                        <div id="modal-editar-usuario">
+                        <!-- <div id="modal-editar-usuario">
                             <iframe id="iframe-editar-usuario" src="../Tela-complementos_OpC/editar-cadastro-usuario.html" frameborder="0"></iframe>
-                        </div>
+                        </div> -->
                     </div>  
             <button id="btn-share"><img id="compartilhar" class="icon" src="../icons/share.svg" alt="compartilhar"></button>
             <button id="btn-excluir"><img id="excluir" class="icon" src="../icons/delete.svg" alt="excluir"></button>
@@ -138,5 +138,16 @@
         </div>
     </div>
     <script src="../modal.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnEditarUsuario = document.querySelectorAll('#btn-editar-usuario');
+
+            btnEditarUsuario.forEach(button => {
+                button.addEventListener('click', function() {
+                    window.parent.postMessage({ action: 'abrirModalEditarUsuario' }, '*');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

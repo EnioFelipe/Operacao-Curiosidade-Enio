@@ -47,7 +47,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 75%;
-    height: 75%;
+    height: 500px;
 }
 
 #modal-excluir{

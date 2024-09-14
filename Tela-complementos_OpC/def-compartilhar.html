@@ -8,15 +8,15 @@
 
     <style>
 
-        html{
-            border-radius: 25px;
-        }
-
-        body {
+html, body {
             width: 100%;
-            height: 100%;
+            height: auto;
+            max-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Remove a rolagem */
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             border-radius: 25px;
@@ -68,9 +68,11 @@
 
         p{
             text-align: justify;
-            text-indent: 30px;
-            padding: 10px;
             color: black;
+            font-weight: 400;
+            padding: 10px;
+            text-indent: 30px;
+            font-size: 18px;
         }
 
         .barra-pesquisa {
@@ -190,7 +192,7 @@
             <h2>Definição de compartilhamento  <button id="btn-fechar"><img src="../icons/fechar.svg" alt=""></button></h2>
             <hr class="separador">
             <p>
-                Insira o nome deo usuário que deseja incluir em sua lista de compartilhamento e pressione a tecla <strong>Enter</strong>
+                Insira o nome de usuário que deseja incluir em sua lista de compartilhamento e pressione a tecla <strong>Enter</strong>
             </p>
             <div class="barra-pesquisa">
                 <img src="../icons/pesquisar.svg" alt=""><input type="search" placeholder="Pesquise aqui" class="entrada-pesquisa"></img>
@@ -202,7 +204,7 @@
             <div id="compartilhamento">
                 <div id="pessoas">
                         <section>
-                            <img id="foto-pessoa" src="../Fotos-usuarios/user04.jpg" alt=""> Carlos Mendes Costa
+                            <img id="foto-pessoa" src="../Fotos-usuarios/user04.jpg" alt=""> Carlos Alberto
                             <div class="caixa-opcoes">
                                 <button class="btn-opcoes">
                                     Editar <img class="icon-expandir" src="seta-expandir02.svg" alt="">
@@ -214,7 +216,7 @@
                             </div>
                         </section>
                         <section>
-                            <img id="foto-pessoa" src="../Fotos-usuarios/user06.jpg" alt=""> Carlos Mendes Costa
+                            <img id="foto-pessoa" src="../Fotos-usuarios/user06.jpg" alt=""> Patrícia Souza
                             <div class="caixa-opcoes">
                                 <button class="btn-opcoes">
                                     Editar <img class="icon-expandir" src="seta-expandir02.svg" alt="">
@@ -226,7 +228,7 @@
                             </div>
                         </section>
                         <section>
-                            <img id="foto-pessoa" src="../Fotos-usuarios/user01.jpg" alt=""> Carlos Mendes Costa
+                            <img id="foto-pessoa" src="../Fotos-usuarios/user01.jpg" alt=""> Edson Arantes
                             <div class="caixa-opcoes">
                                 <button class="btn-opcoes">
                                     Editar <img class="icon-expandir" src="seta-expandir02.svg" alt="">

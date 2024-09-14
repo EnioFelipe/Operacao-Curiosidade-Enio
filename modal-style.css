@@ -47,7 +47,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 75%;
-    height: 500px;
+    height: 100%;
 }
 
 #modal-excluir{
@@ -75,7 +75,7 @@
 
 #btn-notificacoes{
     align-self: center;
-    background-color: white;
+    background-color: transparent;
     border: none;
     border-radius: 50%;
     z-index: 1001; /* Garante que o botão fique acima do modal */
@@ -94,6 +94,7 @@
 
 #btn-share, #btn-excluir, #btn-editar-usuario{
     align-self: center;
+    background-color: transparent;
     border: none;
     border-radius: 50%;
     cursor: pointer;

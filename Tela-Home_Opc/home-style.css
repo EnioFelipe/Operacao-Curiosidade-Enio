@@ -290,6 +290,16 @@ iframe#tela{
     height: 100%;
 }
 
+#iframe-editar-usuario{
+    display: flex;
+    top: 50%;
+    left: 50%;
+    flex: auto;
+    width: 80vw;
+    height: 100vh;
+    margin: auto;
+}
+
 .perfil {
     display: flex;
     flex-direction: column;

@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let modalPerfil = document.getElementById('modal-perfil');
     let btnExcluir = document.getElementById('btn-excluir');
     let modalExcluir = document.getElementById('modal-excluir');
-    let btnEditarUsuario = document.getElementById('btn-editar-usuario');
-    let modalEditarUsuario = document.getElementById('modal-editar-usuario');
+    let btnEditaropc = document.getElementById('btn-editar-opc');
+    let modalEditaropc = document.getElementById('modal-editar-opc');
 
     if (btnPerfil) {
         btnPerfil.addEventListener('click', function() {
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (btnNotificacoes) {
         btnNotificacoes.addEventListener('click', function() {
-            modalOpacidade.classList.toggle('show');
             modalNotificacoes.classList.toggle('show');
         });
     }
@@ -42,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // if (btnEditarUsuario) {
-    //     btnEditarUsuario.addEventListener('click', function() {
+    // if (btnEditaropc) {
+    //     btnEditaropc.addEventListener('click', function() {
     //         modalOpacidade.classList.toggle('show');
-    //         modalEditarUsuario.classList.toggle('show');
+    //         modalEditaropc.classList.toggle('show');
     //     });
     // }
 
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (modalShare) modalShare.classList.remove('show');
             if (modalPerfil) modalPerfil.classList.remove('show');
             if (modalExcluir) modalExcluir.classList.remove('show');
-            if (modalEditarUsuario) modalEditarUsuario.classList.remove('show');
+            if (modalEditaropc) modalEditaropc.classList.remove('show');
         });
     }
 
@@ -86,12 +85,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (modalShare) {
                 modalShare.classList.remove('show');
             }
-        } else if (event.data.action === 'abrirModalEditarUsuario') {
+        } else if (event.data.action === 'abrirModalEditaropc') {
             if (modalOpacidade) {
                 modalOpacidade.classList.toggle('show');
             }
-            if (modalEditarUsuario) {
-                modalEditarUsuario.classList.toggle('show');
+            if (modalEditaropc) {
+                modalEditaropc.classList.toggle('show');
             }
         }
     });

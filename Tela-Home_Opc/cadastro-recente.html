@@ -55,7 +55,7 @@
                     </div>  
             <button id="btn-share"><img id="compartilhar" class="icon" src="../icons/share.svg" alt="compartilhar"></button>
             <button id="btn-excluir"><img id="excluir" class="icon" src="../icons/delete.svg" alt="excluir"></button>
-            <button id="btn-editar-usuario"><img id="editar" class="icon" src="../icons/editar.svg"  alt=""></button>
+            <button id="btn-editar-opc"><img id="editar" class="icon" src="../icons/editar.svg"  alt=""></button>
         </div>
         </div>
     </div>
@@ -140,11 +140,11 @@
     <script src="../modal.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const btnEditarUsuario = document.querySelectorAll('#btn-editar-usuario');
+            const btnEditaropc = document.querySelectorAll('#btn-editar-opc');
 
-            btnEditarUsuario.forEach(button => {
+            btnEditaropc.forEach(button => {
                 button.addEventListener('click', function() {
-                    window.parent.postMessage({ action: 'abrirModalEditarUsuario' }, '*');
+                    window.parent.postMessage({ action: 'abrirModalEditaropc' }, '*');
                 });
             });
         });

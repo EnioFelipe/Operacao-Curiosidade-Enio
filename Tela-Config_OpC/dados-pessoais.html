@@ -17,17 +17,14 @@
         header{
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: left;
             width: 100%;
-            background-color: var(--primary-color);
+            background-image: linear-gradient(to right, #6c2eae, #7f225f);
             padding: 10px 20px;
             border-radius: 10px 10px 0 0;
             margin-bottom: 10px;
         }
 
-        header h2{
-            color: white;
-        }
 
         .form-container {
             background-color: white;
@@ -76,6 +73,23 @@
             width: 500px;
         }
 
+        h2{
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            color: white;
+            margin-left:10px ;
+        }
+
+        .icons{
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            background-color: white;
+            border-radius: 8px;
+        }
+
         .form-container button {
             width: 50%;
             padding: 10px;
@@ -87,27 +101,22 @@
             cursor: pointer;
         }
 
-        .interesse {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
-        }
-
-        .interesse span {
-            font-size: 1.2em;
-            margin-right: 10px;
+        .form-container p {
+            text-align: left;
+            margin-left: 30px;
+            font-size: 14px;
             color: #555;
         }
 
-        .interesse textarea {
-            text-align: left;
-            flex-grow: 1;
+        .form-container textarea {
+            width: 680px;
+            height: 100px;
             padding: 10px;
+            margin: 10px 0px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1em;
+            border-radius: 5px;
             resize: vertical;
+            font-size: 14px;
         }
 
     </style>
@@ -157,64 +166,22 @@
             </div>
 
             <header>
-                <h2>Interesses</h2>
+                <h2>Interesses <img class="icons" src="../icons/interesses.svg" alt=""></h2>
             </header>
-                    <div class="interesse">
-                        <span>1</span>
-                        <textarea></textarea>
-                    </div>
-                    <div class="interesse">
-                        <span>2</span>
-                        <textarea></textarea>
-                    </div>
-                    <div class="interesse">
-                        <span>3</span>
-                        <textarea></textarea>
-                    </div>
-                    <div class="interesse">
-                        <span>4</span>
-                        <textarea></textarea>
-                    </div>
-
+            <p>Digite aqui seus <strong>interesses</strong>, separados por enter:</p>
+            <textarea></textarea>
+    
             <header>
-                <h2>Valores</h2>
+                <h2>Valores <img class="icons" src="../icons/valores.svg" alt=""></h2>
             </header>
-                    <div class="interesse">
-                        <span>1</span>
-                        <textarea></textarea>
-                    </div>
-                    <div class="interesse">
-                        <span>2</span>
-                        <textarea></textarea>
-                    </div>
-                    <div class="interesse">
-                        <span>3</span>
-                        <textarea></textarea>
-                    </div>
-                    <div class="interesse">
-                        <span>4</span>
-                        <textarea></textarea>
-                    </div>
-            
+            <p>Digite aqui seus <strong>valores</strong>, separados por enter:</p>
+            <textarea></textarea>
+    
             <header>
-                <h2>Sentimentos</h2>
+                <h2>Sentimentos <img class="icons" src="../icons/sentimentos.svg" alt=""></h2>
             </header>
-                    <div class="interesse">
-                        <span>1</span>
-                        <textarea></textarea>
-                    </div>
-                    <div class="interesse">
-                        <span>2</span>
-                        <textarea></textarea>
-                    </div>
-                    <div class="interesse">
-                        <span>3</span>
-                        <textarea></textarea>
-                    </div>
-                    <div class="interesse">
-                        <span>4</span>
-                        <textarea></textarea>
-                    </div> 
+            <p>Digite aqui seus <strong>sentimentos</strong>, separados por enter:</p>
+            <textarea></textarea>
                 
             <button type="submit">Salvar</button>
         </form>

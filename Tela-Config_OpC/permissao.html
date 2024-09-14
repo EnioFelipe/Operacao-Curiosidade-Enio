@@ -22,8 +22,7 @@
             border: 1px solid rgba(0, 0, 0, 0.181);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 90%;
-            height: 90dvh;
-            height: auto;
+            max-width: 500px;
         }
 
         .form-container h2 {
@@ -33,9 +32,9 @@
 
         .separador {
             border: none;
-            width: 100%; /* Largura da linha de separação */
-            border-top: 1px solid #ccc; /* Cor da linha de separação */
-            margin: 10px 0; /* Espaçamento vertical */
+            width: 100%;
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
         }
 
         .form-container button {
@@ -53,6 +52,16 @@
         .form-container button:hover {
             background-color: #8923d1;
         }
+
+        .permissao-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .permissao-item input {
+            margin-right: 10px;
+        }
     </style>
 
 </head>
@@ -60,11 +69,37 @@
     <div class="form-container">
         <h2>Permissões <hr class="separador"></h2>
         <form action="/submit-permissao" method="POST">
-                <div id="permissao">
+            <div id="permissao">
+                <div class="permissao-item">
                     <label for="adm">
-                       <input type="checkbox" name="adm" id="adm">
-                       Administrador 
+                        <input type="checkbox" name="adm" id="adm" checked>
+                        Administrador 
                     </label>
+                </div>
+                <div class="permissao-item">
+                    <label for="alterar-status">
+                        <input type="checkbox" name="alterar-status" id="alterar-status" checked>
+                        Alterar Status
+                    </label>
+                </div>
+                <div class="permissao-item">
+                    <label for="excluir">
+                        <input type="checkbox" name="excluir" id="excluir"checked>
+                        Excluir
+                    </label>
+                </div>
+                <div class="permissao-item">
+                    <label for="adicionar-relatorio">
+                        <input type="checkbox" name="adicionar-relatorio" id="adicionar-relatorio"checked>
+                        Adicionar Relatório
+                    </label>
+                </div>
+                <div class="permissao-item">
+                    <label for="criar-operacao">
+                        <input type="checkbox" name="criar-operacao" id="criar-operacao"checked>
+                        Criar Operação
+                    </label>
+                </div>
             </div>
             <button type="submit">Alterar Permissões</button>
         </form>

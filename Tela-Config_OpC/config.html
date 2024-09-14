@@ -22,7 +22,7 @@
             <li><a href="../Tela-Meus_Cadastros-OpC/meus-cadastros.html"><img src="../icons/meus-cadastros.svg" class="icons" alt="meus cadastros"> Meus Cadastros</a></li>
             <li><a href="../Tela-Relatorio_OpC/relatorio.html"><img src="../icons/relatorios.svg" class="icons" alt="relatorios">Relatórios</a></li>
             <li><hr class="separador"></li>
-            <li><a href="config.html" target="_self"><img src="../icons/configuracoes-branco.svg" class="icons" alt="relatorios">Configurações</a></li>
+            <li><a class="active" href="config.html" target="_self"><img src="../icons/configuracoes-branco.svg" class="icons" alt="relatorios">Configurações</a></li>
         </ul>
         <div class="creditos">
             <a id="feito-por" href="#">Powered by</a>
@@ -62,9 +62,9 @@
                 </div>
         </header>
         <nav id="nav-cadastro">
-            <a href="Meu-perfil.html" target="tela"><img src="../icons/relogio.svg" alt="relogio">Meu perfil</a>
-            <a href="gerenciar-usuario.html" target="tela"><img  src="../icons/diversidade.svg" alt="pessoas">Gerenciar Usuários</a>
-            <a href="trilha-auditoria.html" target="tela"><img  src="../icons/diversidade.svg" alt="pessoas">Trilhas de Auditoria</a>
+            <a id="meu-perfil" class="active" href="Meu-perfil.html" target="tela"><img  src="../icons/usuario.svg" alt="relogio">Meu perfil</a>
+            <a id="gerenciar-usuario" href="gerenciar-usuario.html" target="tela"><img  src="../icons/gerenciar-user.svg" alt="pessoas">Gerenciar Usuários</a>
+            <a id="trilha-auditoria" href="trilha-auditoria.html" target="tela"><img  src="../icons/trilha-auditoria.svg" alt="pessoas">Trilhas de Auditoria</a>
     </nav>
         <main>
             <div id="exbir-configs">
@@ -73,6 +73,45 @@
         </main>
     </div>
     <script src="../modal.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('#nav-cadastro a');
+            const iframe = document.querySelector('iframe[name="tela"]');
+    
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Previne o comportamento padrão do link
+    
+                    // Remove a classe 'active' de todos os links
+                    navLinks.forEach(link => link.classList.remove('active'));
+    
+                    // Adiciona a classe 'active' ao link clicado
+                    this.classList.add('active');
+    
+                    // Atualiza o src do iframe para carregar o conteúdo correspondente
+                    iframe.src = this.getAttribute('href');
+                });
+            });
+    
+            // Verifica a URL do iframe ao carregar a página e define o link ativo
+            const setActiveLink = () => {
+                const currentSrc = iframe.src.split('/').pop();
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentSrc) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            };
+    
+            // Chama a função ao carregar a página
+            setActiveLink();
+    
+            // Adiciona um evento de carregamento ao iframe para atualizar o link ativo
+            iframe.addEventListener('load', setActiveLink);
+        });
+    </script>
 </body>
 </html>
 

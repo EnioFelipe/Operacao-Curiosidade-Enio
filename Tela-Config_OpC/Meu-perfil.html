@@ -33,6 +33,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        h2{
+            color: black;
+        }
+
         #lateral-estilo{
             width: 10%;
             height: 100%;
@@ -63,6 +67,8 @@
         }
 
         menu a {
+            display: flex;
+            align-items: center;
             width: 90%;
             text-align: left;
             text-decoration: none; /* Remove o sublinhado */
@@ -72,7 +78,17 @@
             transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
         }
 
+        menu a img{
+            width: 20px;
+            height: 20px;
+            margin: 0px 5px;
+        }
+
         menu a:hover {
+            background-color: #8923d13c; /* Cor de fundo mais clara */
+        }
+
+        a.active {
             background-color: #8923d13c; /* Cor de fundo mais clara */
         }
 
@@ -113,16 +129,54 @@
             <h2>Enio Felipe</h2>
             <img src="../Arquivos SVG/minha_foto.jpg" alt="">
             <hr class="separador">
-            <a href="dados-pessoais.html" target="tela-dados">Fatos e Dados</a>
+            <a class="active" href="dados-pessoais.html" target="tela-dados"> <img src="../icons/fatos e dados.svg" alt="">Fatos e Dados</a>
             <hr class="separador">
-            <a href="segurança.html" target="tela-dados">Segurança</a>
+            <a class="active" href="seguranca.html" target="tela-dados"> <img src="../icons/segurança.svg" alt="">Segurança</a>
             <hr class="separador">
-            <a href="permissao.html" target="tela-dados">Permissões</a>
+            <a href="permissao.html" target="tela-dados"><img src="../icons/permissao.svg" alt=""> Permissões</a>
             <hr class="separador">
-            <a href="editar-foto.html" target="tela-dados">Editar foto</a>
-            <hr class="separador">
+            <a href="editar-foto.html" target="tela-dados"><img src="../icons/editar.svg" alt="">Editar foto</a>
         </div>
     </menu>
     <iframe id="tela-dados" name="tela-dados" src="dados-pessoais.html" frameborder="0"></iframe>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('menu a');
+            const iframe = document.querySelector('iframe[name="tela-dados"]');
+    
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Previne o comportamento padrão do link
+    
+                    // Remove a classe 'active' de todos os links
+                    navLinks.forEach(link => link.classList.remove('active'));
+    
+                    // Adiciona a classe 'active' ao link clicado
+                    this.classList.add('active');
+    
+                    // Atualiza o src do iframe para carregar o conteúdo correspondente
+                    iframe.src = this.getAttribute('href');
+                });
+            });
+    
+            // Verifica a URL do iframe ao carregar a página e define o link ativo
+            const setActiveLink = () => {
+                const currentSrc = iframe.src.split('/').pop();
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentSrc) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            };
+    
+            // Chama a função ao carregar a página
+            setActiveLink();
+    
+            // Adiciona um evento de carregamento ao iframe para atualizar o link ativo
+            iframe.addEventListener('load', setActiveLink);
+        });
+    </script>
 </body>
 </html>

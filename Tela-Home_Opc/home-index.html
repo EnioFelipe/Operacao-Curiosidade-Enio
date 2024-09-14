@@ -15,7 +15,7 @@
             <img src="../Arquivos SVG/Onion_slices.svg" alt=""><p>peração Curiosidade</p>
         </div>
         <ul>
-            <li><a href="home-index.html"><img src="../icons/dashboard.svg" class="icons" alt="visao geral">Visão Geral</a></li>
+            <li><a class="active" href="home-index.html"><img src="../icons/dashboard.svg" class="icons" alt="visao geral">Visão Geral</a></li>
             <li><hr class="separador"></li>
             <li><a href="../Tela-Nova-opc_OpC/Nova-opc.html"><img src="../icons/add.svg" class="icons" alt="cadastrar curiosidade">Nova Operação</a></li>
             <li><hr class="separador"></li>
@@ -68,10 +68,10 @@
             </div>
         </header>
         <nav id="nav-cadastro">
-            <a class="active" href="cadastro-recente.html" target="tela"><img src="../icons/relogio.svg" alt="relogio"> Últimos cadastros</a>
-            <a href="por_mim-compartilhados.html" target="tela"><img src="../icons/diversidade.svg" alt="pessoas">Compartilhados por mim</a>
-            <a href="compartilhados-cmg.html" target="tela"><img  src="../icons/diversidade.svg" alt="pessoas">Compartilhados comigo</a>
-    </nav>
+            <a id="link-cadastro-recente" class="active" href="cadastro-recente.html" target="tela"><img src="../icons/relogio.svg" alt="relogio"> Últimos cadastros</a>
+            <a id="link-por-mim-compartilhados" href="por_mim-compartilhados.html" target="tela"><img src="../icons/diversidade.svg" alt="pessoas">Compartilhados por mim</a>
+            <a id="link-compartilhados-cmg" href="compartilhados-cmg.html" target="tela"><img src="../icons/diversidade.svg" alt="pessoas">Compartilhados comigo</a>
+        </nav>
         <main>
             <div id="cadastro">
                 <iframe name="tela" id="tela" src="cadastro-recente.html" frameborder="0"></iframe>
@@ -94,5 +94,44 @@
         </main>
     </div>
     <script src="../modal.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('#nav-cadastro a');
+            const iframe = document.querySelector('iframe[name="tela"]');
+    
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Previne o comportamento padrão do link
+    
+                    // Remove a classe 'active' de todos os links
+                    navLinks.forEach(link => link.classList.remove('active'));
+    
+                    // Adiciona a classe 'active' ao link clicado
+                    this.classList.add('active');
+    
+                    // Atualiza o src do iframe para carregar o conteúdo correspondente
+                    iframe.src = this.getAttribute('href');
+                });
+            });
+    
+            // Verifica a URL do iframe ao carregar a página e define o link ativo
+            const setActiveLink = () => {
+                const currentSrc = iframe.src.split('/').pop();
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentSrc) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            };
+    
+            // Chama a função ao carregar a página
+            setActiveLink();
+    
+            // Adiciona um evento de carregamento ao iframe para atualizar o link ativo
+            iframe.addEventListener('load', setActiveLink);
+        });
+    </script>
 </body>
 </html>

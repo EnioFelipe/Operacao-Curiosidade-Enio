@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="config-style.css">
     <title>Gerenciar Usuários</title>
     <style>
-        body{
+        body {
             width: 100%;
             height: 100%;
+            overflow-y: hidden;
         }
 
         #tabela-auditoria {
@@ -39,15 +40,17 @@
             padding: 12px;
         }
 
-        .corpo-auditoria{
+        .corpo-auditoria {
             display: flex;
             flex-direction: column;
             border: none;
         }
 
-        .index-corpo {
-            display: flex;
-            flex-direction: row;
+        .index-corpo, .dados {
+            display: grid;
+            grid-template-columns: 150px 150px 200px 150px 70px auto;
+            gap: 80px;
+            align-items: center;
             width: 100%;
             padding: 6px 12px;
             margin-bottom: 10px;
@@ -56,27 +59,25 @@
             border: 1px solid black;
         }
 
-        .index-corpo p {
-            width: 175px;
-            margin-right: 35px;
-            text-align: start;
+        input[type="checkbox"] {
+           margin-right: 10px;
         }
 
-        .dados {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            padding: 15px 12px;
-            margin-bottom: 5px;
-            background-color: #f7f7f7;
-            border-radius: 6px;
-            border: 1px solid black;
+        .index-corpo p, .dados p {
+            text-align: left;
         }
 
         .dados p {
-            width: 175px;
-            margin-right: 35px;
-            text-align: start;
+            color: black;
+        }
+
+        .dados .status-ativo, .dados .status-inativo {
+            text-align: center;
+        }
+
+        .dados{
+            background-color: #f7f7f7;
+            margin-bottom: 5px;
         }
 
         .label-input {
@@ -92,13 +93,45 @@
         }
 
         .form-actions {
-            margin: auto auto 0 auto;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-top: auto;
         }
 
-        .btn-auditoria{
-            width: 90px;
-            height: 23px;
-            margin-left: 5px;
+        .status-ativo{
+            text-align: center;
+            border: 1px solid green;
+            color: green;
+            background-color: rgba(34, 139, 34, 0.144);
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        .status-inativo{
+            text-align: center;
+            border: 1px solid red;
+            color: red;
+            background-color: rgba(255, 0, 0, 0.158);
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        .btn-auditoria {
+            width: 100px;
+            height: 30px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #8923d13c;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #criar-user {
+            background-color: #4CAF50;
+            color: black;
         }
 
         .rodape-auditoria {
@@ -119,7 +152,6 @@
             height: 20px;
             margin-right: 10px;
             margin-left: 10px;
-
         }
 
         .pagination-info, .pagination-controls {
@@ -141,8 +173,10 @@
             background-color: #ddd;
         }
 
-        .dados p{
-            color: black;
+        .label-input select, .label-input input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
 
@@ -153,11 +187,19 @@
         <div class="cabeça-auditoria">
             <div class="label-input">
                 <label for="tipo-item">Status</label>
-                <input type="search" name="tipo-item" id="tipo-item" placeholder="Pesquisar Status">
+                <select name="tipo-item" id="tipo-item">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="ativo">Ativo</option>
+                    <option value="inativo">Inativo</option>
+                </select>
             </div>
             <div class="label-input">
                 <label for="tipo-local">Tipo</label>
-                <input type="search" name="tipo-local" id="tipo-local" placeholder="Pesquisar tipo">
+                <select name="tipo-local" id="tipo-local">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="administrador">Administrador</option>
+                    <option value="operador">Operador</option>
+                </select>
             </div>
             <div class="label-input">
                 <label for="tipo-usuario">Nome ou Código</label>
@@ -170,7 +212,7 @@
             <div class="form-actions">
                 <input class="btn-auditoria" type="reset" value="Limpar">
                 <input class="btn-auditoria" type="submit" value="Filtrar">
-                <input class="btn-auditoria" type="submit" value="Criar Usuário">
+                <input id="criar-user" class="btn-auditoria" type="submit" value="Criar Usuário">
             </div>
         </div>
         <div class="index-corpo">
@@ -182,68 +224,66 @@
         </div>
         <div class="corpo-auditoria">
             <div class="dados">
-                <p><input type="checkbox">2453479</p>
+                <p><input type="checkbox">24-001</p>
                 <p>Edson Arantes</p>
                 <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2023</p>
-                <p>ativo</p>
+                <p>30/10/2024</p>
+                <p class="status-ativo">Ativo</p>
                 <a href="#">detalhes</a>
             </div>
             <div class="dados">
-                <p><input type="checkbox">2453479</p>
-                <p>Edson Arantes</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2023</p>
-                <p>ativo</p>
+                <p><input type="checkbox">24-041</p>
+                <p>Maria Silva</p>
+                <p>maria.silva@fakemail.br</p>
+                <p>01/11/2024</p>
+                <p class="status-inativo">Inativo</p>
                 <a href="#">detalhes</a>
             </div>
             <div class="dados">
-                <p><input type="checkbox">2453479</p>
-                <p>Edson Arantes</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2023</p>
-                <p>ativo</p>
+                <p><input type="checkbox">24-052</p>
+                <p>João Souza</p>
+                <p>joao.souza@fakemail.br</p>
+                <p>02/11/2024</p>
+                <p class="status-ativo">Ativo</p>
                 <a href="#">detalhes</a>
             </div>
             <div class="dados">
-                <p><input type="checkbox">2453479</p>
-                <p>Edson Arantes</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2023</p>
-                <p>ativo</p>
+                <p><input type="checkbox">24-055</p>
+                <p>Ana Pereira</p>
+                <p>ana.pereira@fakemail.br</p>
+                <p>03/11/2024</p>
+                <p class="status-ativo">Ativo</p>
                 <a href="#">detalhes</a>
             </div>
             <div class="dados">
-                <p><input type="checkbox">2453479</p>
-                <p>Edson Arantes</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2023</p>
-                <p>ativo</p>
+                <p><input type="checkbox">24-098</p>
+                <p>Carlos Lima</p>
+                <p>carlos.lima@fakemail.br</p>
+                <p>04/11/2024</p>
+                <p class="status-inativo">Inativo</p>
                 <a href="#">detalhes</a>
             </div>
             <div class="dados">
-                <p><input type="checkbox">2453479</p>
-                <p>Edson Arantes</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2023</p>
-                <p>ativo</p>
+                <p><input type="checkbox">24-105</p>
+                <p>Fernanda Costa</p>
+                <p>fer.costa@fakemail.br</p>
+                <p>05/11/2024</p>
+                <p class="status-ativo">Ativo</p>
                 <a href="#">detalhes</a>
             </div>
         </div>
         <div class="rodape-auditoria">
             <div class="pagination-info">
-                <label for="itens por pg">Itens por página</label>
-                <input type="number" name="itens por pg" id="itens por pg">
+                <label for="itens-por-pg">Itens por página</label>
+                <input type="number" name="itens-por-pg" id="itens-por-pg" value="6">
             </div>
             <div class="pagination-controls">
                 <button>Página anterior</button>
-                <label for="pg atual">Página atual</label>
-                <input type="number" name="pg atual" id="pg atual">
+                <label for="pg-atual">Página atual</label>
+                <input type="number" name="pg-atual" id="pg-atual" value="1">
                 <button>Próxima página</button>
             </div>
         </div>
     </div>
-        
-    
 </body>
 </html>

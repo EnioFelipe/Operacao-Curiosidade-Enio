@@ -17,6 +17,12 @@ body {
     padding: 3px;
 }
 
+img.botao-sino{
+    align-self: flex-end;
+    margin-left: 10em;
+    padding-left: 10em;
+}
+
 menu {
     display: flex;
     flex-direction: column;

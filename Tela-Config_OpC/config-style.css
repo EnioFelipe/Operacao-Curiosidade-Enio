@@ -161,11 +161,11 @@ header {
     margin: 5px;
 }
 
-.botao-sino{
-    align-self: center;
-    margin: 5px;
+img.botao-sino{
+    align-self: flex-end;
+    margin-left: 10em;
+    padding-left: 10em;
 }
-
 .config{
     display: flex;
     flex-direction: column;

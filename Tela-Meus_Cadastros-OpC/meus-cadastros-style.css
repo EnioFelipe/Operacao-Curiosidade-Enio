@@ -97,6 +97,12 @@ menu ul li a.active {
     
 } 
 
+img.botao-sino{
+    align-self: flex-end;
+    margin-left: 10em;
+    padding-left: 10em;
+}
+
 a#feito-por{
     display: flex;
     align-items: center;

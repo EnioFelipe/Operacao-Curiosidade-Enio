@@ -100,22 +100,24 @@
             margin-top: auto;
         }
 
-        .status-ativo{
+        .status-ativo, .status-inativo {
             text-align: center;
-            border: 1px solid green;
-            color: green;
-            background-color: rgba(34, 139, 34, 0.144);
+            border: 1px solid;
             border-radius: 8px;
             padding: 5px;
+            cursor: pointer;
         }
 
-        .status-inativo{
-            text-align: center;
-            border: 1px solid red;
+        .status-ativo {
+            border-color: green;
+            color: green;
+            background-color: rgba(34, 139, 34, 0.144);
+        }
+
+        .status-inativo {
+            border-color: red;
             color: red;
             background-color: rgba(255, 0, 0, 0.158);
-            border-radius: 8px;
-            padding: 5px;
         }
 
         .btn-auditoria {
@@ -275,7 +277,7 @@
                 <p>Edson Arantes</p>
                 <p>ed.arantes@fakemail.br</p>
                 <p>30/10/2024</p>
-                <p class="status-ativo">Ativo</p>    
+                <p class="status-ativo">Ativo</p> 
                 <div class="caixa-opcoes">
                     <button class="btn-opcoes"> Detalhes <img class="icon-expandir" src="../Tela-complementos_OpC/seta-expandir02.svg" alt=""></button>
                     <div class="modal-opcoes">
@@ -374,20 +376,41 @@
             </div>
         </div>
     </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                let btnOpcoes = document.querySelectorAll('.btn-opcoes');
-                btnOpcoes.forEach(function(button) {
-                    button.addEventListener('click', function() {
-                        let modalOpcoes = this.nextElementSibling;
-                        modalOpcoes.classList.toggle('show');
-                    });
+    <script>
+        function toggleStatus(button) {
+            const currentStatus = button.classList.contains('status-ativo') ? 'Ativo' : 'Inativo';
+            const newStatus = currentStatus === 'Ativo' ? 'Inativo' : 'Ativo';
+            const confirmation = confirm(`Você realmente quer mudar o status para ${newStatus}?`);
+    
+            if (confirmation) {
+                if (currentStatus === 'Ativo') {
+                    button.classList.remove('status-ativo');
+                    button.classList.add('status-inativo');
+                    button.textContent = 'Inativo';
+                } else {
+                    button.classList.remove('status-inativo');
+                    button.classList.add('status-ativo');
+                    button.textContent = 'Ativo';
+                }
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            let btnOpcoes = document.querySelectorAll('.btn-opcoes');
+            btnOpcoes.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    let modalOpcoes = this.nextElementSibling;
+                    modalOpcoes.classList.toggle('show');
                 });
-                    document.getElementById('btn-fechar').addEventListener('click', function() {
-                    window.parent.postMessage({ action: 'fechar' }, '*');
-                });
-                
             });
-        </script>
+    
+            let statusButtons = document.querySelectorAll('.status-ativo, .status-inativo');
+            statusButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    toggleStatus(button);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

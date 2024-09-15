@@ -208,9 +208,14 @@
     <menu>
         <div id="lateral-estilo"></div>
         <div id="conteudo">
-            <button id="btn-fechar">fechar</button>
-            <h1>Editar Cadastro de Usuário<hr class="separador"></h2>
-            <div id="foto-perfil"><img src="" alt="foto-usuario"><button id="atualizar-img">Atualizar imagem</button></div>
+            <h1>Editar Operação Curiosidade<button id="btn-fechar"><img src="../icons/fechar.svg" alt=""></button></h1>
+            <hr class="separador">
+            <div id="foto-perfil">
+                <img src="../Fotos-usuarios/user01.jpg" alt="foto-usuario">
+                <button id="atualizar-img"> <img src="../icons/atualizar.svg" alt="">Atualizar imagem</button>
+                <button id="status-ativo" class="status-ativo">Ativo</button>
+                <button id="status-inativo" class="status-inativo">Inativo</button>
+            </div>
             <form action="/submit-cadastro" method="POST">
                 <h2>Fatos e Dados</h2>
                 <div class="alinhamento">

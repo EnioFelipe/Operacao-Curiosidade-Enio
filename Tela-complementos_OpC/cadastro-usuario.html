@@ -162,22 +162,47 @@
         }
 
         h1{
+            display: flex;
+            align-items: center;
             width: 100%;
             text-align: left;
-            margin: 10px 0px;
         }
 
+        h1 img{
+            width: 35px;
+            height: 35px;
+            margin-left:auto;
+        }
         h2{
             width: 100%;
             text-align: left;
             margin: 10px 0px;
         }
 
+        #atualizar-img{
+            display: flex;
+            align-items: center;
+            padding: 10px;  
+            margin-left: 10px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+            background-color: #8923d13c;
+            color: var(--primary-color);
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        #atualizar-img img{
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
         .separador {
             border: none;
             width: 100%; /* Largura da linha de separação */
             border-top: 1px solid #ccc; /* Cor da linha de separação */
-            margin: 10px 0; /* Espaçamento vertical */
+            margin: 5px 0px 20px 0px; /* Espaçamento vertical */
         }
 
         #btn-fechar{
@@ -187,6 +212,7 @@
             color: var(--primary-color);
             cursor: pointer;
         }
+
 
         #btn-salvar{
             width: 90px;
@@ -208,9 +234,12 @@
     <menu>
         <div id="lateral-estilo"></div>
         <div id="conteudo">
-            <button id="btn-fechar">fechar</button>
-            <h1>Cadastro de Usuário<hr class="separador"></h2>
-            <div id="foto-perfil"><img src="" alt="foto-usuario"><button id="atualizar-img">Atualizar imagem</button></div>
+            <h1>Cadastrar Usuário<button id="btn-fechar"><img src="../icons/fechar.svg" alt=""></button></h1>
+            <hr class="separador">
+            <div id="foto-perfil">
+                <img src="../icons/usuario.svg" alt="foto-usuario">
+                <button id="atualizar-img"> <img src="../icons/atualizar.svg" alt="">Atualizar imagem</button>
+            </div>
             <form action="/submit-cadastro" method="POST">
                 <h2>Fatos e Dados</h2>
                 <div class="alinhamento">

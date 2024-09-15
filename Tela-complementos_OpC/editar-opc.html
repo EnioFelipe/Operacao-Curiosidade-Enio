@@ -144,7 +144,7 @@
            margin-left: 10px;
         }
 
-        button#status-ativo {
+        .status-ativo {
             align-self: flex-start;
             text-align: center;
             border: 1px solid green;
@@ -158,7 +158,7 @@
             cursor: pointer;
         }
 
-        button#status-inativo {
+        .status-inativo {
             display: none;
             align-self: flex-start;
             text-align: center;
@@ -205,7 +205,7 @@
             align-items: center;
             width: 100%;
             text-align: left;
-            margin: 10px 0px;
+            margin: 10px 20px;
         }
 
         h2 img{
@@ -215,8 +215,12 @@
             background-color: white;
         }
 
+        h2 .flex-spacer {
+            flex-grow: 1;
+        }
+
         .adicionar{
-            margin-left: 100vh;
+            margin-right: 10px;
         }
 
         .separador {
@@ -305,8 +309,8 @@
             <div id="foto-perfil">
                 <img src="../Fotos-usuarios/user01.jpg" alt="foto-usuario">
                 <button id="atualizar-img"> <img src="../icons/atualizar.svg" alt="">Atualizar imagem</button>
-                <button id="status-ativo">Ativo</button>
-                <button id="status-inativo">Inativo</button>
+                <button id="status-ativo" class="status-ativo">Ativo</button>
+                <button id="status-inativo" class="status-inativo">Inativo</button>
             </div>
             <form action="/submit-cadastro" method="POST">
                 <header>
@@ -348,7 +352,7 @@
                     </label>
                 </div>
                     <header>
-                        <h2><img src="../icons/interesses.svg" alt=""> Interesses <img class="adicionar" src="../icons/add-roxo.svg" alt="">Adicionar</h2>
+                        <h2><img src="../icons/interesses.svg" alt=""> Interesses  <span class="flex-spacer"></span><img class="adicionar" src="../icons/add-roxo.svg" alt="">Adicionar</h2>
                     </header>
                             <div class="interesse">
                                 <span>1</span>
@@ -368,7 +372,7 @@
                             </div>
         
                     <header>
-                        <h2><img src="../icons/valores.svg" alt="">Valores<img class="adicionar" src="../icons/add-roxo.svg" alt="">Adicionar</h2>
+                        <h2><img src="../icons/valores.svg" alt="">Valores<span class="flex-spacer"></span><img class="adicionar" src="../icons/add-roxo.svg" alt="">Adicionar</h2>
                     </header>
                             <div class="interesse">
                                 <span>1</span>
@@ -388,7 +392,7 @@
                             </div>
                     
                     <header>
-                        <h2><img src="../icons/sentimentos.svg" alt="">Sentimentos<img class="adicionar" src="../icons/add-roxo.svg" alt="">Adicionar</h2>
+                        <h2><img src="../icons/sentimentos.svg" alt="">Sentimentos<span class="flex-spacer"></span><img class="adicionar" src="../icons/add-roxo.svg" alt="">Adicionar</h2>
                     </header>
                             <div class="interesse">
                                 <span>1</span>
@@ -412,28 +416,42 @@
         </div>
         <script src="../modal.js"></script>
         <script>
+            function toggleStatus(button, btnAtivo, btnInativo, lateralAtivo, lateralInativo) {
+                const currentStatus = button.id === 'status-ativo' ? 'Ativo' : 'Inativo';
+                const newStatus = currentStatus === 'Ativo' ? 'Inativo' : 'Ativo';
+                const confirmation = confirm(`Você realmente quer mudar o status para ${newStatus}?`);
+    
+                if (confirmation) {
+                    if (currentStatus === 'Ativo') {
+                        btnAtivo.style.display = 'none';
+                        btnInativo.style.display = 'block';
+                        lateralAtivo.style.display = 'none';
+                        lateralInativo.style.display = 'flex';
+                    } else {
+                        btnInativo.style.display = 'none';
+                        btnAtivo.style.display = 'block';
+                        lateralInativo.style.display = 'none';
+                        lateralAtivo.style.display = 'flex';
+                    }
+                }
+            }
+    
             document.addEventListener('DOMContentLoaded', function() {
-                    document.getElementById('btn-fechar').addEventListener('click', function() {
+                document.getElementById('btn-fechar').addEventListener('click', function() {
                     window.parent.postMessage({ action: 'fechar' }, '*');
                 });
-                
+    
                 const btnAtivo = document.getElementById('status-ativo');
                 const btnInativo = document.getElementById('status-inativo');
                 const lateralAtivo = document.getElementById('lateral-ativo');
                 const lateralInativo = document.getElementById('lateral-inativo');
-
+    
                 btnAtivo.addEventListener('click', function() {
-                    btnAtivo.style.display = 'none';
-                    btnInativo.style.display = 'block';
-                    lateralAtivo.style.display = 'none';
-                    lateralInativo.style.display = 'flex';
+                    toggleStatus(btnAtivo, btnAtivo, btnInativo, lateralAtivo, lateralInativo);
                 });
-
+    
                 btnInativo.addEventListener('click', function() {
-                    btnInativo.style.display = 'none';
-                    btnAtivo.style.display = 'block';
-                    lateralInativo.style.display = 'none';
-                    lateralAtivo.style.display = 'flex';
+                    toggleStatus(btnInativo, btnAtivo, btnInativo, lateralAtivo, lateralInativo);
                 });
             });
         </script>

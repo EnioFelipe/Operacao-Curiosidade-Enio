@@ -40,6 +40,15 @@ body {
     padding: 0;
 }
 
+iframe {
+    border: none; /* Remove qualquer borda padrão */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 hr{
     width: 55%;
     max-width: 200px;

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="foto">
-        <img id="cebola_1" src="../Arquivos SVG/big_onion_facts_and_data.svg" alt="">
+        <iframe src="" frameborder="0"></iframe>
         <img id="forlogic_logo" src="../Arquivos SVG/FORLOGIC_LOGO+SIMBOLO_PRETO2.svg" alt="">
     </div>
         <div id="tela">
@@ -25,9 +25,12 @@
                     <div id="camposenha">
                         <img src="../Arquivos SVG/lock_20dp_6B1BC6_FILL0_wght400_GRAD0_opsz20.svg" alt="">
                         <input type="password" name="senha" id="senha" placeholder="Insira aqui a sua senha">
+                        <button id="visibilidade" type="button" onclick="togglePassword()">
+                           <img src="../icons/visibilidade.svg" alt="">
+                        </button>
                     </div>
 
-                    <input type="button" value="ENTRAR"> <br>
+                    <a class="entrar" href="../Tela-Home_Opc/home-index.html">ENTRAR</a> <br>
                     <a class="preencher" href="#">ESQUECI MINHA SENHA</a>
                 </form>
             </div>
@@ -40,6 +43,17 @@
                     <p>Feito por <a href="#">Enio Felipe</a></p>
                 </footer>
         </div>
-    <script src="script.js"></script>
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('senha');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        }
+    </script>
 </body>
 </html>

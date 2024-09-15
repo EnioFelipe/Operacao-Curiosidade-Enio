@@ -50,7 +50,7 @@
         .index-corpo, .dados {
             display: grid;
             grid-template-columns: 150px 150px 200px 150px 120px;
-            gap: 100px;
+            gap: 70px;
             width: 100%;
             padding: 8px 12px;
             margin-bottom: 10px;
@@ -270,5 +270,19 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnImprimir = document.getElementById('imprimir');
+    
+            if (btnImprimir) {
+                btnImprimir.addEventListener('click', function(event) {
+                    event.preventDefault(); // Previne o comportamento padrão do botão de submit
+                    window.print();
+                });
+            } else {
+                console.error('O botão de imprimir não foi encontrado no DOM.');
+            }
+        });
+    </script>
 </body>
 </html>

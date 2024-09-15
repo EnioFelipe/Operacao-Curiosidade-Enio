@@ -132,7 +132,7 @@
             transition: background-color 0.3s ease;
         }
 
-        #criar-user {
+        #btn-criar-usuario {
             background-color: #4CAF50;
             color: black;
         }
@@ -229,9 +229,41 @@
             text-align: center;
         }
 
+        .modal {
+        display: none;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 95%;
+        overflow: hidden;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        position: relative; /* Necessário para posicionar o botão de fechar */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        margin: 10% auto;
+        width: 80%;
+        height: max-content;
+    }
+
+
     </style>
 </head>
 <body>
+    <div id="modal-criar-usuario" class="modal">
+        <div class="modal-content">
+            <iframe src="../Tela-complementos_OpC/cadastro-usuario.html" width="100%" height="400px"></iframe>
+        </div>
+    </div>
     <div id="tabela-auditoria">
         <div class="cabeça-auditoria">
             <div class="label-input">
@@ -261,7 +293,7 @@
             <div class="form-actions">
                 <input class="btn-auditoria" type="reset" value="Limpar">
                 <input class="btn-auditoria" type="submit" value="Filtrar">
-                <input id="criar-user" class="btn-auditoria" type="submit" value="Criar Usuário">
+                <button id="btn-criar-usuario" class="btn-auditoria">Criar Usuário</button>        
             </div>
         </div>
         <div class="index-corpo">
@@ -396,7 +428,27 @@
         }
     
         document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('modal-criar-usuario');
+            const btnCriarUsuario = document.getElementById('btn-criar-usuario');
             let btnOpcoes = document.querySelectorAll('.btn-opcoes');
+
+                    btnCriarUsuario.addEventListener('click', function() {
+                    modal.style.display = 'block';
+                });
+
+
+                window.addEventListener('click', function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+
+                window.addEventListener('message', function(event) {
+                    if (event.data.action === 'fechar') {
+                        modal.style.display = 'none';
+                    }
+                });
+
             btnOpcoes.forEach(function(button) {
                 button.addEventListener('click', function() {
                     let modalOpcoes = this.nextElementSibling;

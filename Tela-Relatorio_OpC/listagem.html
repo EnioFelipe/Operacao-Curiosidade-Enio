@@ -11,8 +11,7 @@
             display: inline-block;
         }
 
-
-        body{
+        body {
             width: 100%;
             height: 100%;
         }
@@ -40,16 +39,17 @@
             border: 1px solid black;
         }
 
-        .corpo-usuario{
+        .corpo-usuario {
             display: flex;
             flex-direction: column;
             border: none;
         }
 
         .index-corpo {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 150px 300px 200px 150px;
+            gap: 120px;
+            align-items: center;
             width: 100%;
             padding: 8px 12px;
             margin-bottom: 10px;
@@ -63,10 +63,11 @@
         }
 
         .dados {
-            display: flex;
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: 150px 300px 200px 150px;
+            gap: 120px;
+            align-items: center;
             width: 100%;
-            justify-content: space-between;
             padding: 15px 12px;
             margin-bottom: 5px;
             background-color: #f7f7f7;
@@ -74,15 +75,20 @@
             border: 1px solid black;
         }
 
-        .dados p{
+        .dados p, .dados a {
             text-align: start;
+            color: black;
+        }
+
+        .dados a {
+            text-decoration: underline;
         }
 
         .form-actions {
             margin: auto auto 0 auto;
         }
 
-        .btn-usuario{
+        .btn-usuario {
             width: 90px;
             height: 23px;
             margin-left: 5px;
@@ -106,7 +112,6 @@
             height: 20px;
             margin-right: 10px;
             margin-left: 10px;
-
         }
 
         .pagination-info, .pagination-controls {
@@ -127,8 +132,6 @@
         .pagination-controls button:hover {
             background-color: #ddd;
         }
-
-
     </style>
 </head>
 <body>
@@ -141,100 +144,94 @@
         </div>
         <div class="corpo-usuario">
             <div class="dados">
-                <p>2453479</p>
-                <a href="detalhes-relatorio.html">Relatórios de nomes de usuário do sitema</a>
+                <p>R24-123</p>
+                <a href="detalhes-relatorio.html">Relatório de nomes de usuário do sistema</a>
                 <p>ed.arantes@fakemail.br</p>
                 <p>30/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-456</p>
+                <a href="detalhes-relatorio.html">Relatório de atividades diárias</a>
+                <p>ana.silva@fakemail.br</p>
+                <p>29/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-789</p>
+                <a href="detalhes-relatorio.html">Relatório de acessos ao sistema</a>
+                <p>joao.pereira@fakemail.br</p>
+                <p>28/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-101</p>
+                <a href="detalhes-relatorio.html">Relatório de erros do sistema</a>
+                <p>maria.souza@fakemail.br</p>
+                <p>27/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-112</p>
+                <a href="detalhes-relatorio.html">Relatório de desempenho</a>
+                <p>carlos.lima@fakemail.br</p>
+                <p>26/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-131</p>
+                <a href="detalhes-relatorio.html">Relatório de segurança</a>
+                <p>fernanda.alves@fakemail.br</p>
+                <p>25/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-415</p>
+                <a href="detalhes-relatorio.html">Relatório de uso de recursos</a>
+                <p>roberto.martins@fakemail.br</p>
+                <p>24/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-161</p>
+                <a href="detalhes-relatorio.html">Relatório de manutenção</a>
+                <p>lucia.oliveira@fakemail.br</p>
+                <p>23/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-718</p>
+                <a href="detalhes-relatorio.html">Relatório de inventário</a>
+                <p>marcos.santos@fakemail.br</p>
+                <p>22/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-192</p>
+                <a href="detalhes-relatorio.html">Relatório de auditoria</a>
+                <p>patricia.mendes@fakemail.br</p>
+                <p>21/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-283</p>
+                <a href="detalhes-relatorio.html">Relatório de conformidade</a>
+                <p>antonio.rodrigues@fakemail.br</p>
+                <p>20/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-374</p>
+                <a href="detalhes-relatorio.html">Relatório de backup</a>
+                <p>claudia.ferreira@fakemail.br</p>
+                <p>19/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-465</p>
+                <a href="detalhes-relatorio.html">Relatório de atualizações</a>
+                <p>ricardo.gomes@fakemail.br</p>
+                <p>18/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-556</p>
+                <a href="detalhes-relatorio.html">Relatório de incidentes</a>
+                <p>juliana.costa@fakemail.br</p>
+                <p>17/10/2024</p>
             </div>
             <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
-            </div>
-            <div class="dados">
-                <p>2453479</p>
-                <p>Relatório de nomes de usuário do sistema</p>
-                <p>ed.arantes@fakemail.br</p>
-                <p>30/10/2024</p>
+                <p>R24-647</p>
+                <a href="detalhes-relatorio.html">Relatório de desempenho de rede</a>
+                <p>pedro.almeida@fakemail.br</p>
+                <p>16/10/2024</p>
             </div>
         </div>
     </div>

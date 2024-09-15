@@ -36,17 +36,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (btnExcluir) {
         btnExcluir.addEventListener('click', function() {
-            modalOpacidade.classList.toggle('show');
-            modalExcluir.classList.toggle('show');
+            if (modalOpacidade) {
+                modalOpacidade.classList.toggle('show');
+            }
+            if (modalExcluir) {
+                modalExcluir.classList.toggle('show');
+            }
         });
     }
 
-    // if (btnEditaropc) {
-    //     btnEditaropc.addEventListener('click', function() {
-    //         modalOpacidade.classList.toggle('show');
-    //         modalEditaropc.classList.toggle('show');
-    //     });
-    // }
+     if (btnEditaropc) {
+         btnEditaropc.addEventListener('click', function() {
+             modalEditaropc.classList.toggle('show');
+         });
+     }
 
     if (modalOpacidade) {
         modalOpacidade.addEventListener('click', function() {

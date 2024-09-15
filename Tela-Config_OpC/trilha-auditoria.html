@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="config-style.css">
     <title>Relatório de Auditoria</title>
     <style>
-        body{
+        body {
             width: 100%;
             height: 100%;
         }
@@ -39,15 +39,17 @@
             padding: 12px;
         }
 
-        .corpo-auditoria{
+        .corpo-auditoria {
             display: flex;
             flex-direction: column;
             border: none;
         }
 
-        .index-corpo {
-            display: flex;
-            flex-direction: row;
+        .index-corpo, .dados {
+            display: grid;
+            grid-template-columns: 150px 150px 200px 150px 70px auto;
+            gap: 80px;
+            align-items: center;
             width: 100%;
             padding: 6px 12px;
             margin-bottom: 10px;
@@ -56,27 +58,26 @@
             border: 1px solid black;
         }
 
-        .index-corpo p {
-            width: 175px;
-            margin-right: 35px;
-            text-align: start;
+        input[type="checkbox"] {
+           margin-right: 10px;
         }
 
-        .dados {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            padding: 15px 12px;
-            margin-bottom: 5px;
-            background-color: #f7f7f7;
-            border-radius: 6px;
-            border: 1px solid black;
+        .index-corpo p, .dados p {
+            text-align: left;
         }
 
         .dados p {
-            width: 175px;
-            margin-right: 35px;
-            text-align: start;
+            color: black;
+        }
+
+        .dados .status-ativo, .dados .status-inativo {
+            text-align: center;
+        }
+
+        .dados {
+            padding: 20px 5px;
+            background-color: #f7f7f7;
+            margin-bottom: 5px;
         }
 
         .label-input {
@@ -92,13 +93,22 @@
         }
 
         .form-actions {
-            margin: auto auto 0 auto;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-top: auto;
         }
 
-        .btn-auditoria{
-            width: 90px;
-            height: 23px;
-            margin-left: 5px;
+        .btn-auditoria {
+            width: 100px;
+            height: 30px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #8923d13c;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         .rodape-auditoria {
@@ -119,7 +129,6 @@
             height: 20px;
             margin-right: 10px;
             margin-left: 10px;
-
         }
 
         .pagination-info, .pagination-controls {
@@ -141,6 +150,13 @@
             background-color: #ddd;
         }
 
+        .label-input select, .label-input input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+  
 
     </style>
 </head>
@@ -153,7 +169,14 @@
             </div>
             <div class="label-input">
                 <label for="tipo-local">Local</label>
-                <input type="search" name="tipo-local" id="tipo-local" placeholder="Pesquisar Local">
+                <select name="tipo-local" id="tipo-local">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="visao-geral">Visão Geral</option>
+                    <option value="nova-operacao">Nova Operação</option>
+                    <option value="meus-cadastros">Meus Cadastros</option>
+                    <option value="relatorios">Relatórios</option>
+                    <option value="configuracoes">Configurações</option>
+                </select>
             </div>
             <div class="label-input">
                 <label for="tipo-usuario">Usuário</label>
@@ -178,61 +201,52 @@
         <div class="corpo-auditoria">
             <div class="dados">
                 <p>Meus Cadastros</p>
-                <p>23/08/2024 11:22:33</p>
-                <p>@enflp</p>
-                <p>Alteração</p>
+                <p>13/09/2024</p>
+                <p>@eniof.mig</p>
+                <p>Operação removida</p>
                 <p>Organizacional</p>
             </div>
             <div class="dados">
-                <p>Meus Cadastros</p>
-                <p>23/08/2024 11:22:33</p>
-                <p>@enflp</p>
-                <p>Alteração</p>
+                <p>Relatórios</p>
+                <p>15/05/2024</p>
+                <p>@eniof.mig</p>
+                <p>Relatório baixado</p>
                 <p>Organizacional</p>
             </div>
             <div class="dados">
-                <p>Meus Cadastros</p>
-                <p>23/08/2024 11:22:33</p>
-                <p>@enflp</p>
-                <p>Alteração</p>
+                <p>Configurações</p>
+                <p>01/09/2024</p>
+                <p>@eniof.mig</p>
+                <p>Usuário cadastrado</p>
                 <p>Organizacional</p>
             </div>
             <div class="dados">
-                <p>Meus Cadastros</p>
-                <p>23/08/2024 11:22:33</p>
-                <p>@enflp</p>
-                <p>Alteração</p>
+                <p>Cadastro</p>
+                <p>13/07/2024</p>
+                <p>@eniof.mig</p>
+                <p>Operação cadastrada</p>
                 <p>Organizacional</p>
             </div>
             <div class="dados">
-                <p>Meus Cadastros</p>
-                <p>23/08/2024 11:22:33</p>
-                <p>@enflp</p>
-                <p>Alteração</p>
-                <p>Organizacional</p>
-            </div>
-            <div class="dados">
-                <p>Meus Cadastros</p>
-                <p>23/08/2024 11:22:33</p>
-                <p>@enflp</p>
-                <p>Alteração</p>
+                <p>Configurações</p>
+                <p>22/02/2024</p>
+                <p>@eniof.mig</p>
+                <p>Usuário alterado</p>
                 <p>Organizacional</p>
             </div>
         </div>
         <div class="rodape-auditoria">
             <div class="pagination-info">
                 <label for="itens por pg">Itens por página</label>
-                <input type="number" name="itens por pg" id="itens por pg">
+                <input type="number" name="itens por pg" id="itens por pg" value="6">
             </div>
             <div class="pagination-controls">
-                <button>Página anterior</button>
+                <button> < </button>
                 <label for="pg atual">Página atual</label>
-                <input type="number" name="pg atual" id="pg atual">
-                <button>Próxima página</button>
+                <input type="number" name="pg atual" id="pg atual" value="1">
+                <button>></button>
             </div>
         </div>
     </div>
-        
-    
 </body>
 </html>

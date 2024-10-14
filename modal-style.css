@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#iframe-notificacoes, #iframe-share, #iframe-excluir,#iframe-editar-opc{
+#iframe-notificacoes, .iframe-share, #iframe-excluir,#iframe-editar-opc{
     width: 100%;
     height: 100%;
     border-radius: 25px;
@@ -39,7 +39,7 @@
     background-color: transparent; /* Cor de fundo do modal */
 }
 
-#modal-share{
+.modal-share{
     display: none;
     position: fixed;
     top: 50%;
@@ -68,7 +68,7 @@
 }
 
 
-#opacidade.show, #modal-notificacoes.show, #modal-share.show, #modal-excluir.show, #modal-editar-opc.show{
+#opacidade.show, #modal-notificacoes.show, .modal-share.show, #modal-excluir.show, #modal-editar-opc.show{
     display: block; /* Mostra o modal quando a classe 'show' é adicionada */
 }
 
@@ -90,7 +90,7 @@
     height: fit-content;
 }
 
-#btn-share, #btn-excluir, #btn-editar-opc{
+.btn-share, #btn-excluir, #btn-editar-opc{
     align-self: center;
     background-color: transparent;
     border: none;

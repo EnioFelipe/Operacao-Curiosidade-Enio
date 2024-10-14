@@ -9,40 +9,41 @@
 </head>
 <body>
     <div id="foto">
-        <iframe src="https://docs.google.com/presentation/d/1_C4kjf2uIOms52-Qb1f6TUcMAM_kzlhl67O9qTpUNXk/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <!-- <iframe src="https://docs.google.com/presentation/d/1_C4kjf2uIOms52-Qb1f6TUcMAM_kzlhl67O9qTpUNXk/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> -->
         <img id="forlogic_logo" src="../Arquivos SVG/FORLOGIC_LOGO+SIMBOLO_PRETO2.svg" alt="">
     </div>
-        <div id="tela">
-            <img id="logoescrita" src="../Arquivos SVG/logoescrita.svg" alt="logo escrita">
-            <div id="campos">
-                <p id="bemvindo" >Bem-vindo de volta! Faça o Login para continuar</p><hr>
-                <form action="#" method="post">
-                    <div id="campoemail">
-                        <img src="../Arquivos SVG/mail_20dp_6B1BC6_FILL0_wght400_GRAD0_opsz20.svg" alt="">
-                        <input type="email" name="email" id="email" placeholder="Insira aqui seu e-mail ou nome de usuário">
-                    </div>
+    <div id="tela">
+        <img id="logoescrita" src="../Arquivos SVG/logoescrita.svg" alt="logo escrita">
+        <div id="campos">
+            <p id="bemvindo">Bem-vindo de volta! Faça o Login para continuar</p><hr>
+            <form id="loginForm">
+                <div id="campoemail">
+                    <img src="../Arquivos SVG/mail_20dp_6B1BC6_FILL0_wght400_GRAD0_opsz20.svg" alt="">
+                    <input type="text" name="email" id="email" placeholder="Insira aqui seu e-mail ou nome de usuário">
+                </div>
 
-                    <div id="camposenha">
-                        <img src="../Arquivos SVG/lock_20dp_6B1BC6_FILL0_wght400_GRAD0_opsz20.svg" alt="">
-                        <input type="password" name="senha" id="senha" placeholder="Insira aqui a sua senha">
-                        <button id="visibilidade" type="button" onclick="togglePassword()">
-                           <img src="../icons/visibilidade.svg" alt="">
-                        </button>
-                    </div>
+                <div id="camposenha">
+                    <img src="../Arquivos SVG/lock_20dp_6B1BC6_FILL0_wght400_GRAD0_opsz20.svg" alt="">
+                    <input type="password" name="senha" id="senha" placeholder="Insira aqui a sua senha">
+                    <button id="visibilidade" type="button" onclick="togglePassword()">
+                        <img src="../icons/visibilidade.svg" alt="">
+                    </button>
+                </div>
 
-                    <a class="entrar" href="../Tela-Home_Opc/home-index.html">ENTRAR</a> <br>
-                    <a class="preencher" href="#">ESQUECI MINHA SENHA</a>
-                </form>
-            </div>
-            <div id="links">
-                <a id="redes" href="#"><img id="google" src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="">Entrar com Google</a>
-                <a id="redes" href="#"><img id="Microsoft" src="https://img.icons8.com/?size=100&id=22989&format=png&color=000000" alt="">Entrar com Microsoft</a>
-    
-            </div>
-                <footer>
-                    <p>Feito por <a href="#">Enio Felipe</a></p>
-                </footer>
+                <button type="submit" class="entrar">ENTRAR</button> <br>
+                <a class="preencher" href="#">ESQUECI MINHA SENHA</a>
+            </form>
         </div>
+        <div id="links">
+            <a id="redes" href="#"><img id="google" src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="">Entrar com Google</a>
+            <a id="redes" href="#"><img id="Microsoft" src="https://img.icons8.com/?size=100&id=22989&format=png&color=000000" alt="">Entrar com Microsoft</a>
+        </div>
+        <footer>
+            <p>Feito por <a href="#">Enio Felipe</a></p>
+        </footer>
+    </div>
+    
+    <script src="../Integracao-API/validacao-login-API.js"></script>
     <script>
         function togglePassword() {
             const passwordField = document.getElementById('senha');

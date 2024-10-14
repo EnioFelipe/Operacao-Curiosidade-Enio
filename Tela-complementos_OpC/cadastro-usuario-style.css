@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+html{
+    border-radius: 25px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 25px;
+    background-color: transparent;
+}
+
+menu {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: white;
+}
+
+#lateral-estilo {
+    width: 6%; /* Defina uma largura fixa ou ajustável */ 
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    border-radius: 12px 0px 0px 12px;
+}
+
+#conteudo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.form-container {
+    background-color: white;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.181);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    height: auto;
+}
+
+input::placeholder {
+    text-align: left;
+}
+
+.alinhamento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: auto;
+    margin: 30px 0px;
+}
+
+#codigo-user{
+    display: none;
+}
+
+.alinhamento label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1em;
+    color: #333;
+    max-width: 250px;
+}
+
+.alinhamento input,
+.alinhamento select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-top: 5px;
+    text-align: left;
+    width: 220px;
+}
+
+.alinhamento input[type="date"] {
+    width: 150px;
+}
+
+.alinhamento input[type="text"].text-area {
+    width: 250px;
+}
+
+.alinhamento select {
+    width: 120px;
+}
+
+label#date {
+    width: 150px;
+}
+
+label#estado-civil {
+    width: 150px;
+}
+
+input#admin {
+    width: 15px;
+    height: 50px;
+    margin: auto;
+}
+
+.checkbox-container {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-container label {
+    margin-left: 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+.form-container button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#foto-perfil {
+    display: flex;
+    flex-direction:row;
+    align-self: self-start;
+    margin-bottom: 30px;
+}
+
+img {
+    align-self: start;
+    width: 120px; /* Largura da foto */
+    height: 120px; /* Altura da foto */
+    border-radius: 8px; /* Foto circular */
+    object-fit: fill; /* Ajusta a imagem para cobrir o espaço */
+}
+
+button#atualizar-img {
+   padding: 0px;
+   height: fit-content;
+   margin-left: 10px;
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+}
+
+h1 img{
+    width: 35px;
+    height: 35px;
+    margin-left:auto;
+}
+h2{
+    width: 100%;
+    text-align: left;
+    margin: 10px 0px;
+}
+
+#atualizar-img{
+    display: flex;
+    align-items: center;
+    padding: 10px;  
+    margin-left: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: #8923d13c;
+    color: var(--primary-color);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#atualizar-img img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.separador {
+    border: none;
+    width: 100%; /* Largura da linha de separação */
+    border-top: 1px solid #ccc; /* Cor da linha de separação */
+    margin: 5px 0px 20px 0px; /* Espaçamento vertical */
+}
+
+#btn-fechar{
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+
+#btn-salvar{
+    width: 90px;
+    padding: 10px;
+    align-self: flex-start;
+    margin-right: auto;
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}

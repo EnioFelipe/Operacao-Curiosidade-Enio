@@ -19,7 +19,7 @@
             align-items: center;
             justify-content: left;
             width: 100%;
-            background-image: linear-gradient(to right, #6c2eae, #7f225f);
+            background-color: #6c2eae;
             padding: 10px 20px;
             border-radius: 10px 10px 0 0;
             margin-bottom: 10px;
@@ -131,57 +131,64 @@
 
             <div class="alinhamento">
                 <label for="nome">Nome
-                    <input type="text" id="nome" name="nome" class="text-area" placeholder="Digite seu nome" required>
+                    <input type="text" id="nome" name="nome" class="text-area" placeholder="Digite seu nome" value="Enio Felipe Botelho Miguel" required>
                 </label>
                 <label for="nome-usuario">Nome de Usuário
-                    <input type="text" id="nome-usuario" name="nome-usuario" placeholder="Digite seu nome de usuário" required>
+                    <input type="text" id="nome-usuario" name="nome-usuario" placeholder="Digite seu nome de usuário" value="@eniof.mig" required>
                 </label>
                 <label for="email">E-mail
-                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    <input type="email" id="ema24-2083il" name="email" placeholder="Digite seu e-mail" value="eniofelipe@fakemail" required>
                 </label>
                 <label for="data-nasc">Data de nascimento
-                    <input type="date" id="data-nasc" name="data-nasc" required>
-                </label>
-                <label for="estado-civil">Estado Civil
-                    <select id="estado-civil" name="estado-civil" required>
-                        <option value="" disabled selected>Selecione</option>
-                        <option value="solteiro">Solteiro(a)</option>
-                        <option value="casado">Casado(a)</option>
-                        <option value="divorciado">Divorciado(a)</option>
-                        <option value="viuvo">Viúvo(a)</option>
-                    </select>
+                    <input type="date" id="data-nasc" name="data-nasc" value="2003-12-15" required>
                 </label>
                 <label for="endereco">Endereço
-                    <input type="text" id="endereco" class="text-area" name="endereco" placeholder="Digite seu endereço" required>
+                    <input type="text" id="endereco" class="text-area" name="endereco" placeholder="Digite seu endereço" value="Rua ABC" required>
                 </label>
                 <label for="complemento">Complemento
-                    <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
+                    <input type="text" id="complemento" name="complemento" placeholder="Digite o complemento" value="AP 22">
                 </label>
                 <label for="ocupacao">Ocupação/Profissão
-                    <input type="text" id="ocupacao" class="text-area" name="ocupacao" placeholder="Digite sua ocupação/profissão" required>
+                    <input type="text" id="ocupacao" class="text-area" name="ocupacao" placeholder="Digite sua ocupação/profissão" value="Desenvolvedor" required>
                 </label>
                 <label for="formacao">Formação Acadêmica
-                    <input type="text" id="formacao" class="text-area" name="formacao" placeholder="Digite sua formação acadêmica" required>
+                    <input type="text" id="formacao" class="text-area" name="formacao" placeholder="Digite sua formação acadêmica" value="Engenharia de Software" required>
                 </label>
             </div>
 
             <header>
                 <h2>Interesses <img class="icons" src="../icons/interesses.svg" alt=""></h2>
-            </header>
-            <p>Digite aqui seus <strong>interesses</strong>, separados por enter:</p>
-            <textarea></textarea>
-    
-            <header>
-                <h2>Valores <img class="icons" src="../icons/valores.svg" alt=""></h2>
-            </header>
-            <p>Digite aqui seus <strong>valores</strong>, separados por enter:</p>
-            <textarea></textarea>
-    
-            <header>
-                <h2>Sentimentos <img class="icons" src="../icons/sentimentos.svg" alt=""></h2>
-            </header>
-            <p>Digite aqui seus <strong>sentimentos</strong>, separados por enter:</p>
-            <textarea></textarea>
+</header>
+<p>Digite aqui seus <strong>interesses</strong>, separados por enter:</p>
+<textarea>
+Leitura
+Esportes
+Tecnologia
+Viagens
+Música
+</textarea>
+
+<header>
+    <h2>Valores <img class="icons" src="../icons/valores.svg" alt=""></h2>
+</header>
+<p>Digite aqui seus <strong>valores</strong>, separados por enter:</p>
+<textarea>
+Honestidade
+Responsabilidade
+Empatia
+Respeito
+Integridade
+</textarea>
+
+<header>
+    <h2>Sentimentos <img class="icons" src="../icons/sentimentos.svg" alt=""></h2>
+</header>
+<p>Digite aqui seus <strong>sentimentos</strong>, separados por enter:</p>
+<textarea>
+Felicidade
+Gratidão
+Esperança
+</textarea>
                 
             <button type="submit">Salvar</button>
         </form>

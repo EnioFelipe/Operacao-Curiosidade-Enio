@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Definições de compartilhamento</title>
+    <title>Remover Usuário</title>
     <link rel="stylesheet" href="../global-style.css">
 
     <style>
@@ -46,84 +46,61 @@
             margin: 10px;
         }
 
-        h2 {
-            width: 100%;
-            text-align: center;
-            margin: 10px 0;
-            font-size: 24px;
-            color: #333;
+        h2{
+            width: fit-content;
+            text-align: left;
+            margin: 10px 0px;
+            font-size: 20px;
         }
 
         .separador {
             border: none;
-            width: 100%;
-            border-top: 1px solid #ccc;
-            margin: 10px 0;
+            width: 100%; /* Largura da linha de separação */
+            border-top: 1px solid #ccc; /* Cor da linha de separação */
+            margin: 10px 0; /* Espaçamento vertical */
         }
 
-        p {
+        p{
             text-align: justify;
             text-indent: 30px;
             width: 100%;
             padding: 10px;
-            color: #555;
-            font-size: 16px;
-            line-height: 1.5;
+            color: black;
         }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        button {
-            width: 120px;
-            height: 40px;
+        button{
+            width: 100px;
+            height: 30px;
             margin: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            color: white;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+            color: black;
         }
 
-        button#btn-cancelar {
-            background-color: #6c757d;
+        button#btn-confirmar-remocao{
+            color: red;
         }
 
-        button#btn-cancelar:hover {
-            background-color: #5a6268;
-        }
-
-        button#btn-confirmar-remocao {
-            background-color: #dc3545;
-        }
-
-        button#btn-confirmar-remocao:hover {
-            background-color: #c82333;
-        }
     </style>
 </head>
 <body>
     <menu>
         <div id="lateral-estilo"></div>
         <div id="conteudo">
-            <h2>Remover Operação Curiosidade<hr class="separador"></h2>
+            <h2>Remover Cadastro de Usuário<hr class="separador"></h2>
             <p>
-                Deseja realmente remover esta operação do sistema? <br>
-                Após remover este cadastro, não será possível recuperá-lo.
+                Deseja realmente remover este usuário do sistema? <br>
+                Após remover este cadastro não será possível recuperá-lo.
             </p>
-            <div class="button-container">
+           <div>
                 <button id="btn-cancelar">Cancelar</button>
                 <button id="btn-confirmar-remocao">Remover</button>
-            </div>
+           </div>
         </div>
-    </menu>
+    
 
-    <script src="../Integracao-API/exibicao-cards-API.js"></script>
-    <script src="../Integracao-API/deletar-operacao-API.js"></script>
+        <script src="../Integracao-API/deletar-usuario-API.js"></script>
+    </menu>
 </body>
 </html>

@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let modalOpacidade = document.getElementById('opacidade');
     let btnNotificacoes = document.getElementById('btn-notificacoes');
     let modalNotificacoes = document.getElementById('modal-notificacoes');
-    let btnShare = document.getElementById('btn-share');
-    let modalShare = document.getElementById('modal-share');
+    let btnShare = document.getElementsByClassName('btn-share');
+    let modalShare = document.getElementsByClassName('modal-share');
     let btnPerfil = document.getElementById('btn-perfil');
     let modalPerfil = document.getElementById('modal-perfil');
     let btnExcluir = document.getElementById('btn-excluir');
@@ -23,14 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (btnShare) {
-        btnShare.addEventListener('click', function() {
-            if (modalOpacidade) {
-                modalOpacidade.classList.toggle('show');
-            }
-            if (modalShare) {
-                modalShare.classList.toggle('show');
-            }
+    if (btnShare.length > 0) {
+        Array.from(btnShare).forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                if (modalOpacidade) {
+                    modalOpacidade.classList.toggle('show');
+                }
+                if (modalShare.length > 0) {
+                    Array.from(modalShare).forEach(function(modal) {
+                        modal.classList.toggle('show');
+                    });
+                }
+            });
         });
     }
 
@@ -45,17 +49,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-     if (btnEditaropc) {
-         btnEditaropc.addEventListener('click', function() {
-             modalEditaropc.classList.toggle('show');
-         });
-     }
+    if (btnEditaropc) {
+        btnEditaropc.addEventListener('click', function() {
+            modalEditaropc.classList.toggle('show');
+        });
+    }
 
     if (modalOpacidade) {
         modalOpacidade.addEventListener('click', function() {
             modalOpacidade.classList.remove('show');
             if (modalNotificacoes) modalNotificacoes.classList.remove('show');
-            if (modalShare) modalShare.classList.remove('show');
+            if (modalShare.length > 0) {
+                Array.from(modalShare).forEach(function(modal) {
+                    modal.classList.remove('show');
+                });
+            }
             if (modalPerfil) modalPerfil.classList.remove('show');
             if (modalExcluir) modalExcluir.classList.remove('show');
             if (modalEditaropc) modalEditaropc.classList.remove('show');
@@ -85,8 +93,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (modalOpacidade) {
                 modalOpacidade.classList.remove('show');
             }
-            if (modalShare) {
-                modalShare.classList.remove('show');
+            if (modalShare.length > 0) {
+                Array.from(modalShare).forEach(function(modal) {
+                    modal.classList.remove('show');
+                });
             }
         } else if (event.data.action === 'abrirModalEditaropc') {
             if (modalOpacidade) {

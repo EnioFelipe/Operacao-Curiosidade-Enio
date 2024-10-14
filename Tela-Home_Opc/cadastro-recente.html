@@ -6,148 +6,76 @@
     <link rel="stylesheet" href="../global-style.css">
     <link rel="stylesheet" href="home-style.css">
     <link rel="stylesheet" href="../modal-style.css">
+    <link rel="stylesheet" href="cards-style.css">
     <title>Últimos cadastros</title>
-
-   <style>
-        body{
-            display: flex;
-            align-items: center;
-            flex-direction: column;
+    <style>
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
         }
-   </style>
-
-
+    </style>
 </head>
+
 <body>
-    <div class="perfil">
-        <div class="main-info">
-            <img src="../Fotos-usuarios/user01.jpg" alt="Foto do usuário" class="perfil-foto">
-            <div class="identificadores">
-                <p id="nome-perfil">Edson Arantes | <a id="apelido" href="#">@ed.arantes</a></p>
-                <p id="email">edson.a@fakemail.br</p>
-                <p id="pilares">
-                    <a href="#" class="curiosidades"> <strong>3</strong> Interesses <img src="../icons/interesses.svg" alt=""></a>
-                    <a href="#"  class="curiosidades"> <strong>2</strong> Sentimentos <img src="../icons/sentimentos.svg" alt=""></a>
-                    <a href="#"  class="curiosidades"> <strong>4</strong> Valores <img src="../icons/valores.svg" alt=""></a>
-                </p>
-            </div>
-            <div class="id-situ">
-                <p id="id-usuario">24-001</p>
-                <p id="situacao-ativo">Ativo</p>
-            </div>
-        </div>
-        <div class="detalhes">
-        <div class="perfil-info">
-            <p id="data-criacao"><img src="../icons/agenda.svg" alt="">Data de Criação: 01/02/2024</p>
-            <p id="editado-por"><img src="../icons/editado-recente.svg" alt="">Editado por: @eniof.mig</p>
-        </div>
-        <div class="perfil-acao">
-                    <div id="opacidade">
-                        <div id="modal-share">
-                            <iframe id="iframe-share" src="../Tela-complementos_OpC/def-compartilhar.html" frameborder="0"></iframe>
-                        </div>
-                        <div id="modal-excluir">
-                            <iframe id="iframe-excluir" src="../Tela-complementos_OpC/remover-usuario.html" frameborder="0"></iframe>
-                        </div>
-                        <!-- <div id="modal-editar-usuario">
-                            <iframe id="iframe-editar-usuario" src="../Tela-complementos_OpC/editar-cadastro-usuario.html" frameborder="0"></iframe>
-                        </div> -->
-                    </div>  
-            <button id="btn-share"><img id="compartilhar" class="icon" src="../icons/share.svg" alt="compartilhar"></button>
-            <button id="btn-excluir"><img id="excluir" class="icon" src="../icons/delete.svg" alt="excluir"></button>
-            <button id="btn-editar-opc"><img id="editar" class="icon" src="../icons/editar.svg"  alt=""></button>
-        </div>
-        </div>
-    </div>
-    <div class="perfil">
-        <div class="main-info">
-            <img src="../Fotos-usuarios/user02.jpg" alt="Foto do usuário" class="perfil-foto">
-            <div class="identificadores">
-                <p id="nome-perfil">Emerson Dracena | <a id="apelido" href="#">@emerson.dracena</a></p>
-                <p id="email">emerson123@fakemail.br</p>
-                <p id="pilares">
-                    <a href="#" class="curiosidades"> <strong>4</strong> Interesses <img src="../icons/interesses.svg" alt=""></a>
-                    <a href="#"  class="curiosidades"> <strong>4</strong> Sentimentos <img src="../icons/sentimentos.svg" alt=""></a>
-                    <a href="#"  class="curiosidades"> <strong>2</strong> Valores <img src="../icons/valores.svg" alt=""></a>
-                </p>
-            </div>
-            <div class="id-situ">
-                <p id="id-usuario">24-002</p>
-                <p id="situacao-inativo">Inativo</p>
-            </div>
-        </div>
-        <div class="detalhes">
-        <div class="perfil-info">
-            <p id="data-criacao"><img src="../icons/agenda.svg" alt="">Data de Criação: 03/04/2024</p>
-            <p id="editado-por"><img src="../icons/editado-recente.svg" alt="">Editado por: @eniof.mig</p>
-        </div>
-        <div class="perfil-acao">
+    <div id="Usuario-list" class="card-container"></div>
 
-                    <div id="opacidade">
-                        <div id="modal-share">
-                            <iframe id="iframe-share" src="../Tela-complementos_OpC/def-compartilhar.html" frameborder="0"></iframe>
-                        </div>
-                        <div id="modal-excluir">
-                            <iframe id="iframe-excluir" src="../Tela-complementos_OpC/remover-usuario.html" frameborder="0"></iframe>
-                        </div>
-                    </div>
-                    
-            <button id="btn-share"><img id="compartilhar" class="icon" src="../icons/share.svg" alt="compartilhar"></button>
-            <button id="btn-excluir"><img id="excluir" class="icon" src="../icons/delete.svg" alt="excluir"></button>
-            <a href="#" class="btn-edit"><img id="editar" class="icon" src="../icons/editar.svg"  alt=""></a>
-        </div>
+    <!-- Modal de Remoção de Usuário -->
+    <div id="modal-remover-usuario" class="modal">
+        <div class="modal-content">
+            <iframe src="../Tela-complementos_OpC/remover-usuario.html"></iframe>
         </div>
     </div>
-    <div class="perfil">
-        <div class="main-info">
-            <img src="../Fotos-usuarios/user03.jpg" alt="Foto do usuário" class="perfil-foto">
-            <div class="identificadores">
-                <p id="nome-perfil">Marta Silva | <a id="apelido" href="#">@marta.silva</a></p>
-                <p id="email">martasilva03@fakemail.br</p>
-                <p id="pilares">
-                    <a href="#" class="curiosidades"> <strong>4</strong> Interesses <img src="../icons/interesses.svg" alt=""></a>
-                    <a href="#"  class="curiosidades"> <strong>3</strong> Sentimentos <img src="../icons/sentimentos.svg" alt=""></a>
-                    <a href="#"  class="curiosidades"> <strong>3</strong> Valores <img src="../icons/valores.svg" alt=""></a>
-                </p>
-            </div>
-            <div class="id-situ">
-                <p id="id-usuario">24-003</p>
-                <p id="situacao-ativo">Ativo</p>
-            </div>
+    <div id="modal-compartilhar-usuario" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal-compartilhar">&times;</span>
+            <iframe src="../Tela-complementos_OpC/def-compartilhar.html"></iframe>
         </div>
-        <div class="detalhes">
-        <div class="perfil-info">
-            <p id="data-criacao"><img src="../icons/agenda.svg" alt="">Data de Criação: 04/05/2024</p>
-            <p id="editado-por"><img src="../icons/editado-recente.svg" alt="">Editado por: @eniof.mig</p>
-        </div>
-        <div class="perfil-acao">
+    </div>
 
-                    <div id="opacidade">
-                        <div id="modal-share">
-                            <iframe id="iframe-share" src="../Tela-complementos_OpC/def-compartilhar.html" frameborder="0"></iframe>
-                        </div>
-                        <div id="modal-excluir">
-                            <iframe id="iframe-excluir" src="../Tela-complementos_OpC/remover-usuario.html" frameborder="0"></iframe>
-                        </div>
-                    </div>
-                    
-            <button id="btn-share"><img id="compartilhar" class="icon" src="../icons/share.svg" alt="compartilhar"></button>
-            <button id="btn-excluir"><img id="excluir" class="icon" src="../icons/delete.svg" alt="excluir"></button>
-            <a href="#" class="btn-edit"><img id="editar" class="icon" src="../icons/editar.svg"  alt=""></a>
-        </div>
-        </div>
-    </div>
+    <script src="../Integracao-API/exibicao-cards-API.js"></script>
+    <script src="../Integracao-API/deletar-operacao-API.js"></script>
     <script src="../modal.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const btnEditaropc = document.querySelectorAll('#btn-editar-opc');
-
-            btnEditaropc.forEach(button => {
-                button.addEventListener('click', function() {
-                    window.parent.postMessage({ action: 'abrirModalEditaropc' }, '*');
-                });
+            // Obter o modal
+            var modal = document.getElementById("modal-remover-usuario");
+            var modalCompartilhar = document.getElementById("modal-compartilhar-usuario");
+            var closeModalCompartilhar = document.getElementById("close-modal-compartilhar");
+            var usuarioIdToRemove = null;
+    
+            window.addEventListener('message', function(event) {
+                if (event.data.action === 'fechar') {
+                    modal.style.display = "none";
+                }
             });
-        });
+    
+            // Função para abrir o modal
+            window.abrirModalRemoverUsuario = function(usuarioId) {
+                window.usuarioIdToRemove = usuarioId; // Armazena o ID do usuário
+                console.log('ID do usuário armazenado: ', window.usuarioIdToRemove);
+                modal.style.display = "block";
+            }
+
+            window.abrirModalCompartilharUsuario = function() {
+        modalCompartilhar.style.display = "block";
+    }
+
+    window.fecharModalCompartilharUsuario = function() {
+        modalCompartilhar.style.display = "none";
+    }
+
+    closeModalCompartilhar.addEventListener('click', function() {
+        fecharModalCompartilharUsuario();
+    });
+
+    // Fechar o modal ao clicar fora dele
+    window.onclick = function(event) {
+        if (event.target == modalCompartilhar) {
+            fecharModalCompartilharUsuario();
+        }
+    }
+});
     </script>
 </body>
 </html>

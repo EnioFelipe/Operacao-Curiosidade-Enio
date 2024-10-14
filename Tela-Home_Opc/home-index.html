@@ -33,12 +33,12 @@
     </menu>
     <div id="exibicao">
         <header>
-            <div id="opacidade">
-                <div id="modal-editar-usuario">
-                    <iframe id="iframe-editar-usuario" src="../Tela-complementos_OpC/editar-opc.html" frameborder="0"></iframe>
+                <div id="modal-editar-usuario" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <iframe id="iframe-editar-usuario" src="../Tela-complementos_OpC/editar-opc.html" frameborder="0"></iframe>
+                    </div>
                 </div>
-            </div>
-            
             <div id="modal-notificacoes">
                 <iframe id="iframe-notificacoes" src="../Tela-complementos_OpC/notificacoes.html" frameborder="0"></iframe>
             </div>
@@ -78,21 +78,23 @@
             
             <div id="dados-cadastro">
                 <div class="cadastro-info">
-                    <h3>Total cadastrados</h3>
-                    <p class="numero">100</p>
+                    <h3>Total Usuários</h3>
+                    <p class="numero total-cadastrados">0</p>
                 </div>
                 <div class="cadastro-info">
-                    <h3>Cadastros pendentes</h3>
-                    <p class="numero">20</p>
+                    <h3>Operações Pendentes</h3>
+                    <p class="numero cadastros-pendentes">0</p>
                 </div>
                 <div class="cadastro-info">
-                    <h3>Cadastros ativos</h3>
-                    <p class="numero">80</p>
+                    <h3>Operações Cadastradas</h3>
+                    <p class="numero cadastros-ativos">0</p>
                 </div>
             </div>
+
         </main>
     </div>
     <script src="../modal.js"></script>
+    <script src="../Integracao-API/exibicao-cards-API.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('#nav-cadastro a');
@@ -108,7 +110,7 @@
                     // Adiciona a classe 'active' ao link clicado
                     this.classList.add('active');
     
-                    // Atualiza o src do iframe para carregar o conteúdo correspondente
+                    // Atualiza o src do iframe para carregar o conteúdo correspondente                    
                     iframe.src = this.getAttribute('href');
                 });
             });
@@ -130,6 +132,31 @@
     
             // Adiciona um evento de carregamento ao iframe para atualizar o link ativo
             iframe.addEventListener('load', setActiveLink);
+
+            // Chama a função para exibir os dados de cadastro
+            readUsuarios().then(Usuarios => displayCardInfo(Usuarios));
+
+            window.addEventListener('message', function(event) {
+                if (event.data.action === 'abrirModalEditarUsuario') {
+                    abrirModalEditarUsuario();
+                }
+            });
+
+            window.abrirModalEditarUsuario = function() {
+                const modalEditar = document.getElementById("modal-editar-usuario");
+                modalEditar.style.display = "block";
+            }
+
+            var modal = document.getElementById("modal-editar-usuario");
+
+            // Obter o elemento <span> que fecha o modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // Quando o usuário clicar em <span> (x), fecha o modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
         });
     </script>
 </body>

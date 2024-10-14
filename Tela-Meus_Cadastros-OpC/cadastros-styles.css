@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#tabela-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-right: 95px;
+    width: 100%;
+    height: 100%;
+    text-align: start;
+}
+
+.cabeça-usuario, .corpo-usuario {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #bab4b45c;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+.cabeça-usuario {
+    padding: 12px;
+}
+
+.corpo-usuario {
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.index-corpo, .dados {
+    display: grid;
+    grid-template-columns: 150px 150px 200px 150px 70px auto;
+    gap: 80px;
+    align-items: center;
+    width: 100%;
+    padding: 6px 12px;
+    margin-bottom: 10px;
+    background-color: #bab4b45c;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+input[type="checkbox"] {
+   margin-right: 10px;
+}
+
+.index-corpo p, .dados p {
+    text-align: left;
+}
+
+.dados p {
+    color: black;
+}
+
+.dados .status-ativo, .dados .status-inativo {
+    text-align: center;
+}
+
+.dados {
+    background-color: #f7f7f7;
+    margin-bottom: 5px;
+}
+
+.label-input {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.cabeça-usuario label {
+    margin-bottom: 5px;
+    text-align: start;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.status-ativo {
+    text-align: center;
+    border: 1px solid green;
+    color: green;
+    background-color: rgba(34, 139, 34, 0.144);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.status-inativo {
+    text-align: center;
+    border: 1px solid red;
+    color: red;
+    background-color: rgba(255, 0, 0, 0.158);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.btn-usuario {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8923d13c;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rodape-usuario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    margin-top: 5px;
+    width: 100%;
+    background-color: #bab4b45c;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+.rodape-usuario input {
+    width: 50px;
+    height: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.pagination-info, .pagination-controls {
+    display: flex;
+    align-items: center;
+}
+
+.pagination-controls button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-controls button:hover {
+    background-color: #ddd;
+}
+
+.label-input select, .label-input input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.caixa-opcoes {
+    width: 100%;
+}
+
+.btn-opcoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: left;
+    padding: 5px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#icon-expandir {
+    max-width: 20px;
+    max-height: 20px;
+    margin: auto 10px;
+}
+
+.modal-opcoes {
+    display: none;
+}
+
+.modal-opcoes.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-opcoes a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    text-align: center;
+}

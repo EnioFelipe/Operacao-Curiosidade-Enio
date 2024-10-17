@@ -1,9 +1,10 @@
 <h1>Projeto Operação Curiosidade</h1>
 
-<img></img>
+<img>![image](https://github.com/user-attachments/assets/010c17fa-b85b-4667-ab0c-ac34682affe8)
+</img>
 
 <h2>Este repositório é referente ao front-end do projeto <br>
-Back-end: <a>https://github.com/EnioFelipe/TesteOpC</a></h2> 
+Back-end: https://github.com/EnioFelipe/TesteOpC </h2> 
 
 <h3> Objetivo: </h3>
 
